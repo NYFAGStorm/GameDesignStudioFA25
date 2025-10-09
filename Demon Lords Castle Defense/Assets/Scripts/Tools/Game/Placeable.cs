@@ -1,0 +1,113 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(Collider))]
+public class Placeable : MonoBehaviour
+{
+    // Author: Gustavo Rojas Flores
+    // Is the base for all placeable items like tiles, goons and decorations
+
+    private Slot container = null;
+    private bool isPlaced = false;
+    private bool isBeingDragged = false;
+    private bool locked;
+    private List<Slot> validSlots;
+    private Vector3 flat = new Vector3(1, 0, 1);
+    private List<Slot> childSlots;
+
+    public void Lock(bool setLock)
+    {
+        locked = setLock;
+    }
+
+    private void OnMouseDown()
+    {
+        if (locked) return;
+
+        StartDrag();
+    }
+
+    private void StartDrag()
+    {
+        isPlaced = false;
+
+        if (container) container.RemoveItem(false);
+        container = null;
+
+        isBeingDragged = true;
+        validSlots = new List<Slot>(FindObjectsByType<Slot>(FindObjectsSortMode.InstanceID));
+        childSlots.Clear();
+
+        foreach (Slot s in validSlots)
+        {
+            Placeable p = s.transform.root.GetComponent<Placeable>();
+            if (p == this)
+            {
+                validSlots.Remove(s);
+                childSlots.Add(s);
+                continue;
+            }
+
+            if (GetType().Name != s.GetSlotType().Name)
+            {
+                validSlots.Remove(s);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (!isBeingDragged) return;
+        transform.position = new Vector3(WorldMouse.Get().x, 1, WorldMouse.Get().y);
+    }
+
+    private Slot GetClosestSlot(float maxDistance)
+    {
+        float closestSlotDistance = maxDistance;
+        Slot closestSlot = null;
+
+        foreach (Slot slot in validSlots)
+        {
+            Vector3 flatTargetPos = Vector3.Scale(slot.transform.position, flat);
+            Vector3 flatPos = Vector3.Scale(transform.position, flat);
+            float flatDistance = Vector3.Distance(flatTargetPos, flatPos);
+
+            if (flatDistance < closestSlotDistance)
+            {
+                closestSlot = slot;
+                closestSlotDistance = flatDistance;
+            }
+        }
+
+        return closestSlot;
+    }
+
+    public void ForceRemove()
+    {
+        foreach (Slot s in childSlots)
+        {
+            s.GetItem().ForceRemove();
+        }
+
+        container = null;
+        Destroy(gameObject);
+        // Tell inventory manager to add this item back to player's inventory
+    }
+
+    public void UpdateContainer(Slot newContainer)
+    {
+        container = newContainer;
+    }
+
+    private void OnMouseUp()
+    {
+        if (!isBeingDragged) return;
+
+        isBeingDragged = false;
+
+        Slot s = GetClosestSlot(2);
+        if (!s) return;
+
+        isPlaced = s.InsertItem(this);
+    }
+}
