@@ -36,7 +36,7 @@ public class Placeable : MonoBehaviour
 
         isBeingDragged = true;
         validSlots = new List<Slot>(FindObjectsByType<Slot>(FindObjectsSortMode.InstanceID));
-        childSlots.Clear();
+        //childSlots.Clear();
 
         foreach (Slot s in validSlots)
         {

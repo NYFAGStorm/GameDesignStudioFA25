@@ -6,27 +6,30 @@ public class TileFloorManager : MonoBehaviour
     // Author: Gustavo Rojas Flores
     // Manages Tile objects that are placed on it
 
-    private Slot[] tileSlots = new Slot[16];
+    private Slot[] tileSlots = new Slot[0];
     private List<Vector2> compiledPath;
 
     public GameObject tileObject;
-    public int gridSize;
+    public Vector2Int gridSize;
     public float unitSize;
     public float yOffset;
 
     private void Awake()
     {
-        for (int y = 0; y < gridSize; y++)
+        tileSlots = new Slot[gridSize.x * gridSize.y];
+
+        for (int y = 0; y < gridSize.y; y++)
         {
-            for (int x = 0; x < gridSize; x++)
+            for (int x = 0; x < gridSize.x; x++)
             {
                 GameObject newTile = Instantiate(tileObject, transform, false);
 
-                float centerOffset = ((gridSize - 1) * unitSize) / 2;
-                newTile.transform.localPosition = new Vector3(x * unitSize - centerOffset, yOffset, y * unitSize - centerOffset);
+                float xCenterOffset = ((gridSize.x - 1) * unitSize) / 2;
+                float yCenterOffset = ((gridSize.y - 1) * unitSize) / 2;
+                newTile.transform.localPosition = new Vector3(x * unitSize - xCenterOffset, yOffset, y * unitSize - yCenterOffset);
                 newTile.transform.rotation = Quaternion.identity;
 
-                tileSlots[x + y * gridSize] = newTile.GetComponent<Slot>();
+                tileSlots[x + y * gridSize.y] = newTile.GetComponent<Slot>();
             }
         }
     }
