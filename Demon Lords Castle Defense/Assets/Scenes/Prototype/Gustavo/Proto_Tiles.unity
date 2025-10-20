@@ -655,11 +655,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileObject: {fileID: 2239036883684472178, guid: fa72ce63887410a42859819245dd94ad, type: 3}
-  gridSize: {x: 5, y: 3}
+  gridSize: {x: 5, y: 4}
   unitSize: 4
   yOffset: 0.1
   floor: {fileID: 1630872360}
-  debugMarker: {fileID: 0}
   debugEnemy: {fileID: 8035822331219493298, guid: 29e1e8b29089a244a9ef9cfaa97bd8ce, type: 3}
 --- !u!114 &610997368
 MonoBehaviour:

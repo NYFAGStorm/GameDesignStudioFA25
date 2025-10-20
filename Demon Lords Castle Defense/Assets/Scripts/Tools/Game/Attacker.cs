@@ -7,6 +7,9 @@ public class Attacker : MonoBehaviour
     // Author: Gustavo Rojas Flores
     // Controls an individual attacker
 
+    // Written rules (Esther)
+    // 
+
     private List<Vector3> path;
     private Vector3 pointA;
     private Vector3 pointB;

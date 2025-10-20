@@ -7,19 +7,22 @@ public class TileFloorManager : MonoBehaviour
     // Author: Gustavo Rojas Flores
     // Manages Tile objects that are placed on it
 
+    // Written rules (Esther)
+    // 
+
     private Slot[] tileSlots = new Slot[0];
     private List<Vector3> compiledPath;
     private Vector3 heroEntrance;
     private Vector3 heroExit;
     private Slot entranceSlot;
     private Vector2Int currentCompilePosition;
+    private Vector2Int compileStartPosition;
 
     public GameObject tileObject;
     public Vector2Int gridSize;
     public float unitSize;
     public float yOffset;
     public Transform floor;
-    public GameObject debugMarker;
     public GameObject debugEnemy;
 
     private void Awake()
@@ -44,13 +47,7 @@ public class TileFloorManager : MonoBehaviour
                 {
                     heroEntrance = tilePosition - new Vector3(0, 0, unitSize);
                     entranceSlot = newSlot.GetComponent<Slot>();
-                    currentCompilePosition = new Vector2Int(x, y);
-
-                    if (debugMarker)
-                    {
-                        GameObject debugentrance = Instantiate(debugMarker, transform, false);
-                        debugentrance.transform.localPosition = heroEntrance;
-                    }
+                    compileStartPosition = new Vector2Int(x, y);
                 }
 
                 if (x == gridSize.x - 1 && y == gridSize.y - 1)
@@ -83,7 +80,8 @@ public class TileFloorManager : MonoBehaviour
     {
         Slot currentSlot = entranceSlot;
         Tile currentTile = (Tile)currentSlot.GetItem();
-        int lastCompileDirection = 2;
+        int lastCompileDirection = 0;
+        currentCompilePosition = compileStartPosition;
 
         if (!currentTile) return false;
 
@@ -96,27 +94,21 @@ public class TileFloorManager : MonoBehaviour
 
         while (validNextTile)
         {
-            if (debugMarker) Instantiate(debugMarker, transform, false).transform.position = currentSlot.transform.position;
-
-            //Debug.Log(currentSlot.transform.localPosition);
             validNextTile = false;
 
-            for (int d = 0; d < 4; d++)
+            for (int d = 0; d < 3; d++)
             {
-                validNextTile = false;
+                int relativeD = (d + lastCompileDirection + 3) % 4;
+                Debug.Log(relativeD);
 
                 // Determine if this tile's side is open
-                if (!currentTile.GetSides()[d]) continue;
-
-                string sideName = Enum.GetName(typeof(TileDirection), (TileDirection)d);
-
-                //Debug.Log(sideName + " side is open");
+                if (!currentTile.GetSides()[relativeD]) continue;
 
                 compiledPath.Add(currentSlot.transform.localPosition);
 
                 Vector2Int nextPosition = currentCompilePosition;
 
-                switch (d)
+                switch (relativeD)
                 {
                     case 0:
                         nextPosition = currentCompilePosition + new Vector2Int(0, 1);
@@ -139,29 +131,20 @@ public class TileFloorManager : MonoBehaviour
                     nextSlot = GetSlot(nextPosition.x, nextPosition.y);
                 }
                 catch (Exception) { continue; }
-                //Debug.Log("There is a slot at " + sideName);
 
                 Tile nextTile = (Tile)nextSlot.GetItem();
 
                 // Look for a tile in the next slot
                 if (!nextTile) continue;
-                //Debug.Log(sideName + " slot has a tile");
 
                 // Determine if the side of the next tile facing the current tile is open
-                if (!nextTile.GetSides()[(d + 2) % 4]) continue;
-                //Debug.Log(sideName + " tile's side facing this tile is open");
-
-                // Make sure not to backtrack
-                if (lastCompileDirection == d) continue;
-                //Debug.Log(sideName + " is not compiled yet");
+                if (!nextTile.GetSides()[(relativeD + 2) % 4]) continue;
 
                 currentSlot = nextSlot;
                 currentTile = nextTile;
                 currentCompilePosition = nextPosition;
                 currentPathNode++;
-                lastCompileDirection = Mathf.RoundToInt((d + 2) % 4);
-
-                //Debug.Log("Adding " + sideName + " tile");
+                lastCompileDirection = relativeD;
 
                 validNextTile = true;
                 break;

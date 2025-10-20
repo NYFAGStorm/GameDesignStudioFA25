@@ -5,6 +5,9 @@ public class Tile : Placeable
     // Author: Gustavo Rojas Flores
     // Controls an individual tile
 
+    // Written rules (Esther)
+    // 
+
     protected TileShape shape;
     protected TileDirection dir;
     protected TileType type;

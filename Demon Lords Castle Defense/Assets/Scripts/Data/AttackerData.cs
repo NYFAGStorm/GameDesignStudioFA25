@@ -13,7 +13,14 @@ public enum AttackerType
     Hunter
 }
 
+public enum AttackForm
+{
+    Melee,
+    Ranged
+}
+
 public class AttackerData : MonoBehaviour
 {
-    
+    public GameObject attackerBase;
+    public UniqueAttackers types;
 }
