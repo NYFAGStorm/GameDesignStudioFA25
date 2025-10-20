@@ -23,4 +23,10 @@ public class AttackerData : MonoBehaviour
 {
     public GameObject attackerBase;
     public UniqueAttackers types;
+
+    public Attacker SummonAttacker(AttackerType type)
+    {
+        Attacker newAttacker = Instantiate(attackerBase).GetComponent<Attacker>();
+        return newAttacker;
+    }
 }
