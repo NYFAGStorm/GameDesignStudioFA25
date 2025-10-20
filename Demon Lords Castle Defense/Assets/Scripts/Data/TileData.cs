@@ -1,10 +1,12 @@
 using UnityEngine;
 
+// Author: Gustavo Rojas Flores
+// Manages all types and enums relating to Tiles
+
 public enum TileShape
 {
     Straight,
-    RightTurn,
-    LeftTurn
+    Turn
 }
 
 public enum TileDirection
@@ -50,8 +52,8 @@ public class TileData : MonoBehaviour
         return newTile;
     }
 
-    public void DEBUGCreateTile()
+    public void DEBUGCreateTile(int t)
     {
-        CreateTile(TileType.ShadowHall);
+        CreateTile((TileType)t);
     }
 }

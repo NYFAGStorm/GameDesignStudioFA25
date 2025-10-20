@@ -8,12 +8,11 @@ public struct UniqueTile
     public Sprite plateImage;
     public int baseSlots;
     public int damagePerBeat;
-    public int damageType;
+    public DamageForm damageType;
 }
 
 [CreateAssetMenu(fileName = "TileTypes", menuName = "DemonDefense/TileTypes", order = 1)]
 public class UniqueTiles : ScriptableObject
 {
-    [SerializeField]
     public UniqueTile[] tiles;
 }

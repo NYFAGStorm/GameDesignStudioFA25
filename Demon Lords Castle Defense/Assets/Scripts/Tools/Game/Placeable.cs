@@ -7,13 +7,13 @@ public class Placeable : MonoBehaviour
     // Author: Gustavo Rojas Flores
     // Is the base for all placeable items like tiles, goons and decorations
 
-    private Slot container = null;
-    private bool isPlaced = false;
-    private bool isBeingDragged = false;
-    private bool locked;
-    private List<Slot> validSlots;
-    private Vector3 flat = new Vector3(1, 0, 1);
-    private List<Slot> childSlots;
+    protected Slot container = null;
+    protected bool isPlaced = false;
+    protected bool isBeingDragged = false;
+    protected bool locked;
+    protected List<Slot> validSlots;
+    protected Vector3 flat = new Vector3(1, 0, 1);
+    protected List<Slot> childSlots;
 
     public void Lock(bool setLock)
     {
@@ -55,7 +55,7 @@ public class Placeable : MonoBehaviour
         }
     }
 
-    private void Update()
+    virtual protected void Update()
     {
         if (!isBeingDragged) return;
         transform.position = new Vector3(WorldMouse.Get().x, 1, WorldMouse.Get().y);
