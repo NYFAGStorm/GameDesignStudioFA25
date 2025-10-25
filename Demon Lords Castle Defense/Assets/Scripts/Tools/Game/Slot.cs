@@ -13,6 +13,14 @@ public class Slot : MonoBehaviour
     // Author: Gustavo Rojas Flores
     // Can hold one Placeable within itself
 
+    // Written rules (Esther)
+    // [REPLACEMENT]
+    // show UI asking if the player wants to replace
+    //      yes: replace item, old item returns to inventory
+    //      no: no replacement, new item returns to inventory
+    // if the returned item is Tile, and Tile has Goons/Trohpies in Slot:
+    //      all Slots should be cleared, all items returns to inventory
+
     private Placeable item = null;
 
     public SlotType slotType = 0;

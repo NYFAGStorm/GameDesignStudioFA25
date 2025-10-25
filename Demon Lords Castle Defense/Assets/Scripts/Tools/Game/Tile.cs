@@ -6,7 +6,19 @@ public class Tile : Placeable
     // Controls an individual tile
 
     // Written rules (Esther)
-    // 
+    // each Tile will have to have 2 sides that are Open, up to 4 sides of the Tile can be Open
+    // connection rule:
+    //      open + open = open
+    //      open + close = close
+    //      close + close = close
+    //      open + null = close
+    //      close + null = close
+    // can be upgraded: to have more slots (up to 6), more powerful attacks, faster attack
+    // clicking on any Tile will show [popup, click away will close said popup]:
+    //      Tile info
+    //              Tile name, attack attribute, current available slots, amount of damage, damage rate
+    //      Upgrade
+    //              showing the cost
 
     protected TileShape shape;
     protected TileDirection dir;

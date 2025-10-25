@@ -7,6 +7,10 @@ public class Placeable : MonoBehaviour
     // Author: Gustavo Rojas Flores
     // Is the base for all placeable items like tiles, goons and decorations
 
+    // Written rules (Esther)
+    // click and hold for 1.5 secs to remove item from slot
+    // if Tile has Goons/Trophies in Slot when moved, items stay in Slot
+
     protected Slot container = null;
     protected bool isPlaced = false;
     protected bool isBeingDragged = false;
