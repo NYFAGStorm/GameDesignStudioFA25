@@ -8,7 +8,30 @@ public class Attacker : MonoBehaviour
     // Controls an individual attacker
 
     // Written rules (Esther)
-    // 
+    // [MOVEMENT]
+    // speed: 4 sec per Tile
+    // HP = 0, death ani, no more attack and movement, give Soul to player
+
+    // [ATTACK - MELEE]
+    // 1 hero attack 1 goon at a time
+    // if attacked:
+    //      if attacked by 1 Goon, fight
+    //      if attacked by >1 Goon, fight *closest* Goon
+    //      Hero is not allowed to move forward until defeated said Goon, or Goon is removed from Slot
+    // when defeated a Goon:
+    //      if isn't being attacked, keep move forward
+    //      if is being attacked, run [if attacked]
+
+    // [ATTACK - RANGE]
+    //   // 1 hero attack 1 goon at a time
+    // if attacked:
+    //      if attacked by 1 Goon, fight
+    //      if attacked by >1 Goon, fight *furthest* Goon
+    //      Hero is allowed to move forward before defeated said Goon, movement happens between attacks
+    // when defeated a Goon:
+    //      if isn't being attacked, keep move forward
+    //      if is being attacked, run [if attacked]
+
 
     private List<Vector3> path;
     private Vector3 pointA;
