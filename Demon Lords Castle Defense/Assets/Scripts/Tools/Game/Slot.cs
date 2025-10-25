@@ -15,6 +15,7 @@ public class Slot : MonoBehaviour
 
     // Written rules (Esther)
     // [REPLACEMENT]
+    // new item freeze in space, old item remain its status, game not paused
     // show UI asking if the player wants to replace
     //      yes: replace item, old item returns to inventory
     //      no: no replacement, new item returns to inventory
