@@ -24,7 +24,12 @@ public class AttackerData : MonoBehaviour
 {
     public GameObject attackerBase;
     public UniqueAttackers types;
-    public List<Vector3> path;
+    private List<Vector3> path;
+
+    public void UpdatePath(List<Vector3> newPath)
+    {
+        path = newPath;
+    }
 
     public Attacker SummonAttacker(AttackerType type)
     {

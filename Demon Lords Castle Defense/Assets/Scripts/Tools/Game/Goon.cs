@@ -1,8 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Goon : MonoBehaviour
+public class Goon : Placeable
 {
+    // Author: Gustavo Rojas Flores
+    // Manages a goon that can attack heroes and be upgraded
 
+    //public GoonType;
+    private int damage;
+    private AttackForm attackType;
+    private float attackRate;
+    private List<Attacker> targets;
+    //private float 
+
+    public void InitializeGoon()
+    {
+
+    }
 
     // Written rules (Esther)
     // speed = 0, Goon is stationary in assigned Slot
@@ -31,15 +45,4 @@ public class Goon : MonoBehaviour
     // if removed from slot:
     //      stop attacking
     //      HP remains the same as before removal
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

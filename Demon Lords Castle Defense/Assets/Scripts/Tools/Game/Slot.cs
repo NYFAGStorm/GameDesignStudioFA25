@@ -4,7 +4,7 @@ using System;
 public enum SlotType
 {
     Tile,
-    Minion,
+    Goon,
     Decoration
 }
 

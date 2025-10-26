@@ -618,6 +618,7 @@ GameObject:
   - component: {fileID: 610997366}
   - component: {fileID: 610997367}
   - component: {fileID: 610997368}
+  - component: {fileID: 610997369}
   m_Layer: 0
   m_Name: TileFloor
   m_TagString: Untagged
@@ -660,6 +661,7 @@ MonoBehaviour:
   yOffset: 0.1
   floor: {fileID: 1630872360}
   debugEnemy: {fileID: 8035822331219493298, guid: 29e1e8b29089a244a9ef9cfaa97bd8ce, type: 3}
+  attackerData: {fileID: 0}
 --- !u!114 &610997368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,6 +676,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TileBase: {fileID: 4128130948670632769, guid: a26a9a4099ee3c642853a700a92a84c6, type: 3}
   types: {fileID: 11400000, guid: d5054ac8e78389c4d86be8de465aa23e, type: 2}
+--- !u!114 &610997369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610997362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e9a941fde1660468b7e049e18ab987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackerBase: {fileID: 8035822331219493298, guid: 29e1e8b29089a244a9ef9cfaa97bd8ce, type: 3}
+  types: {fileID: 0}
+  path: []
 --- !u!1 &859013006
 GameObject:
   m_ObjectHideFlags: 0

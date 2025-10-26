@@ -58,6 +58,7 @@ public class Attacker : MonoBehaviour
         maxHealth = type.maxHealth;
         soulReward = type.soulReward;
         speed = type.travelSpeed;
+        appearance.sprite = type.attackerImage;
 
         NextPathPoint();
         isMoving = true;

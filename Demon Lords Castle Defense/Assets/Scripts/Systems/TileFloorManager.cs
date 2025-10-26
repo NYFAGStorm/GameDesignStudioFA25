@@ -150,6 +150,9 @@ public class TileFloorManager : MonoBehaviour
                 break;
             }
         }
+
+        attackerData.UpdatePath(compiledPath);
+
         return false;
     }
 

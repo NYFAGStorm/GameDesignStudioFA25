@@ -18,6 +18,8 @@ public class Placeable : MonoBehaviour
     protected List<Slot> validSlots;
     protected Vector3 flat = new Vector3(1, 0, 1);
     protected List<Slot> childSlots;
+    protected float removeHoldTime = 1.5f;
+    protected bool clicked = false;
 
     public void Lock(bool setLock)
     {
@@ -26,13 +28,17 @@ public class Placeable : MonoBehaviour
 
     private void OnMouseDown()
     {
+        clicked = true;
+
         if (locked) return;
 
-        StartDrag();
+        Invoke("StartDrag", removeHoldTime);
     }
 
     private void StartDrag()
     {
+        if (!clicked) return;
+
         isPlaced = false;
 
         if (container) container.RemoveItem(false);
@@ -105,6 +111,9 @@ public class Placeable : MonoBehaviour
 
     private void OnMouseUp()
     {
+        clicked = false;
+        CancelInvoke("StartDrag");
+
         if (!isBeingDragged) return;
 
         isBeingDragged = false;
