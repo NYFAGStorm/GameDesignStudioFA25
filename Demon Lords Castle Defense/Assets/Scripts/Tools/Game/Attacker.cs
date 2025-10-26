@@ -45,6 +45,7 @@ public class Attacker : MonoBehaviour
     private int soulReward = 1;
     private bool isMoving = false;
     private Goon target = null;
+    private float attackRange = 1;
 
     public SpriteRenderer appearance;
 
@@ -59,6 +60,7 @@ public class Attacker : MonoBehaviour
         soulReward = data.soulReward;
         speed = data.travelSpeed;
         appearance.sprite = data.attackerImage;
+        attackRange = data.attackRange;
 
         NextPathPoint();
         isMoving = true;
@@ -86,7 +88,8 @@ public class Attacker : MonoBehaviour
         
         if (health == 0)
         {
-            // die
+            // award souls
+            Destroy(gameObject);
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public struct UniqueGoon
 {
     public GoonType type;
+    public int maxHealth;
     public int damage;
     public AttackForm attackType;
     public float attackRate;

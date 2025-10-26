@@ -6,15 +6,19 @@ public class Goon : Placeable
     // Author: Gustavo Rojas Flores
     // Manages a goon that can attack heroes and be upgraded
 
-    //public GoonType;
+    public GoonType type;
     private int damage;
     private AttackForm attackType;
     private float attackRate;
     private List<Attacker> targets;
-    //private float 
+    private int maxHealth = 1;
+    private int health = 1;
 
     public void InitializeGoon(UniqueGoon data)
     {
+        maxHealth = data.maxHealth;
+        health = data.maxHealth;
+        type = data.type;
         damage = data.damage;
         attackType = data.attackType;
         attackRate = data.attackRate;
