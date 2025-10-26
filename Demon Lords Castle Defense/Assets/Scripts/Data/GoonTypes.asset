@@ -12,4 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: GoonTypes
   m_EditorClassIdentifier: Assembly-CSharp::UniqueGoons
-  goons: []
+  goons:
+  - type: 0
+    maxHealth: 20
+    damage: 5
+    attackType: 0
+    damageType: 5
+    attackRate: 1
+    goonImage: {fileID: 0}
+    attackRange: 1
+  - type: 1
+    maxHealth: 20
+    damage: 3
+    attackType: 0
+    damageType: 0
+    attackRate: 1
+    goonImage: {fileID: 0}
+    attackRange: 1.5
+  - type: 2
+    maxHealth: 20
+    damage: 8
+    attackType: 0
+    damageType: 2
+    attackRate: 1
+    goonImage: {fileID: 0}
+    attackRange: 1.5
+  - type: 3
+    maxHealth: 20
+    damage: 4
+    attackType: 0
+    damageType: 4
+    attackRate: 2
+    goonImage: {fileID: 0}
+    attackRange: 2
+  - type: 4
+    maxHealth: 20
+    damage: 7
+    attackType: 0
+    damageType: 3
+    attackRate: 2
+    goonImage: {fileID: 0}
+    attackRange: 1

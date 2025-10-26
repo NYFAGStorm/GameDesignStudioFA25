@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064bc1824a8fe374dbeb4707ec04b956, type: 3}
   m_Name: AttackerTypes
   m_EditorClassIdentifier: 
-  attackers: []
+  attackers:
+  - type: 0
+    attackerImage: {fileID: 0}
+    damageType: 1
+    attackType: 1
+    attackDamage: 3
+    maxHealth: 20
+    soulReward: 10
+    travelSpeed: 1
+    attackRange: 1

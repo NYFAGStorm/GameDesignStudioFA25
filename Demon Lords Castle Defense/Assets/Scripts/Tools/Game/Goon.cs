@@ -14,6 +14,8 @@ public class Goon : Placeable
     private int maxHealth = 1;
     private int health = 1;
 
+    public SpriteRenderer image;
+
     public void InitializeGoon(UniqueGoon data)
     {
         maxHealth = data.maxHealth;
@@ -22,6 +24,7 @@ public class Goon : Placeable
         damage = data.damage;
         attackType = data.attackType;
         attackRate = data.attackRate;
+        image.sprite = data.goonImage;
     }
 
     // Written rules (Esther)
