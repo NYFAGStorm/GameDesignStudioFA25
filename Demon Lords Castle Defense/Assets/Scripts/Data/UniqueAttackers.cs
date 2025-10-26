@@ -13,7 +13,7 @@ public struct UniqueAttacker
     public float travelSpeed;
 }
 
-[CreateAssetMenu(fileName = "AttackerTypes", menuName = "DemonDefense/AttackerTypes", order = 1)]
+[CreateAssetMenu(fileName = "AttackerTypes", menuName = "DemonDefense/AttackerTypes", order = 2)]
 public class UniqueAttackers : ScriptableObject
 {
     public UniqueAttacker[] attackers;

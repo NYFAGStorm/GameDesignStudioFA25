@@ -48,17 +48,17 @@ public class Attacker : MonoBehaviour
 
     public SpriteRenderer appearance;
 
-    public void InitializeAttacker(List<Vector3> inPath, UniqueAttacker type, Vector3 start)
+    public void InitializeAttacker(List<Vector3> inPath, UniqueAttacker data, Vector3 start)
     {
         transform.localPosition = start;
         path = inPath;
 
-        attackDamage = type.attackDamage;
-        health = type.maxHealth;
-        maxHealth = type.maxHealth;
-        soulReward = type.soulReward;
-        speed = type.travelSpeed;
-        appearance.sprite = type.attackerImage;
+        attackDamage = data.attackDamage;
+        health = data.maxHealth;
+        maxHealth = data.maxHealth;
+        soulReward = data.soulReward;
+        speed = data.travelSpeed;
+        appearance.sprite = data.attackerImage;
 
         NextPathPoint();
         isMoving = true;

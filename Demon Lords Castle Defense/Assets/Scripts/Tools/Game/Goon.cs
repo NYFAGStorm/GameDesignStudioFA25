@@ -13,9 +13,11 @@ public class Goon : Placeable
     private List<Attacker> targets;
     //private float 
 
-    public void InitializeGoon()
+    public void InitializeGoon(UniqueGoon data)
     {
-
+        damage = data.damage;
+        attackType = data.attackType;
+        attackRate = data.attackRate;
     }
 
     // Written rules (Esther)
