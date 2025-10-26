@@ -24,6 +24,7 @@ public class TileFloorManager : MonoBehaviour
     public float yOffset;
     public Transform floor;
     public GameObject debugEnemy;
+    public AttackerData attackerData;
 
     private void Awake()
     {
@@ -62,8 +63,7 @@ public class TileFloorManager : MonoBehaviour
 
     public void DEBUGEnemy()
     {
-        Attacker newEnemy = Instantiate(debugEnemy, transform, false).GetComponent<Attacker>();
-        newEnemy.InitializeAttacker(compiledPath, AttackerType.Priest, heroEntrance);
+        attackerData.SummonAttacker(AttackerType.Priest);
     }
 
     private Slot GetSlot(int x, int y)

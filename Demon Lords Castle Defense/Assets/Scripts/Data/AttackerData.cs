@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 // Author: Gustavo Rojas Flores
 // Manages all types and enums relating to Attackers
@@ -23,10 +24,23 @@ public class AttackerData : MonoBehaviour
 {
     public GameObject attackerBase;
     public UniqueAttackers types;
+    public List<Vector3> path;
 
     public Attacker SummonAttacker(AttackerType type)
     {
+        UniqueAttacker attackerData = new UniqueAttacker();
+
+        foreach (UniqueAttacker ua in types.attackers)
+        {
+            if (ua.type == type)
+            {
+                attackerData = ua;
+                break;
+            }
+        }
+
         Attacker newAttacker = Instantiate(attackerBase).GetComponent<Attacker>();
+        newAttacker.InitializeAttacker(path, attackerData, Vector3.zero);
         return newAttacker;
     }
 }

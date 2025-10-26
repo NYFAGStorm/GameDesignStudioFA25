@@ -44,13 +44,20 @@ public class Attacker : MonoBehaviour
     private int maxHealth = 1;
     private int soulReward = 1;
     private bool isMoving = false;
+    private Goon target = null;
 
     public SpriteRenderer appearance;
 
-    public void InitializeAttacker(List<Vector3> inPath, AttackerType type, Vector3 start)
+    public void InitializeAttacker(List<Vector3> inPath, UniqueAttacker type, Vector3 start)
     {
         transform.localPosition = start;
         path = inPath;
+
+        attackDamage = type.attackDamage;
+        health = type.maxHealth;
+        maxHealth = type.maxHealth;
+        soulReward = type.soulReward;
+        speed = type.travelSpeed;
 
         NextPathPoint();
         isMoving = true;
@@ -70,6 +77,16 @@ public class Attacker : MonoBehaviour
         pointA = path[currentPathPos - 1];
         pointB = path[currentPathPos];
         pointLerp = 0;
+    }
+    
+    public void DealDamage(int damage)
+    {
+        health = Mathf.Max(0, health - damage);
+        
+        if (health == 0)
+        {
+            // die
+        }
     }
 
     private void Update()
