@@ -14,11 +14,12 @@ public class Tile : Placeable
     //      open + null = close
     //      close + null = close
     // can be upgraded: to have more slots (up to 6), more powerful attacks, faster attack
-    // clicking on any Tile will show [popup, click away will close said popup]:
-    //      Tile info
-    //              Tile name, attack attribute, current available slots, amount of damage, damage rate
-    //      Upgrade
-    //              showing the cost
+    
+    //[UPGRADE]
+    // details of upgrades pls refer to Characters & Tiles sheet, tab [Tiles Upgrade]
+    // upgrade cost formula:
+    //  lv 2 = base cost * 1.3 (round up)
+    //  lv 3-9 = previous cost * 1.3 (round up)
 
     protected TileShape shape;
     protected TileDirection dir;

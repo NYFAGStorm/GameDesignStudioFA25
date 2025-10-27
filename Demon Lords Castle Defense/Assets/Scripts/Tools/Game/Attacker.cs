@@ -12,6 +12,10 @@ public class Attacker : MonoBehaviour
     // speed: 4 sec per Tile
     // HP = 0, death ani, no more attack and movement, give Soul to player
 
+    //[ATTRIBUTE]
+    //  if damage type is strong against said Goon, takes +15% more damage.
+    //  if damage type is weak against said Goon, takes -15% less damage.
+
     // [ATTACK - MELEE]
     // 1 hero attack 1 goon at a time
     // if attacked:
