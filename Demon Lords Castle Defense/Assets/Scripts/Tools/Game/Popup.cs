@@ -1,13 +1,19 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Popup : MonoBehaviour
 {
-    private GameObject[] statLines;
+    // Author: Gustavo Rojas Flores
+    // Manages popup functionality
 
-    public GameObject popupStatBase;
+    private TMP_Text[] labels;
+    private Button[] buttons;
+
+    public GameObject labelBase;
     public GameObject popupButtonBase;
     public TMP_Text header;
+    public Transform canvas;
 
     public void BuildPopup(PopupBlueprint blueprint)
     {
@@ -15,7 +21,19 @@ public class Popup : MonoBehaviour
         
         foreach (PopupLabel label in blueprint.labels)
         {
+            RectTransform newLabel = Instantiate(labelBase, canvas).GetComponent<RectTransform>();
+            newLabel.anchoredPosition = label.position;
+            newLabel.sizeDelta = label.size;
+            newLabel.GetComponent<TMP_Text>().text = label.text;
+            newLabel.gameObject.name = label.identifier;
+        }
+    }
 
+    public void UpdateLabel(string id, string newText)
+    {
+        foreach (TMP_Text label in labels)
+        {
+            if (label.gameObject.name == id) label.text = newText;
         }
     }
     

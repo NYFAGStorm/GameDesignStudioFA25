@@ -44,6 +44,7 @@ public class PopupManager : MonoBehaviour
 public struct PopupLabel
 {
     public string text;
+    public string identifier;
     public Vector2 size;
     public Vector2 position;
 }
