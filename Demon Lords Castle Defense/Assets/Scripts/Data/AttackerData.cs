@@ -31,6 +31,11 @@ public class AttackerData : MonoBehaviour
         path = newPath;
     }
 
+    public void DEBUGAttacker()
+    {
+        SummonAttacker(AttackerType.Priest);
+    }
+
     public Attacker SummonAttacker(AttackerType type)
     {
         UniqueAttacker attackerData = new UniqueAttacker();

@@ -17,6 +17,11 @@ public class GoonData : MonoBehaviour
     public GameObject goonBase;
     public UniqueGoons types;
 
+    public void DEBUGGoon()
+    {
+        CreateGoon(GoonType.Goblin);
+    }
+
     public Goon CreateGoon(GoonType type)
     {
         UniqueGoon goonData = new UniqueGoon();

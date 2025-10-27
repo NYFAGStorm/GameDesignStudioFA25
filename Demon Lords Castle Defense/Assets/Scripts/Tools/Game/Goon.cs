@@ -27,6 +27,15 @@ public class Goon : Placeable
         image.sprite = data.goonImage;
     }
 
+    protected override void Update()
+    {
+        base.Update();
+
+        if (!isBeingDragged) return;
+        
+
+    }
+
     // Written rules (Esther)
     // speed = 0, Goon is stationary in assigned Slot
 
