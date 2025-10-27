@@ -12,6 +12,11 @@ public class Popup : MonoBehaviour
     public void BuildPopup(PopupBlueprint blueprint)
     {
         header.text = blueprint.header;
+        
+        foreach (PopupLabel label in blueprint.labels)
+        {
+
+        }
     }
     
     public void Delete()

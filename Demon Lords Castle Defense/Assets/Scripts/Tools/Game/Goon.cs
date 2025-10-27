@@ -60,7 +60,7 @@ public class Goon : Placeable
             if (target)
             {
                 state = 2;
-                Rhythm.FullBeat.AddListener(SingleAttack);
+                Rhythm.beats[0].AddListener(SingleAttack);
             }
         }
 
@@ -78,7 +78,7 @@ public class Goon : Placeable
         activeAttackers = new List<Attacker>(FindObjectsByType<Attacker>(FindObjectsSortMode.InstanceID));
         if (target)
         {
-            Rhythm.FullBeat.RemoveListener(SingleAttack);
+            Rhythm.beats[0].RemoveListener(SingleAttack);
         }
     }
 

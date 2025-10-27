@@ -4,6 +4,12 @@ using UnityEngine.Events;
 public class RhythmManager : MonoBehaviour
 {
     private float secondTimer = 0;
+    private int beat = 1;
+
+    private void Awake()
+    {
+        
+    }
 
     private void FixedUpdate()
     {
@@ -13,20 +19,28 @@ public class RhythmManager : MonoBehaviour
 
         if (secondTimer == 1)
         {
-            Rhythm.FullBeat.Invoke();
-            Rhythm.HalfBeat.Invoke();
-            Rhythm.QuarterBeat.Invoke();
-
+            Rhythm.beats[0].Invoke();
             secondTimer = 0;
+            beat++;
+
+            if (beat == 2 || beat == 4)
+            {
+                Rhythm.beats[1].Invoke();
+            }
+
+            if (beat == 3) Rhythm.beats[2].Invoke();
         }
     }
 }
 
 public static class Rhythm
 {
+    private static UnityEvent Beat = new UnityEvent();
+    private static UnityEvent SecondBeat = new UnityEvent();
+    private static UnityEvent ThirdBeat = new UnityEvent();
+    private static UnityEvent FourthBeat = new UnityEvent();
+
     public static float beatsPerMinute = 120;
-    public static UnityEvent FullBeat = new UnityEvent();
-    public static UnityEvent HalfBeat = new UnityEvent();
-    public static UnityEvent QuarterBeat = new UnityEvent();
+    public static UnityEvent[] beats = { Beat, SecondBeat, ThirdBeat, FourthBeat };
 }
 
