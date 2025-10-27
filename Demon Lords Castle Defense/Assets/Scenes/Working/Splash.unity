@@ -291,6 +291,26 @@ MonoBehaviour:
     pitchVariance: 0
     volume: 0
     volumeVariance: 0
+  - name: SFX_Tile 2
+    clip: {fileID: 8300000, guid: 79fe7a2b76d4e48578a3e43072556c5f, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: MX_BoomBoomFunk_noVOX
+    clip: {fileID: 8300000, guid: 7cbcaa2adc4c748ab8b5d1c70e5ee8e4, type: 3}
+    type: 3
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
   musicCrossFadeTime: 2
 --- !u!1 &435026381
 GameObject:
