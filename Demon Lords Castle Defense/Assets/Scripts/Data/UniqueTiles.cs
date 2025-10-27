@@ -9,6 +9,7 @@ public struct UniqueTile
     public int baseSlots;
     public int damagePerBeat;
     public DamageForm damageType;
+    public Vector2[] goonSlotPositions;
 }
 
 [CreateAssetMenu(fileName = "TileTypes", menuName = "DemonDefense/TileTypes", order = 1)]

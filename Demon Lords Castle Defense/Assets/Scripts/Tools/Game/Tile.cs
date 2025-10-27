@@ -28,6 +28,7 @@ public class Tile : Placeable
     protected bool[] openSides = new bool[4];
     protected Slot[] goonSlots;
 
+    public GameObject goonSlot;
     public SpriteRenderer plate;
 
     protected override void Update()
@@ -61,11 +62,16 @@ public class Tile : Placeable
         }
     }
 
-    public void InitializeTile(TileShape inShape, TileType inType, Sprite plateImage)
+    public void InitializeTile(UniqueTile data)
     {
-        shape = inShape;
-        type = inType;
-        plate.sprite = plateImage;
+        shape = data.shape;
+        type = data.type;
+        plate.sprite = data.plateImage;
+
+        foreach (Vector2 goonSlotPosition in data.goonSlotPositions)
+        {
+            GameObject newGoonSlot = Instantiate(goonSlot, transform);
+        }
 
         UpdateSides(0);
     }

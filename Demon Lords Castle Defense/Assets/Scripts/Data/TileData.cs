@@ -47,7 +47,7 @@ public class TileData : MonoBehaviour
         }
         
         Tile newTile = newTileObject.GetComponent<Tile>();
-        newTile.InitializeTile(tileData.shape, tileData.type, tileData.plateImage);
+        newTile.InitializeTile(tileData);
 
         return newTile;
     }
