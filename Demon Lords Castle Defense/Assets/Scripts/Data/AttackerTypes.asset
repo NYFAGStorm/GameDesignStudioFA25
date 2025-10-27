@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackers:
   - type: 0
-    attackerImage: {fileID: 0}
+    attackerImage: {fileID: 21300000, guid: 19d40602d87c2c74a940a61d34d76683, type: 3}
     damageType: 1
     attackType: 1
     attackDamage: 2
