@@ -916,7 +916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMgrName: AudioMgr Menus
-  soundName: Menu Loop
+  soundName: MX_BoomBoomFunk_noVOX
   triggerDelay: 0.01
   soundObject: {fileID: 0}
   minDistance: 1
