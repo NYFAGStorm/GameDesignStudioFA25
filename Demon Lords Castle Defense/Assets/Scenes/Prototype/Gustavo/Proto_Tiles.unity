@@ -331,9 +331,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 610997367}
-        m_TargetAssemblyTypeName: TileFloorManager, Assembly-CSharp
-        m_MethodName: DEBUGEnemy
+      - m_Target: {fileID: 610997369}
+        m_TargetAssemblyTypeName: AttackerData, Assembly-CSharp
+        m_MethodName: DEBUGAttacker
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -727,9 +727,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 610997367}
-        m_TargetAssemblyTypeName: TileFloorManager, Assembly-CSharp
-        m_MethodName: DEBUGEnemy
+      - m_Target: {fileID: 610997370}
+        m_TargetAssemblyTypeName: GoonData, Assembly-CSharp
+        m_MethodName: DEBUGGoon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

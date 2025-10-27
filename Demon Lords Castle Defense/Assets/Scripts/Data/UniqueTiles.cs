@@ -13,7 +13,6 @@ public struct UniqueTile
     public TileType type;
     public TileShape shape;
     public Sprite plateImage;
-    public int baseSlots;
     public int damagePerBeat;
     public DamageForm damageType;
     public goonSlotPosition[] goonSlotPositions;

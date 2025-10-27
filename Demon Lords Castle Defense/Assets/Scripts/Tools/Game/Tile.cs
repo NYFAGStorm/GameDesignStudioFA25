@@ -24,7 +24,6 @@ public class Tile : Placeable
     protected TileDirection dir;
     protected TileType type;
     protected Tile[] neighbors = new Tile[4];
-    protected const int maxSlots = 6;
     protected bool[] openSides = new bool[4];
     protected Slot[] goonSlots;
 
