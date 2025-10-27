@@ -26,6 +26,8 @@ public class Tile : Placeable
     protected Tile[] neighbors = new Tile[4];
     protected bool[] openSides = new bool[4];
     protected Slot[] goonSlots;
+    protected float damage;
+    //protected attack rate
 
     public GameObject goonSlot;
     public SpriteRenderer plate;

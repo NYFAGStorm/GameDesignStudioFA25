@@ -12,8 +12,8 @@ public class Goon : Placeable
     private float attackRate;
     private List<Attacker> activeAttackers;
     private Attacker target;
-    private int maxHealth = 1;
-    private int health = 1;
+    private float maxHealth = 1;
+    private float health = 1;
     private float attackRange = 1;
     private float attackCooldown = 0;
     private int state = 0;

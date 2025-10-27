@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PopupManager : MonoBehaviour
 {
-    public static GameObject popupBase;
+    public GameObject popupBase;
 }
 
 public struct statLine
@@ -18,6 +18,7 @@ public struct PopupBlueprint
     public Transform target;
     public Vector2 size;
     public Vector2 position;
+    public string header;
     public statLine[] stats;
     public string[] buttons;
 }
@@ -26,7 +27,7 @@ public static class PopupBuilder
 {
     public static Popup CreatePopup(PopupBlueprint blueprint)
     {
-        Popup newPopup = Object.Instantiate(PopupManager.popupBase).GetComponent<Popup>();
+        Popup newPopup = Object.Instantiate(Object.FindFirstObjectByType<PopupManager>().popupBase).GetComponent<Popup>();
         newPopup.BuildPopup(blueprint);
 
         return newPopup;

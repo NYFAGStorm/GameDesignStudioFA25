@@ -39,9 +39,9 @@ public class Attacker : MonoBehaviour
     private int currentPathPos = 0;
     private float pointLerp = 0;
     private float speed = 5;
-    private int attackDamage = 1;
-    private int health = 1;
-    private int maxHealth = 1;
+    private float attackDamage = 1;
+    private float health = 1;
+    private float maxHealth = 1;
     private int soulReward = 1;
     private bool isMoving = false;
     private List<Goon> activeGoons;
