@@ -21,27 +21,3 @@ MonoBehaviour:
     attackRate: 1
     goonImage: {fileID: 0}
     attackRange: 1
-  - type: 1
-    maxHealth: 20
-    damage: 3
-    attackType: 0
-    damageType: 0
-    attackRate: 1
-    goonImage: {fileID: 0}
-    attackRange: 1.5
-  - type: 2
-    maxHealth: 20
-    damage: 4
-    attackType: 0
-    damageType: 4
-    attackRate: 2
-    goonImage: {fileID: 0}
-    attackRange: 2
-  - type: 4
-    maxHealth: 20
-    damage: 7
-    attackType: 0
-    damageType: 3
-    attackRate: 2
-    goonImage: {fileID: 0}
-    attackRange: 1
