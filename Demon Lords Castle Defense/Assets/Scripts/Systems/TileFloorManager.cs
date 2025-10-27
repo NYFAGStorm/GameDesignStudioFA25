@@ -94,7 +94,6 @@ public class TileFloorManager : MonoBehaviour
             for (int d = 0; d < 3; d++)
             {
                 int relativeD = (d + lastCompileDirection + 3) % 4;
-                Debug.Log(relativeD);
 
                 // Determine if this tile's side is open
                 if (!currentTile.GetSides()[relativeD]) continue;
@@ -147,6 +146,8 @@ public class TileFloorManager : MonoBehaviour
         }
 
         attackerData.UpdatePath(compiledPath);
+
+        Debug.Log(compiledPath.Count);
 
         return false;
     }

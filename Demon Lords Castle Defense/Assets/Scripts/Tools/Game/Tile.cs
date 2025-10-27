@@ -37,7 +37,7 @@ public class Tile : Placeable
         if (isBeingDragged && Input.GetKeyDown(KeyCode.R))
         {
             dir = (TileDirection)((int)(dir + 1) % 4);
-            transform.localRotation = Quaternion.Euler(0, (int)dir * -90, 0);
+            transform.localRotation = Quaternion.Euler(0, (int)dir * 90, 0);
 
             UpdateSides((int)dir);
         }
