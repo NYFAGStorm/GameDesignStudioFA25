@@ -15,8 +15,9 @@ public class Goon : Placeable
     private float maxHealth = 1;
     private float health = 1;
     private float attackRange = 1;
-    private float attackCooldown = 0;
     private int state = 0;
+    private PopupBlueprint statDisplayBP;
+    private Popup statDisplay = null;
 
     public SpriteRenderer image;
 
@@ -31,7 +32,44 @@ public class Goon : Placeable
         attackRange = data.attackRange;
         image.sprite = data.goonImage;
 
+        statDisplayBP = new PopupBlueprint()
+        {
+            target = transform,
+            size = new Vector2(300, 300),
+            header = "Goon Stats",
+            labels = new PopupLabel[]
+            {
+                new PopupLabel()
+                {
+                    text = "Health: " + health,
+                    textScale = 50,
+                    identifier = "health",
+                    size = new Vector2(250, 30),
+                    position = new Vector2(0, 50)
+                },
+                new PopupLabel()
+                {
+                    text = "Damage: " + damage,
+                    textScale = 50,
+                    identifier = "damage",
+                    size = new Vector2(250, 30),
+                    position = new Vector2(0, -50)
+                }
+            }
+        };
+
         FindFirstObjectByType<GoonData>().ExistingGoonsUpdated.AddListener(UpdateGoons);
+    }
+
+    protected override void OnMouseDown()
+    {
+        base.OnMouseDown();
+
+        if (statDisplay)
+        {
+            statDisplay.Delete();
+        }
+        else statDisplay = PopupBuilder.CreatePopup(statDisplayBP);
     }
 
     protected override void Update()

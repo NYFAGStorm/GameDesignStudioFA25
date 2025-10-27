@@ -44,6 +44,7 @@ public class PopupManager : MonoBehaviour
 public struct PopupLabel
 {
     public string text;
+    public float textScale;
     public string identifier;
     public Vector2 size;
     public Vector2 position;
@@ -52,6 +53,7 @@ public struct PopupLabel
 public struct PopupButton
 {
     public string text;
+    public float textScale;
     public Sprite image;
     public Vector2 size;
     public Vector2 position;
@@ -71,7 +73,7 @@ public static class PopupBuilder
 {
     public static Popup CreatePopup(PopupBlueprint blueprint)
     {
-        Popup newPopup = Object.Instantiate(Object.FindFirstObjectByType<PopupManager>().popupBase).GetComponent<Popup>();
+        Popup newPopup = Object.Instantiate(Object.FindFirstObjectByType<PopupManager>().popupBase, blueprint.target).GetComponent<Popup>();
         newPopup.BuildPopup(blueprint);
 
         return newPopup;

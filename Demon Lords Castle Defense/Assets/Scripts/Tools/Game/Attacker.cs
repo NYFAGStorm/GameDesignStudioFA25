@@ -36,7 +36,6 @@ public class Attacker : MonoBehaviour
     //      if isn't being attacked, keep move forward
     //      if is being attacked, run [if attacked]
 
-
     private List<Vector3> path;
     private Vector3 pointA;
     private Vector3 pointB;
@@ -95,7 +94,8 @@ public class Attacker : MonoBehaviour
     public void DealDamage(int damage)
     {
         health = Mathf.Max(0, health - damage);
-        
+
+        Debug.Log(health);
         if (health == 0)
         {
             CurrencyManager.AwardSouls(soulReward);

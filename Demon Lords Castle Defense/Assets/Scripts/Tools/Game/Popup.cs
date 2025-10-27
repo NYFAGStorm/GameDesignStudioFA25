@@ -18,6 +18,7 @@ public class Popup : MonoBehaviour
     public void BuildPopup(PopupBlueprint blueprint)
     {
         header.text = blueprint.header;
+        canvas.GetComponent<RectTransform>().sizeDelta = blueprint.size;
         
         foreach (PopupLabel label in blueprint.labels)
         {
@@ -25,18 +26,25 @@ public class Popup : MonoBehaviour
             newLabel.anchoredPosition = label.position;
             newLabel.sizeDelta = label.size;
             newLabel.GetComponent<TMP_Text>().text = label.text;
+            newLabel.GetComponent<TMP_Text>().fontSize = label.textScale;
             newLabel.gameObject.name = label.identifier;
         }
 
-        foreach (PopupButton button in blueprint.buttons)
+        if (blueprint.buttons != null)
         {
-            RectTransform newButton = Instantiate(labelBase, canvas).GetComponent<RectTransform>();
-            newButton.anchoredPosition = button.position;
-            newButton.sizeDelta = button.size;
-            newButton.transform.GetChild(0).GetComponent<TMP_Text>().text = button.text;
+            foreach (PopupButton button in blueprint.buttons)
+            {
+                RectTransform newButton = Instantiate(labelBase, canvas).GetComponent<RectTransform>();
+                newButton.anchoredPosition = button.position;
+                newButton.sizeDelta = button.size;
+                TMP_Text label = newButton.transform.GetChild(0).GetComponent<TMP_Text>();
+                label.text = button.text;
+                label.fontSize = button.textScale;
 
-            if (button.image) newButton.GetComponent<Image>().sprite = button.image;
+                if (button.image) newButton.GetComponent<Image>().sprite = button.image;
+            }
         }
+
     }
 
     public void UpdateLabel(string id, string newText)

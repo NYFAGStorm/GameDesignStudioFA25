@@ -26,7 +26,7 @@ public class Placeable : MonoBehaviour
         locked = setLock;
     }
 
-    private void OnMouseDown()
+    virtual protected void OnMouseDown()
     {
         clicked = true;
 
@@ -114,7 +114,7 @@ public class Placeable : MonoBehaviour
         container = newContainer;
     }
 
-    private void OnMouseUp()
+    virtual protected void OnMouseUp()
     {
         clicked = false;
         CancelInvoke("StartDrag");
