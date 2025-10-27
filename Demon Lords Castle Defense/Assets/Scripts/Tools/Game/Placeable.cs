@@ -51,6 +51,7 @@ public class Placeable : MonoBehaviour
 
         foreach (Slot s in validSlots)
         {
+            Debug.Log(s);
             Placeable p = s.transform.root.GetComponent<Placeable>();
             if (p == this)
             {

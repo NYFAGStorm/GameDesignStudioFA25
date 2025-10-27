@@ -42,9 +42,9 @@ public class RhythmManager : MonoBehaviour
 
 public static class Rhythm
 {
-    public static float beatsPerMinute = 60;
-    public static UnityEvent FullBeat;
-    public static UnityEvent HalfBeat;
-    public static UnityEvent QuarterBeat;
+    public static float beatsPerMinute = 120;
+    public static UnityEvent FullBeat = new UnityEvent();
+    public static UnityEvent HalfBeat = new UnityEvent();
+    public static UnityEvent QuarterBeat = new UnityEvent();
 }
 

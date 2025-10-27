@@ -60,27 +60,26 @@ public class Goon : Placeable
             if (target)
             {
                 state = 2;
-                attackCooldown = 0;
+                Rhythm.FullBeat.AddListener(SingleAttack);
             }
         }
 
-        if (state == 2 && target)
-        {
-            if (attackCooldown == 0)
-            {
-                attackCooldown = attackRate;
-                Debug.Log("damaged hero for " + damage);
-                target.DealDamage(damage);
-            }
-
-            attackCooldown = Mathf.Max(0, attackCooldown - Time.deltaTime);
-        }
         else state = 1;
+    }
+
+    private void SingleAttack()
+    {
+        Debug.Log("damaged hero for " + damage);
+        target.DealDamage(damage);
     }
 
     private void UpdateGoons()
     {
         activeAttackers = new List<Attacker>(FindObjectsByType<Attacker>(FindObjectsSortMode.InstanceID));
+        if (target)
+        {
+            Rhythm.FullBeat.RemoveListener(SingleAttack);
+        }
     }
 
     public void DealDamage(int damage)
