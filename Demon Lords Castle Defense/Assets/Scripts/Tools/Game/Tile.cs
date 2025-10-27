@@ -26,6 +26,7 @@ public class Tile : Placeable
     protected Tile[] neighbors = new Tile[4];
     protected const int maxSlots = 6;
     protected bool[] openSides = new bool[4];
+    protected Slot[] goonSlots;
 
     public SpriteRenderer plate;
 

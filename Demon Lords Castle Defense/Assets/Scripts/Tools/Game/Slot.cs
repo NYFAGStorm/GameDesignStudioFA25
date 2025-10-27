@@ -26,6 +26,7 @@ public class Slot : MonoBehaviour
 
     public SlotType slotType = 0;
     public Vector3 offset;
+    public float maximumDistance = 1;
 
     public Placeable GetItem()
     {
