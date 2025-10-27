@@ -52,7 +52,6 @@ public class Goon : Placeable
                 {
                     closestAttackerDistance = dist;
                     closestAttacker = attacker;
-
                 }
             }
 
