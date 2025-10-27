@@ -10,7 +10,7 @@ public class Goon : Placeable
     private int damage;
     private AttackForm attackType;
     private OnBeat attackRate;
-    private List<Attacker> activeAttackers;
+    private List<Attacker> activeAttackers = new List<Attacker>();
     private Attacker target;
     private float maxHealth = 1;
     private float health = 1;
@@ -58,7 +58,7 @@ public class Goon : Placeable
             }
         };
 
-        FindFirstObjectByType<GoonData>().ExistingGoonsUpdated.AddListener(UpdateGoons);
+        FindFirstObjectByType<AttackerData>().ExistingAttackersUpdated.AddListener(UpdateAttackers);
     }
 
     protected override void OnMouseDown()
@@ -89,9 +89,9 @@ public class Goon : Placeable
     {
         base.Update();
 
-        if (!isBeingDragged || state == 0) return;
+        if (isBeingDragged || state == 0) return;
 
-        if (state == 1)
+        if (state == 1 && activeAttackers.Count > 0)
         {
             Attacker closestAttacker = null;
             float closestAttackerDistance = attackRange;
@@ -107,14 +107,18 @@ public class Goon : Placeable
             }
 
             target = closestAttacker;
-            
+
             if (target)
             {
                 state = 2;
                 Rhythm.beats[0].AddListener(SingleAttack);
             }
+            else
+            {
+                state = 1;
+                target = null;
+            }
         }
-        else state = 1;
     }
 
     private void SingleAttack()
@@ -123,7 +127,7 @@ public class Goon : Placeable
         target.DealDamage(damage);
     }
 
-    private void UpdateGoons()
+    private void UpdateAttackers()
     {
         activeAttackers = new List<Attacker>(FindObjectsByType<Attacker>(FindObjectsSortMode.InstanceID));
         if (target)
