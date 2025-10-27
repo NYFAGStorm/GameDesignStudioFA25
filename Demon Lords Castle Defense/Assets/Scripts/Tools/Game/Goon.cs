@@ -95,6 +95,9 @@ public class Goon : Placeable
 
     // Written rules (Esther)
     // speed = 0, Goon is stationary in assigned Slot
+    // [Attribute]
+    //  if damage type is strong against said Goon, takes +15% more damage.
+    //  if damage type is weak against said Goon, takes -15% less damage.
 
     // [ATTACK- MELEE]
     // attack range = 1/6 of the Tile size, recangular shape
@@ -120,4 +123,10 @@ public class Goon : Placeable
     // if removed from slot:
     //      stop attacking
     //      HP remains the same as before removal
+
+    // [UPGRADE]
+    // for details of upgrades pls refer to the Characters & Tiles sheet, tab [Goons Upgrade]
+    // upgrade cost formula:
+    //  lv 2 = base cost * 1.45 (round up)
+    //  lv 3-11 = previous cost * 1.3 (round up)
 }
