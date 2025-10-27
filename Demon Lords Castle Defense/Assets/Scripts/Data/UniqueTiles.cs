@@ -1,6 +1,13 @@
 using UnityEngine;
 
 [System.Serializable]
+public struct goonSlotPosition
+{
+    public Vector2 position;
+    public bool free;
+}
+
+[System.Serializable]
 public struct UniqueTile
 {
     public TileType type;
@@ -9,7 +16,7 @@ public struct UniqueTile
     public int baseSlots;
     public int damagePerBeat;
     public DamageForm damageType;
-    public Vector2[] goonSlotPositions;
+    public goonSlotPosition[] goonSlotPositions;
 }
 
 [CreateAssetMenu(fileName = "TileTypes", menuName = "DemonDefense/TileTypes", order = 1)]
