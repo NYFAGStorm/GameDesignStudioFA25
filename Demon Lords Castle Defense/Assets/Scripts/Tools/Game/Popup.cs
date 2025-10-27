@@ -27,6 +27,16 @@ public class Popup : MonoBehaviour
             newLabel.GetComponent<TMP_Text>().text = label.text;
             newLabel.gameObject.name = label.identifier;
         }
+
+        foreach (PopupButton button in blueprint.buttons)
+        {
+            RectTransform newButton = Instantiate(labelBase, canvas).GetComponent<RectTransform>();
+            newButton.anchoredPosition = button.position;
+            newButton.sizeDelta = button.size;
+            newButton.transform.GetChild(0).GetComponent<TMP_Text>().text = button.text;
+
+            if (button.image) newButton.GetComponent<Image>().sprite = button.image;
+        }
     }
 
     public void UpdateLabel(string id, string newText)

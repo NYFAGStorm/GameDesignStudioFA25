@@ -51,8 +51,8 @@ public struct PopupLabel
 
 public struct PopupButton
 {
-    public string buttonText;
-    public Sprite buttonImage;
+    public string text;
+    public Sprite image;
     public Vector2 size;
     public Vector2 position;
 }
@@ -64,7 +64,7 @@ public struct PopupBlueprint
     public Vector2 position;
     public string header;
     public PopupLabel[] labels;
-    public string[] buttons;
+    public PopupButton[] buttons;
 }
 
 public static class PopupBuilder
