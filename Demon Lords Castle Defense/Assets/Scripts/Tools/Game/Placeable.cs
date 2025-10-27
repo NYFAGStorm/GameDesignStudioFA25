@@ -35,7 +35,7 @@ public class Placeable : MonoBehaviour
         Invoke("StartDrag", removeHoldTime);
     }
 
-    private void StartDrag()
+    virtual protected void StartDrag()
     {
         if (!clicked) return;
 

@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Prototype/Gustavo/Proto_Splash.unity
+    guid: 68906183d919fc343a87d6a15614d04e
+  - enabled: 1
+    path: Assets/Scenes/Prototype/Gustavo/Proto_Tiles.unity
+    guid: 753b6852608e572458570e9aaa0cd444
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
