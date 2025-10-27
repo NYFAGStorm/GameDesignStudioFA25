@@ -99,7 +99,11 @@ public class Goon : Placeable
 
             foreach (Attacker attacker in activeAttackers)
             {
-                if (!attacker) continue;
+                if (!attacker)
+                {
+                    activeAttackers.Remove(attacker);
+                    continue;
+                }
                 
                 float dist = Vector3.Distance(transform.position, attacker.transform.position);
                 if (dist < attackRange && dist < closestAttackerDistance)
