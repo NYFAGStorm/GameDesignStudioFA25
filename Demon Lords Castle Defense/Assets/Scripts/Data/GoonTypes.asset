@@ -18,14 +18,38 @@ MonoBehaviour:
     damage: 5
     attackType: 0
     damageType: 5
-    attackRate: 0
-    goonImage: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
-    attackRange: 100
+    attackRate: 4
+    goonImage: {fileID: 0}
+    attackRange: 0
   - type: 1
     maxHealth: 20
-    damage: 5
+    damage: 6
     attackType: 0
-    damageType: 5
+    damageType: 0
+    attackRate: 4
+    goonImage: {fileID: 0}
+    attackRange: 0
+  - type: 2
+    maxHealth: 20
+    damage: 8
+    attackType: 0
+    damageType: 2
+    attackRate: 4
+    goonImage: {fileID: 0}
+    attackRange: 0
+  - type: 3
+    maxHealth: 20
+    damage: 4
+    attackType: 0
+    damageType: 4
+    attackRate: 2
+    goonImage: {fileID: 0}
+    attackRange: 0
+  - type: 3
+    maxHealth: 0
+    damage: 0
+    attackType: 0
+    damageType: 0
     attackRate: 0
-    goonImage: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
-    attackRange: 100
+    goonImage: {fileID: 0}
+    attackRange: 0
