@@ -69,6 +69,7 @@ public class Goon : Placeable
             if (attackCooldown == 0)
             {
                 attackCooldown = attackRate;
+                Debug.Log("damaged hero for " + damage);
                 target.DealDamage(damage);
             }
 
