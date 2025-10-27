@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6f8624bc21e614d88322842ae01b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goonSlot: {fileID: 7382237548286675273, guid: 0843c1ba69eb8e640a7fd1d4c226648a, type: 3}
   plate: {fileID: 114906927941467277}
 --- !u!65 &5170975655795905280
 BoxCollider:

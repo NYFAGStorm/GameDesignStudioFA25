@@ -68,9 +68,10 @@ public class Tile : Placeable
         type = data.type;
         plate.sprite = data.plateImage;
 
-        foreach (Vector2 goonSlotPosition in data.goonSlotPositions)
+        foreach (Vector2 goonSlotPos in data.goonSlotPositions)
         {
             GameObject newGoonSlot = Instantiate(goonSlot, transform);
+            newGoonSlot.transform.localPosition = new Vector3(goonSlotPos.x, 0.2f, goonSlotPos.y);
         }
 
         UpdateSides(0);

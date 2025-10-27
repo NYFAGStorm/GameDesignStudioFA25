@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotType: 0
   offset: {x: 0, y: 0.1, z: 0}
+  maximumDistance: 3
 --- !u!1 &3146698353109917385
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class Placeable : MonoBehaviour
     protected List<Slot> validSlots;
     protected Vector3 flat = new Vector3(1, 0, 1);
     protected List<Slot> childSlots;
-    protected float removeHoldTime = 1.5f;
+    protected float removeHoldTime = 0.5f;
     protected bool clicked = false;
     protected float closestSlotDistance;
 
@@ -47,7 +47,8 @@ public class Placeable : MonoBehaviour
 
         isBeingDragged = true;
         validSlots = new List<Slot>(FindObjectsByType<Slot>(FindObjectsSortMode.InstanceID));
-        //childSlots.Clear();
+        childSlots = new List<Slot>();
+        childSlots.Clear();
 
         foreach (Slot s in validSlots)
         {
@@ -123,7 +124,7 @@ public class Placeable : MonoBehaviour
 
         if (!s) return;
 
-        if (s.maximumDistance > closestSlotDistance) return;
+        if (s.maximumDistance < closestSlotDistance) return;
 
         isPlaced = s.InsertItem(this);
     }
