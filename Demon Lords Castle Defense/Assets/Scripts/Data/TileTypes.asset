@@ -20,12 +20,12 @@ MonoBehaviour:
     damagePerBeat: 2
     damageType: 0
     goonSlotPositions:
-    - {x: 1, y: 1}
-    - {x: 1, y: 0}
-    - {x: 1, y: -1}
-    - {x: -1, y: 1}
-    - {x: -1, y: 0}
-    - {x: -1, y: -1}
+    - {x: 1.4, y: 1.4}
+    - {x: 1.4, y: 0}
+    - {x: 1.4, y: -1.4}
+    - {x: -1.4, y: 1.4}
+    - {x: -1.4, y: 0}
+    - {x: -1.4, y: -1.4}
   - type: 1
     shape: 1
     plateImage: {fileID: 21300000, guid: bf917f664e6c8154fbe0d6279a64d6a2, type: 3}
