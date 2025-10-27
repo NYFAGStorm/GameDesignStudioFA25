@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Goon : Placeable
@@ -58,7 +59,7 @@ public class Goon : Placeable
             }
         };
 
-        FindFirstObjectByType<AttackerData>().ExistingAttackersUpdated.AddListener(UpdateAttackers);
+        FindFirstObjectByType<AttackerData>().UpdateExistingAttackers.AddListener(UpdateAttackers);
     }
 
     protected override void OnMouseDown()
@@ -98,6 +99,8 @@ public class Goon : Placeable
 
             foreach (Attacker attacker in activeAttackers)
             {
+                if (!attacker) continue;
+                
                 float dist = Vector3.Distance(transform.position, attacker.transform.position);
                 if (dist < attackRange && dist < closestAttackerDistance)
                 {
@@ -113,18 +116,18 @@ public class Goon : Placeable
                 state = 2;
                 Rhythm.beats[0].AddListener(SingleAttack);
             }
-            else
-            {
-                state = 1;
-                target = null;
-            }
         }
     }
 
     private void SingleAttack()
     {
         Debug.Log("damaged hero for " + damage);
-        target.DealDamage(damage);
+        if (!target.DealDamage(damage))
+        {
+            Rhythm.beats[0].RemoveListener(SingleAttack);
+            target = null;
+            state = 1;
+        }
     }
 
     private void UpdateAttackers()

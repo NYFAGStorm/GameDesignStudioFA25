@@ -50,6 +50,7 @@ public class Attacker : MonoBehaviour
     private List<Goon> activeGoons;
     private Goon target = null;
     private float attackRange = 1;
+    private AttackerData attackerData;
 
     public SpriteRenderer appearance;
 
@@ -65,6 +66,8 @@ public class Attacker : MonoBehaviour
         speed = data.travelSpeed;
         appearance.sprite = data.attackerImage;
         attackRange = data.attackRange;
+
+        attackerData = FindFirstObjectByType<AttackerData>();
 
         NextPathPoint();
         isMoving = true;
@@ -91,7 +94,9 @@ public class Attacker : MonoBehaviour
         pointLerp = 0;
     }
     
-    public void DealDamage(int damage)
+
+    // Returns whether the enemy is still alive after taking the damage
+    public bool DealDamage(int damage)
     {
         health = Mathf.Max(0, health - damage);
 
@@ -99,8 +104,13 @@ public class Attacker : MonoBehaviour
         if (health == 0)
         {
             CurrencyManager.AwardSouls(soulReward);
+
             Destroy(gameObject);
+
+            attackerData.UpdateExistingAttackers.Invoke();
         }
+
+        return health > 0;
     }
 
     private void Update()

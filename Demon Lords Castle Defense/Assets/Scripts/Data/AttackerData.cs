@@ -24,7 +24,7 @@ public enum AttackForm
 public class AttackerData : MonoBehaviour
 {
     [HideInInspector]
-    public UnityEvent ExistingAttackersUpdated;
+    public UnityEvent UpdateExistingAttackers;
     public GameObject attackerBase;
     public UniqueAttackers types;
     private List<Vector3> path;
@@ -55,7 +55,7 @@ public class AttackerData : MonoBehaviour
         Attacker newAttacker = Instantiate(attackerBase, GameObject.Find("Attackers").transform).GetComponent<Attacker>();
         newAttacker.InitializeAttacker(path, attackerData, Vector3.zero);
 
-        ExistingAttackersUpdated.Invoke();
+        UpdateExistingAttackers.Invoke();
 
         return newAttacker;
     }
