@@ -1,7 +1,13 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GoonTypes", menuName = "DemonDefense/GoonTypes", order = 3)]
+[System.Serializable]
+public struct UniqueTrophy
+{
+    public float effectAmount;
+}
+
+[CreateAssetMenu(fileName = "TrophyTypes", menuName = "DemonDefense/TrophyTypes", order = 3)]
 public class UniqueTrophies : ScriptableObject
 {
-    
+    public UniqueTrophy[] trophies;
 }
