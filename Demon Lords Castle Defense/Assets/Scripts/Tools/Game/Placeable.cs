@@ -49,22 +49,25 @@ public class Placeable : MonoBehaviour
         childSlots = new List<Slot>();
         childSlots.Clear();
 
+        List<Slot> newValidSlots = new List<Slot>(validSlots);
+
         foreach (Slot s in validSlots)
         {
-            Debug.Log(s);
             Placeable p = s.transform.root.GetComponent<Placeable>();
             if (p == this)
             {
-                validSlots.Remove(s);
+                newValidSlots.Remove(s);
                 childSlots.Add(s);
                 continue;
             }
 
             if (GetType().Name != s.GetSlotType().Name)
             {
-                validSlots.Remove(s);
+                newValidSlots.Remove(s);
             }
         }
+
+        validSlots = newValidSlots;
     }
 
     virtual protected void Update()
