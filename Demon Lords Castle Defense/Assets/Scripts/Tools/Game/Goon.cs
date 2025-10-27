@@ -6,7 +6,7 @@ public class Goon : Placeable
     // Author: Gustavo Rojas Flores
     // Manages a goon that can attack heroes and be upgraded
 
-    public GoonType type;
+    private GoonType type;
     private int damage;
     private AttackForm attackType;
     private float attackRate;

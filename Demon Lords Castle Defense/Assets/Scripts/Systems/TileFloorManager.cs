@@ -66,6 +66,11 @@ public class TileFloorManager : MonoBehaviour
         attackerData.SummonAttacker(AttackerType.Priest);
     }
 
+    public void DEBUGGoon()
+    {
+        
+    }
+
     private Slot GetSlot(int x, int y)
     {
         return tileSlots[Mathf.RoundToInt(x + y * gridSize.x)];
