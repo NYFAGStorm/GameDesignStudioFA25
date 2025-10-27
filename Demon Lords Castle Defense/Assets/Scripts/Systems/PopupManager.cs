@@ -9,6 +9,8 @@ public struct statLine
 {
     public string statName;
     public float value;
+    public Vector2 size;
+    public Vector2 position;
 }
 
 public struct PopupBlueprint

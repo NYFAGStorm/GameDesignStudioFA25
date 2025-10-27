@@ -14,6 +14,6 @@ public class Popup : MonoBehaviour
     
     public void Delete()
     {
-
+        Destroy(gameObject);
     }
 }
