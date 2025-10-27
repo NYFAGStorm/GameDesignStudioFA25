@@ -44,6 +44,7 @@ public class Attacker : MonoBehaviour
     private int maxHealth = 1;
     private int soulReward = 1;
     private bool isMoving = false;
+    private List<Goon> activeGoons;
     private Goon target = null;
     private float attackRange = 1;
 
@@ -88,7 +89,7 @@ public class Attacker : MonoBehaviour
         
         if (health == 0)
         {
-            // award souls
+            CurrencyManager.AwardSouls(soulReward);
             Destroy(gameObject);
         }
     }

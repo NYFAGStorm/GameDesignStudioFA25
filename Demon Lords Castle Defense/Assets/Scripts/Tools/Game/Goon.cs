@@ -10,9 +10,11 @@ public class Goon : Placeable
     private int damage;
     private AttackForm attackType;
     private float attackRate;
-    private List<Attacker> targets;
+    private List<Attacker> activeAttackers;
+    private Attacker target;
     private int maxHealth = 1;
     private int health = 1;
+    private float attackRange = 1;
 
     public SpriteRenderer image;
 
@@ -24,7 +26,10 @@ public class Goon : Placeable
         damage = data.damage;
         attackType = data.attackType;
         attackRate = data.attackRate;
+        attackRange = data.attackRange;
         image.sprite = data.goonImage;
+
+        FindFirstObjectByType<GoonData>().ExistingGoonsUpdated.AddListener(UpdateGoons);
     }
 
     protected override void Update()
@@ -33,7 +38,29 @@ public class Goon : Placeable
 
         if (!isBeingDragged) return;
         
+        foreach (Attacker attacker in activeAttackers)
+        {
+            if (Vector3.Distance(transform.position, attacker.transform.position) < attackRange)
+            {
+                target = attacker;
+            }
+        }
+    }
 
+    private void UpdateGoons()
+    {
+        activeAttackers = new List<Attacker>(FindObjectsByType<Attacker>(FindObjectsSortMode.InstanceID));
+    }
+
+    public void DealDamage(int damage)
+    {
+        health = Mathf.Max(0, health - damage);
+        
+        if (health == 0)
+        {
+            container.RemoveItem(false);
+            Destroy(gameObject);
+        }
     }
 
     // Written rules (Esther)
