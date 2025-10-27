@@ -821,6 +821,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e9a941fde1660468b7e049e18ab987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExistingAttackersUpdated:
+    m_PersistentCalls:
+      m_Calls: []
   attackerBase: {fileID: 8035822331219493298, guid: 29e1e8b29089a244a9ef9cfaa97bd8ce, type: 3}
   types: {fileID: 11400000, guid: f95d656a17601a9499f399803dce10de, type: 2}
 --- !u!114 &610997370
@@ -1122,6 +1125,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1239981531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1239981533}
+  - component: {fileID: 1239981532}
+  m_Layer: 0
+  m_Name: RhythmManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1239981532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239981531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1d7137ab3fb4f4396c79846e54d92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1239981533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239981531}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.4773164, y: 1.649424, z: 0.82162845}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1630872359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,3 +1360,4 @@ SceneRoots:
   - {fileID: 1672454220}
   - {fileID: 610997366}
   - {fileID: 859013008}
+  - {fileID: 1239981533}
