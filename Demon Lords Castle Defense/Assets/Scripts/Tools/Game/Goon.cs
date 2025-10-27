@@ -97,7 +97,9 @@ public class Goon : Placeable
             Attacker closestAttacker = null;
             float closestAttackerDistance = attackRange;
 
-            foreach (Attacker attacker in activeAttackers)
+            List<Attacker> bakedActiveAttackers = activeAttackers;
+
+            foreach (Attacker attacker in bakedActiveAttackers)
             {
                 if (!attacker)
                 {
