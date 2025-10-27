@@ -836,7 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goonBase: {fileID: 8032749320919845049, guid: 185c0342d81c2f34599b42aaf579a331, type: 3}
-  types: {fileID: 0}
+  types: {fileID: 11400000, guid: 0cf70b441c4ef844dae168e93392d628, type: 2}
 --- !u!1 &859013006
 GameObject:
   m_ObjectHideFlags: 0
