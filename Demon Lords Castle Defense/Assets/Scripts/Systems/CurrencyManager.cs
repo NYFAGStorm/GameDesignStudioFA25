@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class CurrencyManager
 {
-    private static float bankedSouls;
+    private static int bankedSouls;
 
     public static bool SpendSouls(int price)
     {
@@ -19,5 +19,10 @@ public static class CurrencyManager
     public static void AwardSouls(int reward)
     {
         bankedSouls += reward;
+    }
+
+    public static int SoulBalance()
+    {
+        return bankedSouls;
     }
 }
