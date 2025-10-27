@@ -25,6 +25,9 @@ public class SplashScreen : MonoBehaviour
     public Color buttonFontColor = Color.white;
     public int buttonFontSizeAt1024 = 48;
 
+    public MenuManager menuManager;
+    public string sceneToLoad;
+
 
     void Start()
     {
@@ -69,7 +72,8 @@ public class SplashScreen : MonoBehaviour
 
         if (GUI.Button(r,s,g))
         {
-            SceneManager.LoadScene("Menu");
+            //SceneManager.LoadScene("Menu");
+            menuManager.SwitchScene(sceneToLoad);
         }
     }
 }
