@@ -9,7 +9,7 @@ public struct UniqueGoon
     public int damage;
     public AttackForm attackType;
     public DamageForm damageType;
-    public float attackRate;
+    public OnBeat attackRate;
     public Sprite goonImage;
     public float attackRange;
 }

@@ -9,7 +9,7 @@ public class Goon : Placeable
     private GoonType type;
     private int damage;
     private AttackForm attackType;
-    private float attackRate;
+    private OnBeat attackRate;
     private List<Attacker> activeAttackers;
     private Attacker target;
     private float maxHealth = 1;
@@ -101,7 +101,6 @@ public class Goon : Placeable
                 Rhythm.beats[0].AddListener(SingleAttack);
             }
         }
-
         else state = 1;
     }
 

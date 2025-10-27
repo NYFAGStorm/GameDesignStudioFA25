@@ -1,6 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum OnBeat
+{
+    OnOne,
+    OnTwo,
+    OnThree,
+    OnFour
+}
+
 public class RhythmManager : MonoBehaviour
 {
     private float secondTimer = 0;
