@@ -31,14 +31,6 @@ MonoBehaviour:
     attackRange: 1.5
   - type: 2
     maxHealth: 20
-    damage: 8
-    attackType: 0
-    damageType: 2
-    attackRate: 1
-    goonImage: {fileID: 0}
-    attackRange: 1.5
-  - type: 3
-    maxHealth: 20
     damage: 4
     attackType: 0
     damageType: 4
