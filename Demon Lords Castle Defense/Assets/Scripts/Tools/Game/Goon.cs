@@ -15,6 +15,8 @@ public class Goon : Placeable
     private int maxHealth = 1;
     private int health = 1;
     private float attackRange = 1;
+    private float attackCooldown = 0;
+    private int state = 0;
 
     public SpriteRenderer image;
 
@@ -36,15 +38,44 @@ public class Goon : Placeable
     {
         base.Update();
 
-        if (!isBeingDragged) return;
-        
-        foreach (Attacker attacker in activeAttackers)
+        if (!isBeingDragged || state == 0) return;
+
+        if (state == 1)
         {
-            if (Vector3.Distance(transform.position, attacker.transform.position) < attackRange)
+            Attacker closestAttacker = null;
+            float closestAttackerDistance = attackRange;
+
+            foreach (Attacker attacker in activeAttackers)
             {
-                target = attacker;
+                float dist = Vector3.Distance(transform.position, attacker.transform.position);
+                if (dist < attackRange && dist < closestAttackerDistance)
+                {
+                    closestAttackerDistance = dist;
+                    closestAttacker = attacker;
+
+                }
+            }
+
+            target = closestAttacker;
+            
+            if (target)
+            {
+                state = 2;
+                attackCooldown = 0;
             }
         }
+
+        if (state == 2 && target)
+        {
+            if (attackCooldown == 0)
+            {
+                attackCooldown = attackRate;
+                target.DealDamage(damage);
+            }
+
+            attackCooldown = Mathf.Max(0, attackCooldown - Time.deltaTime);
+        }
+        else state = 1;
     }
 
     private void UpdateGoons()

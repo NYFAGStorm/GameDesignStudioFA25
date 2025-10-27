@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 // Author: Gustavo Rojas Flores
-// Manages all types and enums relating to Attackers
+// Manages all types and enums relating to Attackers, as well as creation of Attackers
 
 public enum AttackerType
 {
@@ -22,6 +23,8 @@ public enum AttackForm
 
 public class AttackerData : MonoBehaviour
 {
+    [HideInInspector]
+    public UnityEvent ExistingAttackersUpdated;
     public GameObject attackerBase;
     public UniqueAttackers types;
     private List<Vector3> path;

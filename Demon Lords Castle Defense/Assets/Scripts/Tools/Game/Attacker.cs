@@ -67,6 +67,11 @@ public class Attacker : MonoBehaviour
         isMoving = true;
     }
 
+    public float PathProgress()
+    {
+        return currentPathPos + pointLerp;
+    }
+
     private void NextPathPoint()
     {
         currentPathPos++;
