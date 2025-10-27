@@ -20,7 +20,6 @@ public class Placeable : MonoBehaviour
     protected List<Slot> childSlots;
     protected float removeHoldTime = 0.5f;
     protected bool clicked = false;
-    protected float closestSlotDistance;
 
     public void Lock(bool setLock)
     {
@@ -75,7 +74,7 @@ public class Placeable : MonoBehaviour
 
     private Slot GetClosestSlot()
     {
-        closestSlotDistance = Mathf.Infinity;
+        float closestSlotDistance = Mathf.Infinity;
         Slot closestSlot = null;
 
         foreach (Slot slot in validSlots)
@@ -84,7 +83,7 @@ public class Placeable : MonoBehaviour
             Vector3 flatPos = Vector3.Scale(transform.position, flat);
             float flatDistance = Vector3.Distance(flatTargetPos, flatPos);
 
-            if (flatDistance < closestSlotDistance)
+            if (flatDistance < closestSlotDistance && slot.maximumDistance > flatDistance)
             {
                 closestSlot = slot;
                 closestSlotDistance = flatDistance;
@@ -123,8 +122,6 @@ public class Placeable : MonoBehaviour
         Slot s = GetClosestSlot();
 
         if (!s) return;
-
-        if (s.maximumDistance < closestSlotDistance) return;
 
         isPlaced = s.InsertItem(this);
     }
