@@ -17,6 +17,51 @@ MonoBehaviour:
     attackerImage: {fileID: 0}
     damageType: 1
     attackType: 1
+    attackDamage: 2
+    maxHealth: 20
+    soulReward: 10
+    travelSpeed: 1
+    attackRange: 1
+  - type: 1
+    attackerImage: {fileID: 0}
+    damageType: 5
+    attackType: 1
+    attackDamage: 3
+    maxHealth: 20
+    soulReward: 10
+    travelSpeed: 1
+    attackRange: 1
+  - type: 2
+    attackerImage: {fileID: 0}
+    damageType: 0
+    attackType: 0
+    attackDamage: 1
+    maxHealth: 20
+    soulReward: 10
+    travelSpeed: 1
+    attackRange: 1
+  - type: 3
+    attackerImage: {fileID: 0}
+    damageType: 0
+    attackType: 1
+    attackDamage: 4
+    maxHealth: 20
+    soulReward: 10
+    travelSpeed: 1
+    attackRange: 1
+  - type: 3
+    attackerImage: {fileID: 0}
+    damageType: 0
+    attackType: 1
+    attackDamage: 4
+    maxHealth: 20
+    soulReward: 10
+    travelSpeed: 1
+    attackRange: 1
+  - type: 5
+    attackerImage: {fileID: 0}
+    damageType: 0
+    attackType: 1
     attackDamage: 3
     maxHealth: 20
     soulReward: 10
