@@ -11,6 +11,7 @@ public class DataBox : MonoBehaviour
     //      - clicking away (on black space, on another item), box disappear
     //  data shown (Hero):
     //      - Name
+    //      - Speed
     //      - Current HP / Total HP
     //      - Damage
     //      - Attack on _____ beat
