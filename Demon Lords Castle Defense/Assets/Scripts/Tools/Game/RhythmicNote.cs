@@ -5,39 +5,50 @@ public class RhythmicNote : MonoBehaviour
     // Author: Esther Li (YT)
     // this judges the accuracy of input to each note
 
-    public bool isPartiallyOverlapped = false;
-    
-    // Ranging from Perfect (100%), Great (75%), Good (50%), Poor (25%), Miss (0%)
+    public bool canBePressed = false;
+    public bool obtained = false;
+
+    // Ranging from Perfect (75%), Great (50%), Good (25%), Miss (0%)
 
     void Update()
     {
-        // [space] to hit note
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            HitNote();
+            Debug.Log("SPACE");
+
+            if (canBePressed)
+            {
+                RhythmGameManager.instance.NoteHit();
+                obtained = true;
+                gameObject.SetActive(false);
+            }
+
+            if (!canBePressed)
+            {
+                RhythmGameManager.instance.NoteMissed();
+                obtained = true;
+                gameObject.SetActive(false);
+            }
+            
         }
-
-        
-    }
-
-    private void HitNote()
-    {
-         Debug.Log ("HIT");
     }
 
     private void OnTriggerEnter2D(UnityEngine.Collider2D other)
     {
         //Debug.Log("triggered");
-        if (other.name == "Target")  isPartiallyOverlapped = true;
-        else isPartiallyOverlapped = false;
+        if (other.tag == "Target") canBePressed = true;
+        else canBePressed = false;
 
-        //Debug.Log(isPartiallyOverlapped);
+        //Debug.Log(canBePressed);
     }
     private void OnTriggerExit2D(UnityEngine.Collider2D other)
     {
         //Debug.Log("left");
-        if (other.name == "Target")  isPartiallyOverlapped = false;
-
-        //Debug.Log(isPartiallyOverlapped);
+        if (other.tag == "Target" && !obtained)
+        {
+            canBePressed = false;
+            RhythmGameManager.instance.NoteMissed();
+        }
+        //Debug.Log(canBePressed);
     }
 }// end of script
