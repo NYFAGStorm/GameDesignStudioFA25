@@ -5,7 +5,7 @@ public class RhythmicNote : MonoBehaviour
     // Author: Esther Li (YT)
     // this judges the accuracy of input to each note
 
-    // [need to change to private once done]
+    // [need to change to private once debug done]
     public bool canBePressed = false;
     public bool obtained = false;
     
@@ -13,12 +13,14 @@ public class RhythmicNote : MonoBehaviour
     public bool isGood = false;
     public bool isPerfect = false;
 
-    public int goodScore = 50;
+    public GameObject RhythmGameManager;
+    public int currentScore;
+    public int goodScore = 1;
     public int perfectScore = 100;
 
     private void Start()
     {
-        
+        RhythmGameManager = GameObject.Find("RhythmGameManager");
     }
     void Update()
     {
@@ -26,30 +28,37 @@ public class RhythmicNote : MonoBehaviour
         {
             Debug.Log("SPACE");
 
-            if (canBePressed)
+            if (canBePressed && !obtained)
             {
-                RhythmGameManager.instance.NoteHit();
                 obtained = true;
-                gameObject.SetActive(false);
+
+                // gives a score based on accuracy
+                if (collisionCounter == 0) currentScore += 0;
+                if (collisionCounter == 1) currentScore += goodScore;
+                if (collisionCounter == 2) currentScore += perfectScore;
+
+                // update score to game manager
+                RhythmGameManager.GetComponent<RhythmGameManager>().UpdateScore();
+
+                // destroy so game manager doesnt re-add score
+                Destroy(gameObject);
             }
 
             if (!canBePressed)
             {
-                RhythmGameManager.instance.NoteMissed();
-                obtained = true;
-                gameObject.SetActive(false);
+                Debug.Log("MISS");
             }
             
         }
     }
-    // Ranging from Perfect (75%), Great (50%), Good (25%), Miss (0%)
     private void OnTriggerEnter2D(UnityEngine.Collider2D other)
     {
         if (other.tag == "Target")
         {
             collisionCounter++;
-
             if (collisionCounter > 0) canBePressed = true;
+
+            // mainly for debugging
             if (collisionCounter == 1) isGood = true;
             if (collisionCounter == 2) isPerfect = true;
         }
@@ -61,6 +70,8 @@ public class RhythmicNote : MonoBehaviour
             collisionCounter--;
 
             if (collisionCounter < 1) canBePressed = false;
+
+            // mainly for debugging
             if (collisionCounter == 1) isPerfect = false;
             if (collisionCounter == 0) isGood = false;
         }

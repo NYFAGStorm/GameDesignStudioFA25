@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class TargetController : MonoBehaviour
 {
     // Author: Esther Li (YT)
-    // this handles the target area for the rhythm notes
+    // this handles player feedback
 
-    // [need to change to private once done]
+    // [need to change to private once debug done]
     public Image idleTargetImage;
     public Image hitTargetImage;
 
@@ -21,6 +21,7 @@ public class TargetController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             // change target image to default
+
         }
     }
 

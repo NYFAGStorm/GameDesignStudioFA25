@@ -3,32 +3,27 @@ using UnityEngine;
 public class RhythmGameManager : MonoBehaviour
 {
     // Author: Esther Li (YT)
-    // this handles the detection of each note as well as spawning
+    // this handles the total score for each game as well as spawning
 
-    public static RhythmGameManager instance;
-
-    // [need to change to private once done]
+    // [need to change to private once debug done]
     public int totalScore;
-    public int hitGoodScore = 50;
-    public int hitPerfectScore = 100;
 
-    void Start()
-    {
-        instance = this;
-    }
+    public GameObject[] note;
 
     private void Update()
     {
-        
+        // can get notes while spawning
+        note = GameObject.FindGameObjectsWithTag("Note");
     }
 
-    public void NoteHit()
+    public int UpdateScore()
     {
-        Debug.Log("hit");
-    }
+        for (int i = 0; i < note.Length; i++)
+        {
+            totalScore += note[i].gameObject.GetComponent<RhythmicNote>().currentScore;
+        }
 
-    public void NoteMissed()
-    {
-        Debug.Log("Missed");
+        Debug.Log(totalScore);
+        return totalScore;
     }
 }// end of script
