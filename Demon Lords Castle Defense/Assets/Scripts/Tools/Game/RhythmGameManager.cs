@@ -7,12 +7,17 @@ public class RhythmGameManager : MonoBehaviour
 
     public static RhythmGameManager instance;
 
+    // [need to change to private once done]
+    public int totalScore;
+    public int hitGoodScore = 50;
+    public int hitPerfectScore = 100;
+
     void Start()
     {
         instance = this;
     }
 
-    void Update()
+    private void Update()
     {
         
     }

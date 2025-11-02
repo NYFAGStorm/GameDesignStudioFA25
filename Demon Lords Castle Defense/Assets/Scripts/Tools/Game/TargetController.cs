@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TargetController : MonoBehaviour
 {
     // Author: Esther Li (YT)
     // this handles the target area for the rhythm notes
+
+    // [need to change to private once done]
+    public Image idleTargetImage;
+    public Image hitTargetImage;
 
     void Update()
     {
@@ -18,6 +23,5 @@ public class TargetController : MonoBehaviour
             // change target image to default
         }
     }
-
 
 }// end of script

@@ -5,11 +5,21 @@ public class RhythmicNote : MonoBehaviour
     // Author: Esther Li (YT)
     // this judges the accuracy of input to each note
 
+    // [need to change to private once done]
     public bool canBePressed = false;
     public bool obtained = false;
+    
+    public int collisionCounter = 0;
+    public bool isGood = false;
+    public bool isPerfect = false;
 
-    // Ranging from Perfect (75%), Great (50%), Good (25%), Miss (0%)
+    public int goodScore = 50;
+    public int perfectScore = 100;
 
+    private void Start()
+    {
+        
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -32,23 +42,27 @@ public class RhythmicNote : MonoBehaviour
             
         }
     }
-
+    // Ranging from Perfect (75%), Great (50%), Good (25%), Miss (0%)
     private void OnTriggerEnter2D(UnityEngine.Collider2D other)
     {
-        //Debug.Log("triggered");
-        if (other.tag == "Target") canBePressed = true;
-        else canBePressed = false;
+        if (other.tag == "Target")
+        {
+            collisionCounter++;
 
-        //Debug.Log(canBePressed);
+            if (collisionCounter > 0) canBePressed = true;
+            if (collisionCounter == 1) isGood = true;
+            if (collisionCounter == 2) isPerfect = true;
+        }
     }
     private void OnTriggerExit2D(UnityEngine.Collider2D other)
     {
-        //Debug.Log("left");
-        if (other.tag == "Target" && !obtained)
+        if (other.tag == "Target")
         {
-            canBePressed = false;
-            RhythmGameManager.instance.NoteMissed();
+            collisionCounter--;
+
+            if (collisionCounter < 1) canBePressed = false;
+            if (collisionCounter == 1) isPerfect = false;
+            if (collisionCounter == 0) isGood = false;
         }
-        //Debug.Log(canBePressed);
     }
 }// end of script
