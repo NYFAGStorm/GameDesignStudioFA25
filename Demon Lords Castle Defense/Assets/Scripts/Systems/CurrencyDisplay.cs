@@ -1,4 +1,11 @@
+using TMPro;
 using UnityEngine;
+
+public class CurrencyDisplay : MonoBehaviour
+{
+    public TMP_Text display;
+
+}
 
 public static class CurrencyManager
 {
