@@ -49,7 +49,7 @@ public class Attacker : MonoBehaviour
     private bool isMoving = false;
     private List<Goon> activeGoons;
     private Goon target = null;
-    private float attackRange = 1;
+    private AttackForm attackForm;
     private AttackerData attackerData;
     private OnBeat attackOnBeat;
     private int state;
@@ -67,13 +67,25 @@ public class Attacker : MonoBehaviour
         soulReward = data.soulReward;
         speed = data.travelSpeed;
         appearance.sprite = data.attackerImage;
-        attackRange = data.attackRange;
         attackOnBeat = data.attackRate;
+        attackForm = data.attackType;
 
         attackerData = FindFirstObjectByType<AttackerData>();
 
+        //FindFirstObjectByType<GoonData>().ExistingGoonsUpdated.AddListener(UpdateGoons);
+
+        //UpdateGoons();
+
         NextPathPoint();
         isMoving = true;
+        state = 1;
+    }
+
+    public void Engage(Goon combatant)
+    {
+        target = combatant;
+        state = 2;
+        Rhythm.beats[(int)attackOnBeat].RemoveListener(SingleAttack);
     }
 
     public float PathProgress()
@@ -85,10 +97,14 @@ public class Attacker : MonoBehaviour
     {
         currentPathPos++;
 
-        if (currentPathPos == path.Count)
+        if (currentPathPos == path.Count - 1)
         {
-            // reached the end
+            FindFirstObjectByType<DemonGameManager>().EnemyReachedEnd();
             isMoving = false;
+
+            Destroy(gameObject);
+            attackerData.UpdateExistingAttackers.Invoke();
+
             return;
         }
         
@@ -102,7 +118,7 @@ public class Attacker : MonoBehaviour
     {
         health = Mathf.Max(0, health - damage);
 
-        Debug.Log(health);
+        Debug.Log("hero health: " + health);
         if (health == 0)
         {
             CurrencyManager.AwardSouls(soulReward);
@@ -129,40 +145,7 @@ public class Attacker : MonoBehaviour
 
     private void Update()
     {
-        if (state == 1 && activeGoons.Count > 0)
-        {
-            Goon closestGoon = null;
-            float closestGoonDistance = attackRange;
-
-            List<Goon> bakedActiveGoons = new List<Goon>(activeGoons);
-
-            foreach (Goon goon in bakedActiveGoons)
-            {
-                if (!goon)
-                {
-                    activeGoons.Remove(goon);
-                    continue;
-                }
-
-                float dist = Vector3.Distance(transform.position, goon.transform.position);
-                if (dist < attackRange && dist < closestGoonDistance)
-                {
-                    closestGoonDistance = dist;
-                    closestGoon = goon;
-                }
-            }
-
-            target = closestGoon;
-
-            if (target)
-            {
-                isMoving = false;
-                state = 2;
-                Rhythm.beats[(int)attackOnBeat].AddListener(SingleAttack);
-            }
-        }
-
-        if (!isMoving && state != 1) return;
+        if (!isMoving || state != 1) return;
 
         pointLerp += (Time.deltaTime * speed) / 5;
         transform.localPosition = Vector3.Lerp(pointA, pointB, pointLerp);

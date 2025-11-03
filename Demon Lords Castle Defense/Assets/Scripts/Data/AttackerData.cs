@@ -61,7 +61,7 @@ public class AttackerData : MonoBehaviour
         }
 
         Attacker newAttacker = Instantiate(attackerBase, GameObject.Find("Attackers").transform).GetComponent<Attacker>();
-        newAttacker.InitializeAttacker(path, attackerData, Vector3.zero);
+        newAttacker.InitializeAttacker(path, attackerData, path[0]);
 
         UpdateExistingAttackers.Invoke();
 
