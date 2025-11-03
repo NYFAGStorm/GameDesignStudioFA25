@@ -23,11 +23,13 @@ public enum AttackForm
 
 public class AttackerData : MonoBehaviour
 {
+    private List<Vector3> path;
+    
     [HideInInspector]
     public UnityEvent UpdateExistingAttackers;
     public GameObject attackerBase;
     public UniqueAttackers types;
-    private List<Vector3> path;
+    public TileFloorManager tfm;
 
     public void UpdatePath(List<Vector3> newPath)
     {
@@ -41,6 +43,12 @@ public class AttackerData : MonoBehaviour
 
     public Attacker SummonAttacker(AttackerType type)
     {
+        if (!tfm.validPath)
+        {
+            Debug.LogWarning("No valid path generated!");
+            return null;
+        }
+
         UniqueAttacker attackerData = new UniqueAttacker();
 
         foreach (UniqueAttacker ua in types.attackers)

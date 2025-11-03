@@ -656,6 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f2c23132c21314ebf6283e019fd372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPath: 0
   tileObject: {fileID: 2239036883684472178, guid: fa72ce63887410a42859819245dd94ad, type: 3}
   gridSize: {x: 5, y: 4}
   unitSize: 4
@@ -696,6 +697,7 @@ MonoBehaviour:
       m_Calls: []
   attackerBase: {fileID: 8035822331219493298, guid: 29e1e8b29089a244a9ef9cfaa97bd8ce, type: 3}
   types: {fileID: 11400000, guid: f95d656a17601a9499f399803dce10de, type: 2}
+  tfm: {fileID: 610997367}
 --- !u!114 &610997370
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   tiles:
   - type: 0
     shape: 0
-    plateImage: {fileID: 21300000, guid: e17e765009725cf438883ccbdecdecd2, type: 3}
+    plateImage: {fileID: 21300000, guid: 5fb4dc88c11a1d548816dcefeaf2679c, type: 3}
     damagePerBeat: 2
     damageType: 0
     goonSlotPositions:
@@ -33,7 +33,7 @@ MonoBehaviour:
       free: 0
   - type: 1
     shape: 1
-    plateImage: {fileID: 21300000, guid: bf917f664e6c8154fbe0d6279a64d6a2, type: 3}
+    plateImage: {fileID: 21300000, guid: e27d5ee24160b354d8d2d9e9eae713cc, type: 3}
     damagePerBeat: 4
     damageType: 0
     goonSlotPositions:
@@ -51,7 +51,7 @@ MonoBehaviour:
       free: 0
   - type: 2
     shape: 1
-    plateImage: {fileID: 21300000, guid: 4093e9c0e9a7fa14283bc4c341825af0, type: 3}
+    plateImage: {fileID: 21300000, guid: e27d5ee24160b354d8d2d9e9eae713cc, type: 3}
     damagePerBeat: 2
     damageType: 1
     goonSlotPositions:
@@ -67,7 +67,7 @@ MonoBehaviour:
       free: 0
   - type: 3
     shape: 0
-    plateImage: {fileID: 21300000, guid: 7475e83f503ee054686a0790e109195d, type: 3}
+    plateImage: {fileID: 21300000, guid: 5fb4dc88c11a1d548816dcefeaf2679c, type: 3}
     damagePerBeat: 3
     damageType: 1
     goonSlotPositions:
@@ -83,7 +83,7 @@ MonoBehaviour:
       free: 0
   - type: 4
     shape: 1
-    plateImage: {fileID: 21300000, guid: a2e842e73e9ebc84abdb504ec3d2693e, type: 3}
+    plateImage: {fileID: 21300000, guid: e27d5ee24160b354d8d2d9e9eae713cc, type: 3}
     damagePerBeat: 5
     damageType: 3
     goonSlotPositions:
@@ -101,7 +101,7 @@ MonoBehaviour:
       free: 0
   - type: 5
     shape: 0
-    plateImage: {fileID: 21300000, guid: 97ba25ed7a344c04eae15b2e482976c5, type: 3}
+    plateImage: {fileID: 21300000, guid: 5fb4dc88c11a1d548816dcefeaf2679c, type: 3}
     damagePerBeat: 4
     damageType: 1
     goonSlotPositions:

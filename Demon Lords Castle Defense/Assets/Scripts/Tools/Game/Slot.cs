@@ -31,10 +31,10 @@ public class Slot : MonoBehaviour
 
     private void Awake()
     {
-        //replacePrompt = new PopupBlueprint()
-        //{
+        replacePrompt = new PopupBlueprint()
+        {
 
-        //};
+        };
     }
 
     public Placeable GetItem()

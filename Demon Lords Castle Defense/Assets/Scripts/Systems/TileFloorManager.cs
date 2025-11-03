@@ -20,6 +20,8 @@ public class TileFloorManager : MonoBehaviour
     private Vector2Int currentCompilePosition;
     private Vector2Int compileStartPosition;
 
+    [HideInInspector]
+    public bool validPath;
     public GameObject tileObject;
     public Vector2Int gridSize;
     public float unitSize;
@@ -91,7 +93,8 @@ public class TileFloorManager : MonoBehaviour
 
     public void DEBUGCompile()
     {
-        Debug.Log(CompilePath());
+        validPath = CompilePath();
+        Debug.Log(validPath);
     }
 
     public bool CompilePath()
