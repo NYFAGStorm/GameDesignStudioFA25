@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PopupManager : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public struct PopupButton
     public Sprite image;
     public Vector2 size;
     public Vector2 position;
-    //public 
+    public UnityAction action;
 }
 
 public struct PopupBlueprint
@@ -72,10 +73,14 @@ public struct PopupBlueprint
 
 public static class PopupBuilder
 {
+    public static UnityEvent DestroyOtherPopups = new UnityEvent();
+
     public static Popup CreatePopup(PopupBlueprint blueprint)
     {
         Popup newPopup = Object.Instantiate(Object.FindFirstObjectByType<PopupManager>().popupBase, blueprint.target).GetComponent<Popup>();
         newPopup.BuildPopup(blueprint);
+
+        DestroyOtherPopups.Invoke();
 
         return newPopup;
     }

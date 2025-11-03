@@ -132,6 +132,7 @@ public class Goon : Placeable
 
     private void SingleAttack()
     {
+        target.Engage(this);
         Debug.Log("damaged hero for " + damage);
         if (!target.DealDamage(damage))
         {

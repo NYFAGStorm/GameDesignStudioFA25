@@ -47,7 +47,6 @@ public class Attacker : MonoBehaviour
     private float maxHealth = 1;
     private int soulReward = 1;
     private bool isMoving = false;
-    private List<Goon> activeGoons;
     private Goon target = null;
     private AttackForm attackForm;
     private AttackerData attackerData;
@@ -72,10 +71,6 @@ public class Attacker : MonoBehaviour
 
         attackerData = FindFirstObjectByType<AttackerData>();
 
-        //FindFirstObjectByType<GoonData>().ExistingGoonsUpdated.AddListener(UpdateGoons);
-
-        //UpdateGoons();
-
         NextPathPoint();
         isMoving = true;
         state = 1;
@@ -83,9 +78,11 @@ public class Attacker : MonoBehaviour
 
     public void Engage(Goon combatant)
     {
+        if (state == 2) return;
+
         target = combatant;
         state = 2;
-        Rhythm.beats[(int)attackOnBeat].RemoveListener(SingleAttack);
+        Rhythm.beats[(int)attackOnBeat].AddListener(SingleAttack);
     }
 
     public float PathProgress()

@@ -19,7 +19,10 @@ public class Popup : MonoBehaviour
     {
         header.text = blueprint.header;
         canvas.GetComponent<RectTransform>().sizeDelta = blueprint.size;
-        
+
+        PopupBuilder.DestroyOtherPopups.AddListener(Delete);
+
+
         foreach (PopupLabel label in blueprint.labels)
         {
             RectTransform newLabel = Instantiate(labelBase, canvas).GetComponent<RectTransform>();
@@ -40,6 +43,7 @@ public class Popup : MonoBehaviour
                 TMP_Text label = newButton.transform.GetChild(0).GetComponent<TMP_Text>();
                 label.text = button.text;
                 label.fontSize = button.textScale;
+                newButton.GetComponent<Button>().onClick.AddListener(button.action);
 
                 if (button.image) newButton.GetComponent<Image>().sprite = button.image;
             }
