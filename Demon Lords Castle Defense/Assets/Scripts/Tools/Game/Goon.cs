@@ -8,7 +8,7 @@ public class Goon : Placeable
     // Manages a goon that can attack heroes and be upgraded
 
     private GoonType type;
-    private int damage;
+    private float damage;
     private AttackForm attackType;
     private OnBeat attackRate;
     private List<Attacker> activeAttackers = new List<Attacker>();
@@ -145,7 +145,7 @@ public class Goon : Placeable
         }
     }
 
-    public void DealDamage(int damage)
+    public bool DealDamage(float damage)
     {
         health = Mathf.Max(0, health - damage);
         
@@ -154,6 +154,8 @@ public class Goon : Placeable
             container.RemoveItem(false);
             Destroy(gameObject);
         }
+
+        return health > 0;
     }
 
     // Written rules (Esther)

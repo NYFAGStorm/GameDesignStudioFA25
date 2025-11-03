@@ -96,7 +96,7 @@ public class Attacker : MonoBehaviour
     }
 
     // Returns whether the enemy is still alive after taking the damage
-    public bool DealDamage(int damage)
+    public bool DealDamage(float damage)
     {
         health = Mathf.Max(0, health - damage);
 
@@ -116,25 +116,21 @@ public class Attacker : MonoBehaviour
     private void SingleAttack()
     {
         Debug.Log("Damaged goon for " + attackDamage + " damage");
-
+        if (!target.DealDamage(attackDamage))
+        {
+            Rhythm.beats[0].RemoveListener(SingleAttack);
+            target = null;
+            state = 1;
+            isMoving = true;
+        }
     }
 
     private void Update()
     {
-        if (!isMoving) return;
-
-        pointLerp += (Time.deltaTime * speed) / 5;
-        transform.localPosition = Vector3.Lerp(pointA, pointB, pointLerp);
-
-        if (pointLerp > 1)
-        {
-            NextPathPoint();
-        }
-
         if (state == 1 && activeGoons.Count > 0)
         {
-            Attacker closestAttacker = null;
-            float closestAttackerDistance = attackRange;
+            Goon closestGoon = null;
+            float closestGoonDistance = attackRange;
 
             List<Goon> bakedActiveGoons = new List<Goon>(activeGoons);
 
@@ -146,21 +142,32 @@ public class Attacker : MonoBehaviour
                     continue;
                 }
 
-                float dist = Vector3.Distance(transform.position, attacker.transform.position);
-                if (dist < attackRange && dist < closestAttackerDistance)
+                float dist = Vector3.Distance(transform.position, goon.transform.position);
+                if (dist < attackRange && dist < closestGoonDistance)
                 {
-                    closestAttackerDistance = dist;
-                    closestAttacker = attacker;
+                    closestGoonDistance = dist;
+                    closestGoon = goon;
                 }
             }
 
-            target = closestAttacker;
+            target = closestGoon;
 
             if (target)
             {
+                isMoving = false;
                 state = 2;
                 Rhythm.beats[0].AddListener(SingleAttack);
             }
+        }
+
+        if (!isMoving && state != 1) return;
+
+        pointLerp += (Time.deltaTime * speed) / 5;
+        transform.localPosition = Vector3.Lerp(pointA, pointB, pointLerp);
+
+        if (pointLerp > 1)
+        {
+            NextPathPoint();
         }
     }
 }
