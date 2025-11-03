@@ -160,13 +160,18 @@ public class TileFloorManager : MonoBehaviour
             }
         }
 
-        compiledPath.Add(heroExit);
+        if (horizontalEntrance ? lastCompileDirection == 1 : lastCompileDirection == 2)
+        {
+            compiledPath.Add(heroExit);
 
-        attackerData.UpdatePath(compiledPath);
+            attackerData.UpdatePath(compiledPath);
 
-        Debug.Log(compiledPath.Count);
-
-        return false;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void LockFloor(bool setLocked)
