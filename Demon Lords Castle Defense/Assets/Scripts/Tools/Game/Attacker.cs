@@ -51,6 +51,7 @@ public class Attacker : MonoBehaviour
     private Goon target = null;
     private float attackRange = 1;
     private AttackerData attackerData;
+    private int state;
 
     public SpriteRenderer appearance;
 
@@ -93,7 +94,6 @@ public class Attacker : MonoBehaviour
         pointB = path[currentPathPos];
         pointLerp = 0;
     }
-    
 
     // Returns whether the enemy is still alive after taking the damage
     public bool DealDamage(int damage)
@@ -113,6 +113,12 @@ public class Attacker : MonoBehaviour
         return health > 0;
     }
 
+    private void SingleAttack()
+    {
+        Debug.Log("Damaged goon for " + attackDamage + " damage");
+
+    }
+
     private void Update()
     {
         if (!isMoving) return;
@@ -123,6 +129,38 @@ public class Attacker : MonoBehaviour
         if (pointLerp > 1)
         {
             NextPathPoint();
+        }
+
+        if (state == 1 && activeGoons.Count > 0)
+        {
+            Attacker closestAttacker = null;
+            float closestAttackerDistance = attackRange;
+
+            List<Goon> bakedActiveGoons = new List<Goon>(activeGoons);
+
+            foreach (Goon goon in bakedActiveGoons)
+            {
+                if (!goon)
+                {
+                    activeGoons.Remove(goon);
+                    continue;
+                }
+
+                float dist = Vector3.Distance(transform.position, attacker.transform.position);
+                if (dist < attackRange && dist < closestAttackerDistance)
+                {
+                    closestAttackerDistance = dist;
+                    closestAttacker = attacker;
+                }
+            }
+
+            target = closestAttacker;
+
+            if (target)
+            {
+                state = 2;
+                Rhythm.beats[0].AddListener(SingleAttack);
+            }
         }
     }
 }
