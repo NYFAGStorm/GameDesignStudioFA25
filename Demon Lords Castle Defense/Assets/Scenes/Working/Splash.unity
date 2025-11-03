@@ -311,6 +311,16 @@ MonoBehaviour:
     pitchVariance: 0
     volume: 0
     volumeVariance: 0
+  - name: SFX_Bat 1
+    clip: {fileID: 8300000, guid: ecae2c3aa19c44175a2ccf471a76d300, type: 3}
+    type: 3
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
   musicCrossFadeTime: 2
 --- !u!1 &435026381
 GameObject:
