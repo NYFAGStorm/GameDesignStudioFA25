@@ -63,6 +63,8 @@ public class Goon : Placeable
         };
 
         FindFirstObjectByType<AttackerData>().UpdateExistingAttackers.AddListener(UpdateAttackers);
+
+        UpdateAttackers();
     }
 
     protected override void OnMouseDown()
@@ -153,7 +155,8 @@ public class Goon : Placeable
     public bool DealDamage(float damage)
     {
         health = Mathf.Max(0, health - damage);
-        
+
+        Debug.Log("goon health: " + health);
         if (health == 0)
         {
             container.RemoveItem(false);

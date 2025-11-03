@@ -74,8 +74,11 @@ public class Attacker : MonoBehaviour
 
         FindFirstObjectByType<GoonData>().ExistingGoonsUpdated.AddListener(UpdateGoons);
 
+        UpdateGoons();
+
         NextPathPoint();
         isMoving = true;
+        state = 1;
     }
 
     private void UpdateGoons()
@@ -96,7 +99,7 @@ public class Attacker : MonoBehaviour
     {
         currentPathPos++;
 
-        if (currentPathPos == path.Count)
+        if (currentPathPos == path.Count - 1)
         {
             FindFirstObjectByType<DemonGameManager>().EnemyReachedEnd();
             isMoving = false;
@@ -117,7 +120,7 @@ public class Attacker : MonoBehaviour
     {
         health = Mathf.Max(0, health - damage);
 
-        Debug.Log(health);
+        Debug.Log("hero health: " + health);
         if (health == 0)
         {
             CurrencyManager.AwardSouls(soulReward);
@@ -177,7 +180,7 @@ public class Attacker : MonoBehaviour
             }
         }
 
-        if (!isMoving && state != 1) return;
+        if (!isMoving || state != 1) return;
 
         pointLerp += (Time.deltaTime * speed) / 5;
         transform.localPosition = Vector3.Lerp(pointA, pointB, pointLerp);
