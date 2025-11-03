@@ -109,7 +109,7 @@ public class TileFloorManager : MonoBehaviour
 
         int currentPathNode = 1;
         bool validNextTile = true;
-        bool[] lastSides = null;
+        bool[] lastSides = { false, false, false, false };
 
         while (validNextTile)
         {
@@ -173,6 +173,7 @@ public class TileFloorManager : MonoBehaviour
         if ((horizontalEntrance ? lastSides[1] : lastSides[2]) && compiledPath[compiledPath.Count - 1] == exitSlotPosition)
         {
             compiledPath.Add(heroExit);
+            compiledPath.RemoveAt(1);
 
             attackerData.UpdatePath(compiledPath);
 
