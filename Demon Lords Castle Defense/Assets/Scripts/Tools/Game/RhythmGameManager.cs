@@ -1,5 +1,10 @@
 using UnityEngine;
 
+public enum RhythmGameType
+{
+    Boost,
+    DanceOff
+}
 public class RhythmGameManager : MonoBehaviour
 {
     // Author: Esther Li (YT)
@@ -8,7 +13,9 @@ public class RhythmGameManager : MonoBehaviour
     // [need to change to private once debug done]
     public int totalScore;
 
-    public GameObject[] note;
+    private GameObject[] note;
+
+    public RhythmGameType gameType;
 
     private void Update()
     {

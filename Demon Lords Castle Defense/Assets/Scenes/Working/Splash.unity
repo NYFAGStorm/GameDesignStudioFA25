@@ -271,8 +271,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - name: MX_BoomBoomFunk_noVOX
+    clip: {fileID: 8300000, guid: 7cbcaa2adc4c748ab8b5d1c70e5ee8e4, type: 3}
+    type: 3
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
   - name: SFX_UI_Click 1
     clip: {fileID: 8300000, guid: 4aa5c5b6a3abf41eeb5e400a0ed78d4e, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_UI_Click 2
+    clip: {fileID: 8300000, guid: 7921ad3e710bb4ac69a93815b795c82a, type: 3}
     type: 0
     delay: 0
     maxDelay: 0
@@ -301,9 +321,9 @@ MonoBehaviour:
     pitchVariance: 0
     volume: 0
     volumeVariance: 0
-  - name: MX_BoomBoomFunk_noVOX
-    clip: {fileID: 8300000, guid: 7cbcaa2adc4c748ab8b5d1c70e5ee8e4, type: 3}
-    type: 3
+  - name: SFX_Bat 1
+    clip: {fileID: 8300000, guid: ecae2c3aa19c44175a2ccf471a76d300, type: 3}
+    type: 0
     delay: 0
     maxDelay: 0
     spaceBlend: 0
@@ -311,9 +331,209 @@ MonoBehaviour:
     pitchVariance: 0
     volume: 0
     volumeVariance: 0
-  - name: SFX_Bat 1
-    clip: {fileID: 8300000, guid: ecae2c3aa19c44175a2ccf471a76d300, type: 3}
-    type: 3
+  - name: SFX_Goblin 1
+    clip: {fileID: 8300000, guid: f7e3924eb2f4341228ba350d5a19235d, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Hellhound 1
+    clip: {fileID: 8300000, guid: 8fe45b6f7ed5a40a2b0416294f50a78a, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Imp 1
+    clip: {fileID: 8300000, guid: 4920fa9d3a6fc4d458d2de9832d84d6b, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Slimmer 1
+    clip: {fileID: 8300000, guid: daa6be9c854bb4ce38350519b51b53c5, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Bat_death 1
+    clip: {fileID: 8300000, guid: 50d625b063b014175b999b72844698a4, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Goblin_death 1
+    clip: {fileID: 8300000, guid: 1e746a89e46414c788e4e3c451a1219d, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Hellhound_death 1
+    clip: {fileID: 8300000, guid: 9424a2c6f29404fe5a5e70e5bf28782b, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Imp_death 1
+    clip: {fileID: 8300000, guid: e48057b37207941adb505d7b3c45f3c7, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Slimmer_death 1
+    clip: {fileID: 8300000, guid: 5a72ed0b7ed594b21a1db01da8188b65, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Archer_death 3
+    clip: {fileID: 8300000, guid: 500fa29e70b844281bcd2b01c5361ac3, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Assassin_death 1
+    clip: {fileID: 8300000, guid: aff5b62d30f1e4b0dbbb6308aa21107d, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Hunter_death 1
+    clip: {fileID: 8300000, guid: 606aecbe390264a94baf2b50c7beb1cc, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Knight_death 2
+    clip: {fileID: 8300000, guid: 9b2a2ca738e7e4e448e6092d29914673, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Priest_death 1
+    clip: {fileID: 8300000, guid: 1c2949e2a341e4671b123432dceace51, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Sniper_death 1
+    clip: {fileID: 8300000, guid: 5e2d877b1a5be4865bfc11b8620b819a, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Arrow 1
+    clip: {fileID: 8300000, guid: c4c52e9ba83824b758a970f06e85f972, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Gunshot 1
+    clip: {fileID: 8300000, guid: ce03519f6c62443c8bd5b3051b684f50, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Spellcast 1
+    clip: {fileID: 8300000, guid: 1156e4b86c7d844faa6b007715cb1e4c, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Sword_Metal Impact 1
+    clip: {fileID: 8300000, guid: f9120451cf4d943e7996a7c6a405d805, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Sword_Metal Impact 2
+    clip: {fileID: 8300000, guid: 374d4902bd58b474b84877f5256616ec, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: SFX_Sword_Shing 1
+    clip: {fileID: 8300000, guid: 37a5640f1f0ba40cb81c82ba87d7603b, type: 3}
+    type: 0
     delay: 0
     maxDelay: 0
     spaceBlend: 0
