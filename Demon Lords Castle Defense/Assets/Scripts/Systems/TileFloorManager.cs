@@ -15,6 +15,7 @@ public class TileFloorManager : MonoBehaviour
     private List<Vector3> compiledPath;
     private Vector3 heroEntrance;
     private Vector3 heroExit;
+    private Vector3 exitSlotPosition;
     private Slot entranceSlot;
     private Vector2Int currentCompilePosition;
     private Vector2Int compileStartPosition;
@@ -69,6 +70,7 @@ public class TileFloorManager : MonoBehaviour
                 {
                     if (horizontalEntrance ? (y == exit) : (x == exit))
                     {
+                        exitSlotPosition = tilePosition;
                         heroExit = tilePosition + (horizontalEntrance ? new Vector3(unitSize, 0, 0) : new Vector3(0, 0, unitSize));
 
                         GameObject marker = Instantiate(pathMarker, transform, false);
@@ -107,6 +109,7 @@ public class TileFloorManager : MonoBehaviour
 
         int currentPathNode = 1;
         bool validNextTile = true;
+        bool[] lastSides = null;
 
         while (validNextTile)
         {
@@ -160,13 +163,14 @@ public class TileFloorManager : MonoBehaviour
                 currentCompilePosition = nextPosition;
                 currentPathNode++;
                 lastCompileDirection = relativeD;
+                lastSides = nextTile.GetSides();
 
                 validNextTile = true;
                 break;
             }
         }
 
-        if (horizontalEntrance ? lastCompileDirection == 1 : lastCompileDirection == 2)
+        if ((horizontalEntrance ? lastSides[1] : lastSides[2]) && compiledPath[compiledPath.Count - 1] == exitSlotPosition)
         {
             compiledPath.Add(heroExit);
 
