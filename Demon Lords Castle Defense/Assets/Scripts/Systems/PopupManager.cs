@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PopupManager : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public struct PopupButton
     public Sprite image;
     public Vector2 size;
     public Vector2 position;
-    //public 
+    public UnityAction action;
 }
 
 public struct PopupBlueprint
