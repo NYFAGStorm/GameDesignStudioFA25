@@ -27,6 +27,15 @@ public class Slot : MonoBehaviour
     public SlotType slotType = 0;
     public Vector3 offset;
     public float maximumDistance = 1;
+    public PopupBlueprint replacePrompt;
+
+    private void Awake()
+    {
+        replacePrompt = new PopupBlueprint()
+        {
+
+        };
+    }
 
     public Placeable GetItem()
     {
@@ -44,7 +53,7 @@ public class Slot : MonoBehaviour
 
         if (item)
         {
-            // prompt replacement
+            PopupBuilder.CreatePopup();
             return false;
         }
         else

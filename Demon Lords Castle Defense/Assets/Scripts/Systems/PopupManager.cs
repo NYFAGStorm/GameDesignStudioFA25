@@ -57,6 +57,7 @@ public struct PopupButton
     public Sprite image;
     public Vector2 size;
     public Vector2 position;
+    //public 
 }
 
 public struct PopupBlueprint
