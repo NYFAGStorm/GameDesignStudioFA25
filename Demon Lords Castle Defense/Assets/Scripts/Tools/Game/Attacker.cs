@@ -67,13 +67,24 @@ public class Attacker : MonoBehaviour
         soulReward = data.soulReward;
         speed = data.travelSpeed;
         appearance.sprite = data.attackerImage;
-        attackRange = data.attackRange;
+        attackRange = data.attackRange * 2;
         attackOnBeat = data.attackRate;
 
         attackerData = FindFirstObjectByType<AttackerData>();
 
+        FindFirstObjectByType<GoonData>().ExistingGoonsUpdated.AddListener(UpdateGoons);
+
         NextPathPoint();
         isMoving = true;
+    }
+
+    private void UpdateGoons()
+    {
+        activeGoons = new List<Goon>(FindObjectsByType<Goon>(FindObjectsSortMode.InstanceID));
+        if (!target)
+        {
+            Rhythm.beats[(int)attackOnBeat].RemoveListener(SingleAttack);
+        }
     }
 
     public float PathProgress()
@@ -87,8 +98,12 @@ public class Attacker : MonoBehaviour
 
         if (currentPathPos == path.Count)
         {
-            // reached the end
+            FindFirstObjectByType<DemonGameManager>().EnemyReachedEnd();
             isMoving = false;
+
+            Destroy(gameObject);
+            attackerData.UpdateExistingAttackers.Invoke();
+
             return;
         }
         

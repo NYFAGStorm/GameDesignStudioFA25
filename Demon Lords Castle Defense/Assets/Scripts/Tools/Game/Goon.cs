@@ -19,6 +19,7 @@ public class Goon : Placeable
     private int state = 0;
     private PopupBlueprint statDisplayBP;
     private Popup statDisplay = null;
+    private GoonData goonData;
 
     public SpriteRenderer image;
 
@@ -32,6 +33,8 @@ public class Goon : Placeable
         attackRate = data.attackRate;
         attackRange = data.attackRange * 2;
         image.sprite = data.goonImage;
+
+        goonData = FindFirstObjectByType<GoonData>();
 
         statDisplayBP = new PopupBlueprint()
         {
@@ -141,7 +144,7 @@ public class Goon : Placeable
     private void UpdateAttackers()
     {
         activeAttackers = new List<Attacker>(FindObjectsByType<Attacker>(FindObjectsSortMode.InstanceID));
-        if (target)
+        if (!target)
         {
             Rhythm.beats[(int)attackRate].RemoveListener(SingleAttack);
         }
@@ -155,6 +158,8 @@ public class Goon : Placeable
         {
             container.RemoveItem(false);
             Destroy(gameObject);
+
+            goonData.ExistingGoonsUpdated.Invoke();
         }
 
         return health > 0;

@@ -2,17 +2,10 @@ using UnityEngine;
 
 public class DemonGameManager : MonoBehaviour
 {
-    //
-    // This handles top-level mechanics of the main game loop
+    float demonHealth = 100;
 
-    void Start()
+    public void EnemyReachedEnd()
     {
-        
-    }
 
-
-    void Update()
-    {
-        
     }
 }
