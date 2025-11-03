@@ -16,7 +16,6 @@ public class TileFloorManager : MonoBehaviour
     private Vector3 heroEntrance;
     private Vector3 heroExit;
     private Slot entranceSlot;
-    private Slot exitSlot;
     private Vector2Int currentCompilePosition;
     private Vector2Int compileStartPosition;
 
@@ -59,6 +58,7 @@ public class TileFloorManager : MonoBehaviour
 
                         GameObject marker = Instantiate(pathMarker, transform, false);
                         marker.transform.localPosition = heroEntrance;
+                        marker.transform.localRotation = horizontalEntrance ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 180, 0);
 
                         compileStartPosition = new Vector2Int(x, y);
                         entranceSlot = newSlot.GetComponent<Slot>();
@@ -73,8 +73,7 @@ public class TileFloorManager : MonoBehaviour
 
                         GameObject marker = Instantiate(pathMarker, transform, false);
                         marker.transform.localPosition = heroExit;
-
-                        exitSlot = newSlot.GetComponent<Slot>();
+                        marker.transform.localRotation = horizontalEntrance ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 180, 0);
                     }
                 }
 
