@@ -30,7 +30,7 @@ public class Goon : Placeable
         damage = data.damage;
         attackType = data.attackType;
         attackRate = data.attackRate;
-        attackRange = data.attackRange;
+        attackRange = data.attackRange * 2;
         image.sprite = data.goonImage;
 
         statDisplayBP = new PopupBlueprint()
@@ -120,7 +120,7 @@ public class Goon : Placeable
             if (target)
             {
                 state = 2;
-                Rhythm.beats[0].AddListener(SingleAttack);
+                Rhythm.beats[(int)attackRate].AddListener(SingleAttack);
             }
         }
     }
@@ -130,7 +130,9 @@ public class Goon : Placeable
         Debug.Log("damaged hero for " + damage);
         if (!target.DealDamage(damage))
         {
-            Rhythm.beats[0].RemoveListener(SingleAttack);
+            UpdateAttackers();
+
+            Rhythm.beats[(int)attackRate].RemoveListener(SingleAttack);
             target = null;
             state = 1;
         }
@@ -141,7 +143,7 @@ public class Goon : Placeable
         activeAttackers = new List<Attacker>(FindObjectsByType<Attacker>(FindObjectsSortMode.InstanceID));
         if (target)
         {
-            Rhythm.beats[0].RemoveListener(SingleAttack);
+            Rhythm.beats[(int)attackRate].RemoveListener(SingleAttack);
         }
     }
 
