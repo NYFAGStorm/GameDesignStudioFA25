@@ -83,9 +83,11 @@ public class Attacker : MonoBehaviour
 
     public void Engage(Goon combatant)
     {
+        if (state == 2) return;
+
         target = combatant;
         state = 2;
-        Rhythm.beats[(int)attackOnBeat].RemoveListener(SingleAttack);
+        Rhythm.beats[(int)attackOnBeat].AddListener(SingleAttack);
     }
 
     public float PathProgress()
