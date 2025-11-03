@@ -664,6 +664,7 @@ MonoBehaviour:
   debugEnemy: {fileID: 8035822331219493298, guid: 29e1e8b29089a244a9ef9cfaa97bd8ce, type: 3}
   attackerData: {fileID: 610997369}
   horizontalEntrance: 1
+  pathMarker: {fileID: 0}
 --- !u!114 &610997368
 MonoBehaviour:
   m_ObjectHideFlags: 0

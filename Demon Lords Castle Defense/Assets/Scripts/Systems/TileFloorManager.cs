@@ -28,6 +28,7 @@ public class TileFloorManager : MonoBehaviour
     public GameObject debugEnemy;
     public AttackerData attackerData;
     public bool horizontalEntrance = true;
+    public GameObject pathMarker;
 
     private void Awake()
     {
@@ -55,7 +56,10 @@ public class TileFloorManager : MonoBehaviour
                     if (horizontalEntrance ? (y == entrance) : (x == entrance))
                     {
                         heroEntrance = tilePosition + (horizontalEntrance ? new Vector3(-unitSize, 0, 0) : new Vector3(0, 0, -unitSize));
-                        
+
+                        GameObject marker = Instantiate(pathMarker, transform, false);
+                        marker.transform.localPosition = heroEntrance;
+
                         compileStartPosition = new Vector2Int(x, y);
                         entranceSlot = newSlot.GetComponent<Slot>();
                     }
@@ -66,6 +70,9 @@ public class TileFloorManager : MonoBehaviour
                     if (horizontalEntrance ? (y == exit) : (x == exit))
                     {
                         heroExit = tilePosition + (horizontalEntrance ? new Vector3(unitSize, 0, 0) : new Vector3(0, 0, unitSize));
+
+                        GameObject marker = Instantiate(pathMarker, transform, false);
+                        marker.transform.localPosition = heroExit;
 
                         exitSlot = newSlot.GetComponent<Slot>();
                     }
