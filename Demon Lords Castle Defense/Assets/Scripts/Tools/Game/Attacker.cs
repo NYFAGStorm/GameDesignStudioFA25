@@ -51,6 +51,7 @@ public class Attacker : MonoBehaviour
     private Goon target = null;
     private float attackRange = 1;
     private AttackerData attackerData;
+    private OnBeat attackOnBeat;
     private int state;
 
     public SpriteRenderer appearance;
@@ -67,6 +68,7 @@ public class Attacker : MonoBehaviour
         speed = data.travelSpeed;
         appearance.sprite = data.attackerImage;
         attackRange = data.attackRange;
+        attackOnBeat = data.attackRate;
 
         attackerData = FindFirstObjectByType<AttackerData>();
 
@@ -156,7 +158,7 @@ public class Attacker : MonoBehaviour
             {
                 isMoving = false;
                 state = 2;
-                Rhythm.beats[0].AddListener(SingleAttack);
+                Rhythm.beats[(int)attackOnBeat].AddListener(SingleAttack);
             }
         }
 

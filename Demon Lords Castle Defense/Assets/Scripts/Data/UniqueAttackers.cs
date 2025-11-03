@@ -12,6 +12,7 @@ public struct UniqueAttacker
     public int soulReward;
     public float travelSpeed;
     public float attackRange;
+    public OnBeat attackRate;
 }
 
 [CreateAssetMenu(fileName = "AttackerTypes", menuName = "DemonDefense/AttackerTypes", order = 2)]
