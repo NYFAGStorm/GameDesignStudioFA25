@@ -49,7 +49,14 @@ public class TileFloorManager : MonoBehaviour
                 newSlot.transform.localPosition = tilePosition;
                 newSlot.transform.rotation = Quaternion.identity;
 
-                if (x == 0 && y == 0)
+                if (horizontalEntrance)
+                {
+                    if (y == entrance)
+                    {
+                        heroEntrance = tilePosition - new Vector3(0, 0, unitSize);
+                    }
+                }
+                if (horizontalEntrance ? (x == 0 && y == 0) : (false))
                 {
                     heroEntrance = tilePosition - new Vector3(0, 0, unitSize);
                     entranceSlot = newSlot.GetComponent<Slot>();
