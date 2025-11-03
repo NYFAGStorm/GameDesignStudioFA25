@@ -16,6 +16,7 @@ public class TileFloorManager : MonoBehaviour
     private Vector3 heroEntrance;
     private Vector3 heroExit;
     private Slot entranceSlot;
+    private Slot exitSlot;
     private Vector2Int currentCompilePosition;
     private Vector2Int compileStartPosition;
 
@@ -49,23 +50,25 @@ public class TileFloorManager : MonoBehaviour
                 newSlot.transform.localPosition = tilePosition;
                 newSlot.transform.rotation = Quaternion.identity;
 
-                if (horizontalEntrance)
+                if (horizontalEntrance ? (x == 0) : (y == 0))
                 {
-                    if (y == entrance)
+                    if (horizontalEntrance ? (y == entrance) : (x == entrance))
                     {
-                        heroEntrance = tilePosition - new Vector3(0, 0, unitSize);
+                        heroEntrance = tilePosition + (horizontalEntrance ? new Vector3(-unitSize, 0, 0) : new Vector3(0, 0, -unitSize));
+                        
+                        compileStartPosition = new Vector2Int(x, y);
+                        entranceSlot = newSlot.GetComponent<Slot>();
                     }
                 }
-                if (horizontalEntrance ? (x == 0 && y == 0) : (false))
-                {
-                    heroEntrance = tilePosition - new Vector3(0, 0, unitSize);
-                    entranceSlot = newSlot.GetComponent<Slot>();
-                    compileStartPosition = new Vector2Int(x, y);
-                }
 
-                if (x == gridSize.x - 1 && y == gridSize.y - 1)
+                if (horizontalEntrance ? (x == gridSize.x - 1) : (y == gridSize.y - 1))
                 {
-                    heroExit = tilePosition;
+                    if (horizontalEntrance ? (y == exit) : (x == exit))
+                    {
+                        heroExit = tilePosition + (horizontalEntrance ? new Vector3(unitSize, 0, 0) : new Vector3(0, 0, unitSize));
+
+                        exitSlot = newSlot.GetComponent<Slot>();
+                    }
                 }
 
                 tileSlots[x + y * gridSize.x] = newSlot.GetComponent<Slot>();
@@ -156,6 +159,8 @@ public class TileFloorManager : MonoBehaviour
                 break;
             }
         }
+
+        compiledPath.Add(heroExit);
 
         attackerData.UpdatePath(compiledPath);
 
