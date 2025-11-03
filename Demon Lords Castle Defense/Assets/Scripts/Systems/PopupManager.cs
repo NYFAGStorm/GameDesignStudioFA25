@@ -73,10 +73,14 @@ public struct PopupBlueprint
 
 public static class PopupBuilder
 {
+    public static UnityEvent DestroyOtherPopups = new UnityEvent();
+
     public static Popup CreatePopup(PopupBlueprint blueprint)
     {
         Popup newPopup = Object.Instantiate(Object.FindFirstObjectByType<PopupManager>().popupBase, blueprint.target).GetComponent<Popup>();
         newPopup.BuildPopup(blueprint);
+
+        DestroyOtherPopups.Invoke();
 
         return newPopup;
     }
