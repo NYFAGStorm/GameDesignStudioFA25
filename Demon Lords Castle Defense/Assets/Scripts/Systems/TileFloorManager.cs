@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using Random = UnityEngine.Random;
 
 public class TileFloorManager : MonoBehaviour
 {
@@ -25,11 +26,15 @@ public class TileFloorManager : MonoBehaviour
     public Transform floor;
     public GameObject debugEnemy;
     public AttackerData attackerData;
+    public bool horizontalEntrance = true;
 
     private void Awake()
     {
         tileSlots = new Slot[gridSize.x * gridSize.y];
         floor.localScale = new Vector3(gridSize.x * unitSize, gridSize.y * unitSize, 1);
+
+        int entrance = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
+        int exit = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
 
         for (int y = 0; y < gridSize.y; y++)
         {
