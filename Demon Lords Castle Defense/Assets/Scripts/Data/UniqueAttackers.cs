@@ -11,7 +11,6 @@ public struct UniqueAttacker
     public int maxHealth;
     public int soulReward;
     public float travelSpeed;
-    public float attackRange;
     public OnBeat attackRate;
 }
 
