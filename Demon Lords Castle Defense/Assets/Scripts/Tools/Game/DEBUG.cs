@@ -1,0 +1,15 @@
+using UnityEngine;
+
+public class DEBUG : MonoBehaviour
+{
+    public InventoryScript inventoryScript;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            inventoryScript.AddToInventory(this.gameObject.name, this.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite);
+            inventoryScript.RefreshUI();
+            //Destroy(gameObject);
+        }
+    }
+}
