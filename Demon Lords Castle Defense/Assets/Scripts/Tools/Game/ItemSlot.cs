@@ -27,8 +27,16 @@ public class ItemSlot : MonoBehaviour
         }
     }
 
-    /*protected virtual void OnValidate()
+    public Placeable placeableScript;
+
+    private void Awake()
     {
-        if (image == null) image = GetComponent<Image>();
-    }*/
+        placeableScript = gameObject.GetComponent<Placeable>();
+    }
+
+    private void Update()
+    {
+        //if (placeableScript.)
+    }
+
 }// end of class
