@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    // Author: Gustavo Rojas Flores
+    // Manages the shop
 
-    // Update is called once per frame
-    void Update()
+    public GameObject shopContainer;
+    public GameObject shopClosed;
+
+    private bool shopOpen = false;
+
+    public void ToggleShop()
     {
-        
+        shopOpen = !shopOpen;
+
+        shopContainer.SetActive(shopOpen);
+        shopClosed.SetActive(!shopOpen);
     }
 }
