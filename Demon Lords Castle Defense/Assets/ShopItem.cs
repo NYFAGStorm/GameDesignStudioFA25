@@ -11,7 +11,7 @@ public class ShopItem : MonoBehaviour
 
     public TMP_Text costDisplay;
     public TMP_Text nameDisplay;
-    public SpriteRenderer icon;
+    public Image icon;
 
     public void InitializeShopItem(UniqueShopItem itemData)
     {
