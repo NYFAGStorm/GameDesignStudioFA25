@@ -1,20 +1,34 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Purchasing;
 using UnityEngine.UI;
 
 public class ShopItem : MonoBehaviour
 {
-    private int cost;
-    private string name;
+    private int price;
+    private string itemName;
     private Sprite image;
 
-    public void InitializeShopItem()
+    public TMP_Text costDisplay;
+    public TMP_Text nameDisplay;
+    public SpriteRenderer icon;
+
+    public void InitializeShopItem(UniqueShopItem itemData)
     {
+        price = itemData.price;
+        itemName = itemData.name;
+        image = itemData.image;
+
+        costDisplay.text = "$" + price;
+        nameDisplay.text = itemName;
+        icon.sprite = image;
+
         GetComponent<Button>().onClick.AddListener(BuyItem);
     }
 
     private void BuyItem()
     {
-        if (CurrencyManager.SpendSouls(cost))
+        if (CurrencyManager.SpendSouls(price))
         {
             FindFirstObjectByType<InventoryScript>().AddToInventory(name, image);
         }
