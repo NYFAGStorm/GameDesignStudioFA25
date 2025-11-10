@@ -36,9 +36,25 @@ public class InventoryScript : MonoBehaviour
         Debug.Log(items.Count);
     }
 
-    public void RemoveFromInventory(InventoryItem itemToRemove) 
+    public InventoryItem FindTHEItem (string name)
     {
-        items.Remove(itemToRemove);
+        InventoryItem itemToFind = null;
+
+        for (int i = 0; i < items.Count; i ++) 
+        {
+            if (items[i].itemName == name)
+            {
+                itemToFind = items[i];
+                break;
+            }            
+        }
+
+        return itemToFind;
+    }
+
+    public void RemoveFromInventory(string name) 
+    {
+        items.Remove(FindTHEItem(name));
         Debug.Log(items.Count);
     }
 }// end of class

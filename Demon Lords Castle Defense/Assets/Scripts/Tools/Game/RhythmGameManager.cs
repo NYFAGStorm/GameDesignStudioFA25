@@ -5,6 +5,7 @@ public enum RhythmGameType
     Boost,
     DanceOff
 }
+
 public class RhythmGameManager : MonoBehaviour
 {
     // Author: Esther Li (YT)

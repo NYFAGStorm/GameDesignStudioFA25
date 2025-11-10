@@ -11,5 +11,11 @@ public class DEBUG : MonoBehaviour
             inventoryScript.RefreshUI();
             //Destroy(gameObject);
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            inventoryScript.RemoveFromInventory(this.gameObject.name);
+            inventoryScript.RefreshUI();
+        }
     }
 }
