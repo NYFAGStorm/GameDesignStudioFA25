@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
@@ -29,9 +30,33 @@ public class InventoryScript : MonoBehaviour
         for (; i < itemSlots.Length; i++) itemSlots[i].Item = null;
     }
 
-    public void AddToInventory(string name, Sprite icon)
+    public void AddToInventory(TileType tileType, TileShape tileShape, int damagePerBeat, DamageForm damageType, goonSlotPosition[] goonSlotPositions)
     {
-        items.Add(new InventoryItem { itemName = name, Icon = icon });
+            items.Add(new TileItem
+            {
+                tileType = tileType,
+                tileShape = tileShape,
+                damagePerBeat = damagePerBeat,
+                damageType = damageType,
+                goonSlotPositions = goonSlotPositions
+            });
+        //items.Add(new InventoryItem { itemName = name, Icon = icon });
+
+        Debug.Log(items.Count);
+    }
+
+    public void AddToInventory(GoonType goonType, int currentHealth, int currentDamage, AttackForm attackType, DamageForm damageType, OnBeat attackRate, float attackRange)
+    {
+        items.Add(new GoonItem
+        {
+            goonType = goonType,
+            currentHealth = currentHealth,
+            currentDamage = currentDamage,
+            attackType = attackType,
+            damageType = damageType,
+            attackRate = attackRate,
+            attackRange = attackRange
+        });
 
         Debug.Log(items.Count);
     }

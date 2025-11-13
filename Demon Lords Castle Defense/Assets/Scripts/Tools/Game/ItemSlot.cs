@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class ItemSlot : MonoBehaviour
+public class ItemSlot : Placeable
 {
     // Author: Eshter Li (YT)
     // this handles 
@@ -27,16 +27,13 @@ public class ItemSlot : MonoBehaviour
         }
     }
 
-    public Placeable placeableScript;
 
-    private void Awake()
+    public new void Update()
     {
-        placeableScript = gameObject.GetComponent<Placeable>();
-    }
-
-    private void Update()
-    {
-        //if (placeableScript.)
+        if (isBeingDragged)
+        {
+            Debug.Log("CONNECTED");
+        }
     }
 
 }// end of class
