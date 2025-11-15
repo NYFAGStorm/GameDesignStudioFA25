@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum ItemType
 {
@@ -22,10 +23,11 @@ public class TileItem : InventoryItem
     public int damagePerBeat;
     public DamageForm damageType;
     public goonSlotPosition[] goonSlotPositions;
-    [Space]
+    [Space] // need to consider adding these for tile info
     public int currentLevel;
     public int currentSlotCount;
     public int currentDamage;
+    public OnBeat currentAttackRate;
     public string attribute;
 }
 
@@ -37,9 +39,9 @@ public class GoonItem : InventoryItem
     public int currentDamage;
     public AttackForm attackType;
     public DamageForm damageType;
-    public OnBeat attackRate;
     public float attackRange;
-    [Space]
+    [Space] // need to consider adding these for goon info
     public int currentLevel;
     public int currentTargetCount;
+    public OnBeat currentAttackRate;
 }

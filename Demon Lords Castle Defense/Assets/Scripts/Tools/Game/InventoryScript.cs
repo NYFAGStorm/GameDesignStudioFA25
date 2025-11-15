@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryScript : MonoBehaviour
 {
@@ -30,31 +31,33 @@ public class InventoryScript : MonoBehaviour
         for (; i < itemSlots.Length; i++) itemSlots[i].Item = null;
     }
 
-    public void AddToInventory(TileType tileType, TileShape tileShape, int damagePerBeat, DamageForm damageType, goonSlotPosition[] goonSlotPositions)
+    public void AddToInventory(Sprite sprite, TileType tileType, TileShape tileShape, OnBeat damagePerBeat)
     {
             items.Add(new TileItem
             {
+                Icon = sprite,
                 tileType = tileType,
                 tileShape = tileShape,
-                damagePerBeat = damagePerBeat,
+                /*damagePerBeat = damagePerBeat,
                 damageType = damageType,
-                goonSlotPositions = goonSlotPositions
+                goonSlotPositions = goonSlotPositions*/
             });
         //items.Add(new InventoryItem { itemName = name, Icon = icon });
 
         Debug.Log(items.Count);
     }
 
-    public void AddToInventory(GoonType goonType, int currentHealth, int currentDamage, AttackForm attackType, DamageForm damageType, OnBeat attackRate, float attackRange)
+    public void AddToInventory(Sprite sprite, GoonType goonType, int currentHealth, int currentDamage, AttackForm attackType, DamageForm damageType, OnBeat attackRate, float attackRange)
     {
         items.Add(new GoonItem
         {
+            Icon = sprite,
             goonType = goonType,
             currentHealth = currentHealth,
             currentDamage = currentDamage,
             attackType = attackType,
             damageType = damageType,
-            attackRate = attackRate,
+            currentAttackRate = attackRate,
             attackRange = attackRange
         });
 

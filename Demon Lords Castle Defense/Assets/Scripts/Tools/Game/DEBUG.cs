@@ -19,7 +19,7 @@ public class DEBUG : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            //inventoryScript.AddToInventory(tileScript.);
+            inventoryScript.AddToInventory(this.gameObject.GetComponentInChildren<SpriteRenderer>().sprite, tileScript.type, tileScript.shape, tileScript.attackRate);
             inventoryScript.RefreshUI();
             //Destroy(gameObject);
         }
