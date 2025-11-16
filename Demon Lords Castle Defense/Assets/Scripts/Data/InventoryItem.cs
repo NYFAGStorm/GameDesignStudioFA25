@@ -1,21 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ItemType
+/*public enum ItemType
 {
     Tile,
     Goon,
     Trophy
-}
+}*/
 
 [System.Serializable]
 public class InventoryItem
 {
-    public string itemName;
+    //public string itemName;
+    public GameObject item;
     public Sprite Icon;
 }
 
-public class TileItem : InventoryItem
+/*public class TileItem : InventoryItem
 {
     public TileType tileType;
     public TileShape tileShape;
@@ -44,4 +45,4 @@ public class GoonItem : InventoryItem
     public int currentLevel;
     public int currentTargetCount;
     public OnBeat currentAttackRate;
-}
+}*/

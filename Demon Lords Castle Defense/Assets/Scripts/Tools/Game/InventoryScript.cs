@@ -31,46 +31,21 @@ public class InventoryScript : MonoBehaviour
         for (; i < itemSlots.Length; i++) itemSlots[i].Item = null;
     }
 
-    public void AddToInventory(Sprite sprite, TileType tileType, TileShape tileShape, OnBeat damagePerBeat)
+    public void AddToInventory(GameObject gameObject, Sprite sprite)
     {
-            items.Add(new TileItem
-            {
-                Icon = sprite,
-                tileType = tileType,
-                tileShape = tileShape,
-                /*damagePerBeat = damagePerBeat,
-                damageType = damageType,
-                goonSlotPositions = goonSlotPositions*/
-            });
-        //items.Add(new InventoryItem { itemName = name, Icon = icon });
+        items.Add (new InventoryItem { item = gameObject, Icon = sprite });
+        RefreshUI ();
 
         Debug.Log(items.Count);
     }
 
-    public void AddToInventory(Sprite sprite, GoonType goonType, int currentHealth, int currentDamage, AttackForm attackType, DamageForm damageType, OnBeat attackRate, float attackRange)
-    {
-        items.Add(new GoonItem
-        {
-            Icon = sprite,
-            goonType = goonType,
-            currentHealth = currentHealth,
-            currentDamage = currentDamage,
-            attackType = attackType,
-            damageType = damageType,
-            currentAttackRate = attackRate,
-            attackRange = attackRange
-        });
-
-        Debug.Log(items.Count);
-    }
-
-    public InventoryItem FindTHEItem (string name)
+    public InventoryItem FindTHEItem (GameObject gameObject)
     {
         InventoryItem itemToFind = null;
 
         for (int i = 0; i < items.Count; i ++) 
         {
-            if (items[i].itemName == name)
+            if (items[i].item == gameObject)
             {
                 itemToFind = items[i];
                 break;
@@ -80,52 +55,11 @@ public class InventoryScript : MonoBehaviour
         return itemToFind;
     }
 
-    public void RemoveFromInventory(string name) 
+    public void RemoveFromInventory(GameObject gameObject) 
     {
-        items.Remove(FindTHEItem(name));
+        items.Remove(FindTHEItem(gameObject));
+        RefreshUI ();
+
         Debug.Log(items.Count);
     }
 }// end of class
-
-/*
- * [SerializeField] List<InventoryItem> items;
-    [SerializeField] Transform itemsParent;
-    [SerializeField] ItemSlot[] itemSlots;
- * 
- * private void OnValidate()
-{
-    if (itemsParent != null) itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
-
-    RefreshUI();
-}
-
-private void RefreshUI()
-{
-    int i = 0;
-    for (; i < items.Count && i < itemSlots.Length; i++) itemSlots[i].Item = items[i];
-    for (; i < itemSlots.Length; i++) itemSlots[i].Item = null;
-}
-
-public bool AddItem(InventoryItem item)
-{
-    if (IsFull()) return false;
-
-    items.Add(item);
-    RefreshUI();
-    return true;
-}
-
-public bool RemoveItem(InventoryItem item)
-{
-    if (items.Remove(item))
-    {
-        RefreshUI();
-        return true;
-    }
-    return false;
-}
-
-public bool IsFull()
-{
-    return items.Count >= itemSlots.Length;
-}*/

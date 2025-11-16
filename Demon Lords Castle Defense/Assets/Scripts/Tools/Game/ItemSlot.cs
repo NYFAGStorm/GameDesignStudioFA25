@@ -3,14 +3,15 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class ItemSlot : Placeable
+public class ItemSlot : MonoBehaviour
 {
     // Author: Eshter Li (YT)
-    // this handles 
+    // this handles getting the item out of the inventory, as well as show tooltip
 
     public Image image;
-    
-    private InventoryItem _item;
+    public InventoryScript inventoryScript;
+
+    public InventoryItem _item;
     public InventoryItem Item
     {
         get { return _item; }
@@ -27,13 +28,16 @@ public class ItemSlot : Placeable
         }
     }
 
-
-    public new void Update()
+    private void Awake()
     {
-        if (isBeingDragged)
-        {
-            Debug.Log("CONNECTED");
-        }
+        inventoryScript = GetComponentInParent<InventoryScript>();
     }
 
+    public void TakeOutItem()
+    {
+        _item.item.SetActive(true);
+        _item.item.transform.position = new Vector3 (WorldMouse.Get().x, 1, WorldMouse.Get().y);
+
+        inventoryScript.RemoveFromInventory(_item.item);
+    }
 }// end of class
