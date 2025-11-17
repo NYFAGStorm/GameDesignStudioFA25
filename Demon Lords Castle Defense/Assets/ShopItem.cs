@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Purchasing;
+//using UnityEngine.Purchasing;
 using UnityEngine.UI;
 
 public class ShopItem : MonoBehaviour
@@ -30,7 +30,7 @@ public class ShopItem : MonoBehaviour
     {
         if (CurrencyManager.SpendSouls(price))
         {
-            FindFirstObjectByType<InventoryScript>().AddToInventory(name, image);
+            FindFirstObjectByType<InventoryScript>().AddToInventory(this.gameObject, image);
         }
     }
 }
