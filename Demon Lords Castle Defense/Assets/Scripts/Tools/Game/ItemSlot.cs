@@ -39,5 +39,7 @@ public class ItemSlot : MonoBehaviour
         _item.item.transform.position = new Vector3 (WorldMouse.Get().x, 1, WorldMouse.Get().y);
 
         inventoryScript.RemoveFromInventory(_item.item);
+
+        _item.item.GetComponent<Placeable>().ManualStartDrag();
     }
 }// end of class
