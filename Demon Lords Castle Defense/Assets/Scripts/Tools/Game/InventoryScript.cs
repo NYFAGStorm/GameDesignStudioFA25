@@ -28,6 +28,7 @@ public class InventoryScript : MonoBehaviour
         ItemType currentType = ItemType.Tile;
         while (safety < 1000 && tmp.Count < items.Count)
         {
+            safety++;
             if ((int)currentType > 2)
                 Debug.LogWarning("--- reached beyond type length");
             foreach (InventoryItem i in items)
