@@ -13,5 +13,15 @@ public class AnimDEBUG : MonoBehaviour
 
             //gameObject.SetActive(false);
         }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            animationScript.SetCurrentAnim(AnimSprite.AnimSet.Hurt);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            animationScript.SetCurrentAnim(AnimSprite.AnimSet.Death);
+        }
     }
 }
