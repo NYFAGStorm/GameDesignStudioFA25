@@ -192,7 +192,8 @@ public class TileFloorManager : MonoBehaviour
     {
         foreach (Slot s in tileSlots)
         {
-            s.GetItem().Lock(setLocked);
+            Placeable slotItem = s.GetItem();
+            if (slotItem) slotItem.Lock(setLocked);
         }
     }
 }
