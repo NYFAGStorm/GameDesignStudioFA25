@@ -101,6 +101,7 @@ public class TileFloorManager : MonoBehaviour
     {
         Slot currentSlot = entranceSlot;
         Tile currentTile = (Tile)currentSlot.GetItem();
+        Tile lastTile = null;
         int lastCompileDirection = 0;
         currentCompilePosition = compileStartPosition;
 
@@ -118,7 +119,7 @@ public class TileFloorManager : MonoBehaviour
         {
             validNextTile = false;
 
-            for (int d = 0; d < 3; d++)
+            for (int d = 0; d < 4; d++)
             {
                 int relativeD = (d + lastCompileDirection + 3) % 4;
 
@@ -161,12 +162,17 @@ public class TileFloorManager : MonoBehaviour
                 // Determine if the side of the next tile facing the current tile is open
                 if (!nextTile.GetSides()[(relativeD + 2) % 4]) continue;
 
+                // Make sure the next tile is not equal to the last tile extended from
+                if (nextTile == lastTile) continue;
+
+                lastCompileDirection = relativeD;
+                lastSides = nextTile.GetSides();
+                lastTile = currentTile;
+
                 currentSlot = nextSlot;
                 currentTile = nextTile;
                 currentCompilePosition = nextPosition;
                 currentPathNode++;
-                lastCompileDirection = relativeD;
-                lastSides = nextTile.GetSides();
 
                 validNextTile = true;
                 break;
