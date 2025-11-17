@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-/*public enum ItemType
+public enum ItemType
 {
     Tile,
     Goon,
     Trophy
-}*/
+}
 
 [System.Serializable]
 public class InventoryItem
 {
+    public ItemType type;
     //public string itemName;
     public GameObject item;
     public Sprite Icon;

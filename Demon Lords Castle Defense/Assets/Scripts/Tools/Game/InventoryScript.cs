@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InventoryScript : MonoBehaviour
 {
@@ -20,6 +18,18 @@ public class InventoryScript : MonoBehaviour
         if (itemsParent != null) itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
         
         RefreshUI();
+    }
+
+    public void SortInventory()
+    {
+        List<InventoryItem> tmp = new List<InventoryItem>(items.Count);
+        int safety = 0;
+        int sorted = 0;
+        
+        while (safety < 1000 && sorted < items.Count)
+        {
+
+        }
     }
 
     public void RefreshUI()
