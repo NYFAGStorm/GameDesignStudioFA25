@@ -97,12 +97,14 @@ public class AnimSprite : MonoBehaviour
                         {
                             // if not death, set to idle and loop
                             SetCurrentAnim(AnimSet.Idle);
-                            return;
                         }
-                        if (resetOnComplete)
-                            gameObject.SetActive(false);
                         else
-                            enabled = false;
+                        {
+                            if (resetOnComplete)
+                                gameObject.SetActive(false);
+                            else
+                                enabled = false;
+                        }
                     }
                 }
                 r.sprite = sprites[currentFrame];
