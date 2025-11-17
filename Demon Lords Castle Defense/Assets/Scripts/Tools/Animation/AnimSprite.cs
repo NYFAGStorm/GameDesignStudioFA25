@@ -8,7 +8,22 @@ public class AnimSprite : MonoBehaviour
     // Author: Glenn Storm
     // This handles simple sprite animation (loops or play once)
 
-    public Sprite[] sprites;
+    public enum AnimSet
+    {
+        Idle,
+        Attack,
+        Hurt,
+        Death
+    }
+    public AnimSet currentAnim;
+
+    public Sprite[] idleSprites;
+    public Sprite[] attackSprites;
+    public Sprite[] hurtSprites;
+    public Sprite[] deathSprites;
+
+    private Sprite[] sprites;
+
     public bool loop;
     public float frameInterval = 0.25f;
     [Tooltip("If true, will deactivate this tool to be re-used. If false, will disable this tool.")]
@@ -40,11 +55,11 @@ public class AnimSprite : MonoBehaviour
             Debug.LogError("--- AnimSprite [Start] : "+gameObject.name+" no sprite renderer attached. aborting.");
             enabled = false;
         }
-        if ( sprites == null || sprites.Length == 0 )
-        {
-            Debug.LogError("--- AnimSprite [Start] : " + gameObject.name + " no sprites configured. aborting.");
-            enabled = false;
-        }
+        //if ( sprites == null || sprites.Length == 0 )
+        //{
+        //    Debug.LogError("--- AnimSprite [Start] : " + gameObject.name + " no sprites configured. aborting.");
+        //    enabled = false;
+        //}
         if ( frameInterval <= 0f )
         {
             Debug.LogWarning("--- AnimSprite [Start] : " + gameObject.name + " invalid frame interval. will set to "+ MINFRAMEINTERVAL + ".");
