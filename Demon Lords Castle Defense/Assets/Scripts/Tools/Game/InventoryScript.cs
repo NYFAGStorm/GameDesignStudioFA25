@@ -22,6 +22,7 @@ public class InventoryScript : MonoBehaviour
 
     public void SortInventory()
     {
+        //
         List<InventoryItem> tmp = new List<InventoryItem>();
         int safety = 0;
         ItemType currentType = ItemType.Tile;
