@@ -35,7 +35,17 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        
+    }
 
+    public void LoadGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
     }
 
     void Update()
