@@ -23,7 +23,7 @@ public class AnimSprite : MonoBehaviour
     public Sprite[] hurtSprites;
     public Sprite[] deathSprites;
 
-    private Sprite[] sprites;
+    private Sprite[] sprites = new Sprite[0];
 
     public bool loop;
     public float frameInterval = 0.25f;
@@ -76,6 +76,8 @@ public class AnimSprite : MonoBehaviour
             currentFrame = 0;
             frameTimer = frameInterval;
             SetCurrentAnim(currentAnim);
+            if (sprites == null || sprites.Length == 0)
+                sprites = idleSprites;
         }
     }
 

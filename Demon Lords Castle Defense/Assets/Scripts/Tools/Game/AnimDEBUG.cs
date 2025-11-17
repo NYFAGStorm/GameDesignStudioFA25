@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 public class AnimDEBUG : MonoBehaviour
@@ -6,7 +5,7 @@ public class AnimDEBUG : MonoBehaviour
     public AnimSprite animationScript;
     
 
-    private void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
