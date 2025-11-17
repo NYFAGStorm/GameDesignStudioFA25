@@ -7,6 +7,7 @@ public class AnimSprite : MonoBehaviour
 {
     // Author: Glenn Storm
     // This handles simple sprite animation (loops or play once)
+    // This is modified to work with animation sets
 
     public enum AnimSet
     {
@@ -73,18 +74,6 @@ public class AnimSprite : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// This sets the current animation immediately
-    /// </summary>
-    /// <param name="current">the animation set</param>
-    public void SetCurrentAnim(AnimSet current)
-    {
-        if (current == currentAnim)
-            return;
-        currentAnim = current;
-        loop = (current == AnimSet.Idle);
-        currentFrame = 0;
-    }
 
     void Update()
     {
@@ -104,7 +93,13 @@ public class AnimSprite : MonoBehaviour
                     if (!loop)
                     {
                         frameTimer = 0f;
-                        if ( resetOnComplete )
+                        if (currentAnim != AnimSet.Death)
+                        {
+                            // if not death, set to idle and loop
+                            SetCurrentAnim(AnimSet.Idle);
+                            return;
+                        }
+                        if (resetOnComplete)
                             gameObject.SetActive(false);
                         else
                             enabled = false;
@@ -115,6 +110,23 @@ public class AnimSprite : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This sets the current animation immediately
+    /// </summary>
+    /// <param name="current">the animation set</param>
+    public void SetCurrentAnim(AnimSet current)
+    {
+        if (current == currentAnim)
+            return;
+        currentAnim = current;
+        loop = (current == AnimSet.Idle);
+        currentFrame = 0;
+    }
+
+    /// <summary>
+    /// This sets the time between frames (in seconds)
+    /// </summary>
+    /// <param name="newInterval">interval in seconds</param>
     public void SetFrameInterval( float newInterval )
     {
         frameInterval = newInterval;
