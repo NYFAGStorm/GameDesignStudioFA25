@@ -94,7 +94,7 @@ public class Attacker : MonoBehaviour
     {
         currentPathPos++;
 
-        if (currentPathPos == path.Count - 1)
+        if (currentPathPos == path.Count)
         {
             FindFirstObjectByType<DemonGameManager>().EnemyReachedEnd();
             isMoving = false;

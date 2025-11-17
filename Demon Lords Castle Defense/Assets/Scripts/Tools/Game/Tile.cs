@@ -89,4 +89,9 @@ public class Tile : Placeable
     {
         return shape;
     }
+    
+    public TileDirection GetDirection()
+    {
+        return dir;
+    }
 }
