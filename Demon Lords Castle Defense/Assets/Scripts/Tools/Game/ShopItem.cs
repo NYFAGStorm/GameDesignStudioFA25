@@ -62,7 +62,7 @@ public class ShopItem : MonoBehaviour
         }
         else
         { 
-            FindFirstObjectByType<InventoryScript>().AddToInventory(newInvItem, image);
+            //FindFirstObjectByType<InventoryScript>().AddToInventory(newInvItem, image);
         }
     }
 }

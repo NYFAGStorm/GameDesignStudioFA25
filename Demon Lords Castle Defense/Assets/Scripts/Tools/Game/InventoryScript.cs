@@ -22,7 +22,6 @@ public class InventoryScript : MonoBehaviour
 
     public void SortInventory()
     {
-        //
         List<InventoryItem> tmp = new List<InventoryItem>();
         int safety = 0;
         ItemType currentType = ItemType.Tile;
@@ -52,13 +51,15 @@ public class InventoryScript : MonoBehaviour
         for (; i < itemSlots.Length; i++) itemSlots[i].Item = null;
     }
 
-    public void AddToInventory(GameObject gameObject, Sprite sprite)
+    public void AddToInventory(ItemType type, GameObject gameObject, Sprite sprite)
     {
-        items.Add (new InventoryItem { item = gameObject, Icon = sprite });
-        RefreshUI ();
+        items.Add (new InventoryItem { type = type, item = gameObject, Icon = sprite });
 
         gameObject.transform.position = new Vector3(outOfWorldX, 1, outOfWorldZ);
         gameObject.SetActive(false);
+
+        SortInventory();
+        RefreshUI();
 
         Debug.Log(items.Count);
     }
@@ -82,6 +83,7 @@ public class InventoryScript : MonoBehaviour
     public void RemoveFromInventory(GameObject gameObject) 
     {
         items.Remove(FindTHEItem(gameObject));
+        SortInventory();
         RefreshUI ();
 
         Debug.Log(items.Count);
