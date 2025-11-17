@@ -119,8 +119,26 @@ public class AnimSprite : MonoBehaviour
     public void SetCurrentAnim(AnimSet current)
     {
         if (current == currentAnim)
+        {
+            Debug.LogWarning("--- AnimSprite [SetCurrentAnim] : anim set '"+current.ToString()+"' is already playing. will ignore.");
             return;
+        }
         currentAnim = current;
+        switch (current)
+        {
+            case AnimSet.Idle:
+                sprites = idleSprites;
+                break;
+            case AnimSet.Attack:
+                sprites = attackSprites;
+                break;
+            case AnimSet.Hurt:
+                sprites = hurtSprites;
+                break;
+            case AnimSet.Death:
+                sprites = deathSprites;
+                break;
+        }
         loop = (current == AnimSet.Idle);
         currentFrame = 0;
     }
