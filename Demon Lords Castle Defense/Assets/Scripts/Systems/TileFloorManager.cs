@@ -119,7 +119,7 @@ public class TileFloorManager : MonoBehaviour
         {
             validNextTile = false;
 
-            for (int d = 0; d < 4; d++)
+            for (int d = 0; d < 3; d++)
             {
                 int relativeD = (d + lastCompileDirection + 3) % 4;
 
