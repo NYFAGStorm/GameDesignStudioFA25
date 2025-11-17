@@ -15,8 +15,9 @@ public class DayNightManager : MonoBehaviour
     public int currentRound;
     public bool bossRound = false;
 
-    public float roundTimerDuration = 60f;
-    public float roundTimer;
+    // For testing purposes
+    //public float roundTimerDuration = 60f;
+    //public float roundTimer;
 
     public TileFloorManager tileFloorManager;
 
@@ -27,6 +28,8 @@ public class DayNightManager : MonoBehaviour
 
     void Update()
     {
+        // Timer for testing purposes
+        /**
         if (roundTimer > 0f)
         {
             roundTimer -= Time.deltaTime;
@@ -38,6 +41,7 @@ public class DayNightManager : MonoBehaviour
                 RoundEnd();
             }
         }
+        **/
     }
 
     // Begins the next round
@@ -60,7 +64,8 @@ public class DayNightManager : MonoBehaviour
             }
             Debug.Log("New round started!");
         }
-        roundTimer = roundTimerDuration;
+        // For testing purposes
+        //roundTimer = roundTimerDuration;
     }
 
     // Moves the current round count up by 1
