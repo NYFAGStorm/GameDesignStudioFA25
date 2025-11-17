@@ -44,6 +44,7 @@ public class AnimSprite : MonoBehaviour
         {
             currentFrame = 0;
             frameTimer = frameInterval;
+            SetCurrentAnim(currentAnim);
         }
     }
 
