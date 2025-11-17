@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class AnimDEBUG : MonoBehaviour
 {
-    public GoblinSpriteAnimation animationScript;
+    public AnimSprite animationScript;
     
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            animationScript.SetCurrentAnim(GoblinSpriteAnimation.AnimSet.Attack);
+            animationScript.SetCurrentAnim(AnimSprite.AnimSet.Attack);
 
             //gameObject.SetActive(false);
         }
