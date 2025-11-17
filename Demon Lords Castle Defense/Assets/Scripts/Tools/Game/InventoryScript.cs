@@ -22,14 +22,21 @@ public class InventoryScript : MonoBehaviour
 
     public void SortInventory()
     {
-        List<InventoryItem> tmp = new List<InventoryItem>(items.Count);
+        List<InventoryItem> tmp = new List<InventoryItem>();
         int safety = 0;
-        int sorted = 0;
-        
-        while (safety < 1000 && sorted < items.Count)
+        ItemType currentType = ItemType.Tile;
+        while (safety < 1000 && tmp.Count < items.Count)
         {
-
+            if ((int)currentType > 2)
+                Debug.LogWarning("--- reached beyond type length");
+            foreach (InventoryItem i in items)
+            {
+                if (i.type == currentType)
+                    tmp.Add(i);
+            }
+            currentType++;
         }
+        items = tmp;
     }
 
     public void RefreshUI()
