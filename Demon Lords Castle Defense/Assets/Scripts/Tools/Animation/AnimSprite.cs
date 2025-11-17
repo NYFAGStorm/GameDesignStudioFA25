@@ -56,11 +56,11 @@ public class AnimSprite : MonoBehaviour
             Debug.LogError("--- AnimSprite [Start] : "+gameObject.name+" no sprite renderer attached. aborting.");
             enabled = false;
         }
-        //if ( sprites == null || sprites.Length == 0 )
-        //{
-        //    Debug.LogError("--- AnimSprite [Start] : " + gameObject.name + " no sprites configured. aborting.");
-        //    enabled = false;
-        //}
+        if (idleSprites == null || idleSprites.Length == 0 )
+        {
+            Debug.LogError("--- AnimSprite [Start] : " + gameObject.name + " no idle sprites configured. aborting.");
+            enabled = false;
+        }
         if ( frameInterval <= 0f )
         {
             Debug.LogWarning("--- AnimSprite [Start] : " + gameObject.name + " invalid frame interval. will set to "+ MINFRAMEINTERVAL + ".");
