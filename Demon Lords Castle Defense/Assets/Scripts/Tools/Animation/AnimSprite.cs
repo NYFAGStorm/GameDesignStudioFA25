@@ -42,6 +42,7 @@ public class AnimSprite : MonoBehaviour
     {
         if (valid)
         {
+            loop = (currentAnim == AnimSet.Idle);
             currentFrame = 0;
             frameTimer = frameInterval;
             SetCurrentAnim(currentAnim);
@@ -71,7 +72,10 @@ public class AnimSprite : MonoBehaviour
         if ( enabled )
         {
             valid = true;
+            loop = (currentAnim == AnimSet.Idle);
+            currentFrame = 0;
             frameTimer = frameInterval;
+            SetCurrentAnim(currentAnim);
         }
     }
 
@@ -142,6 +146,7 @@ public class AnimSprite : MonoBehaviour
         }
         loop = (current == AnimSet.Idle);
         currentFrame = 0;
+        frameTimer = frameInterval;
     }
 
     /// <summary>
