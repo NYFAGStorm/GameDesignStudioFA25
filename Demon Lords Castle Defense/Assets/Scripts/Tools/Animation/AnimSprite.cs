@@ -73,6 +73,19 @@ public class AnimSprite : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This sets the current animation immediately
+    /// </summary>
+    /// <param name="current">the animation set</param>
+    public void SetCurrentAnim(AnimSet current)
+    {
+        if (current == currentAnim)
+            return;
+        currentAnim = current;
+        loop = (current == AnimSet.Idle);
+        currentFrame = 0;
+    }
+
     void Update()
     {
         if ( frameTimer > 0f )
