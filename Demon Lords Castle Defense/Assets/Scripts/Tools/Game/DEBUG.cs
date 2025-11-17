@@ -10,7 +10,7 @@ public class DEBUG : MonoBehaviour
         {
             inventoryScript.AddToInventory(this.gameObject, this.gameObject.GetComponentInChildren<SpriteRenderer>().sprite);
 
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.P))

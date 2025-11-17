@@ -9,6 +9,8 @@ public class InventoryScript : MonoBehaviour
     // this handles the inventory
 
     public List<InventoryItem> items = new List<InventoryItem>();
+    public int outOfWorldX = -30;
+    public int outOfWorldZ = -5;
 
     [SerializeField] Transform itemsParent;
     [SerializeField] ItemSlot[] itemSlots;
@@ -35,6 +37,9 @@ public class InventoryScript : MonoBehaviour
     {
         items.Add (new InventoryItem { item = gameObject, Icon = sprite });
         RefreshUI ();
+
+        gameObject.transform.position = new Vector3(outOfWorldX, 1, outOfWorldZ);
+        gameObject.SetActive(false);
 
         Debug.Log(items.Count);
     }

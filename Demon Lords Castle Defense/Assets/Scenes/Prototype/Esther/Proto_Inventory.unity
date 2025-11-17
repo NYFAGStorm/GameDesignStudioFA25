@@ -1963,7 +1963,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 241552541}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.6595555
+  m_Size: 0.65955555
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4531,7 +4531,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 15
   m_Viewport: {fileID: 940650695}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 669709728}
@@ -4896,6 +4896,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977395840}
   m_CullTransparentMesh: 1
+--- !u!1 &1985749845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1985749846}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1985749846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985749845}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -57.4, y: -33.219246, z: 2.985669}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056799944
 GameObject:
   m_ObjectHideFlags: 0
@@ -4952,6 +4983,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  outOfWorldX: -50
+  outOfWorldZ: -30
   itemsParent: {fileID: 1901885136}
   itemSlots:
   - {fileID: 293627672}
@@ -5015,3 +5048,4 @@ SceneRoots:
   - {fileID: 610997366}
   - {fileID: 1239981533}
   - {fileID: 1054647806}
+  - {fileID: 1985749846}
