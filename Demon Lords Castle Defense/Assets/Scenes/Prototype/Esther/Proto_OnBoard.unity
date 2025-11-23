@@ -339,11 +339,11 @@ GameObject:
   - component: {fileID: 147293458}
   m_Layer: 0
   m_Name: T4
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &147293457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -351,18 +351,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147293456}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1021388910}
   - {fileID: 1598791992}
-  m_Father: {fileID: 2106245208}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -224.99998, y: -20.999996}
   m_SizeDelta: {x: 650, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &147293458
@@ -415,8 +415,8 @@ GameObject:
   - component: {fileID: 210472112}
   - component: {fileID: 210472111}
   m_Layer: 0
-  m_Name: D1
-  m_TagString: Untagged
+  m_Name: D1-1
+  m_TagString: DemonLord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -433,11 +433,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 247121496}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -134.99994}
+  m_AnchoredPosition: {x: 13, y: -328.99994}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &210472111
@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 247121498}
   - component: {fileID: 247121497}
   m_Layer: 0
-  m_Name: Demon Lord
+  m_Name: Demon Lord Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,21 +657,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247121495}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 210472110}
-  - {fileID: 779633997}
-  - {fileID: 1929415972}
-  - {fileID: 613197415}
-  - {fileID: 1648284498}
-  m_Father: {fileID: 495741889}
+  m_Children: []
+  m_Father: {fileID: 1125866581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -194}
+  m_AnchoredPosition: {x: -542, y: -291}
   m_SizeDelta: {x: 55.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &247121497
@@ -943,7 +938,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e659962ea1b3d684aa398c79640cb3e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec21998461d85144cba09b83fbdbd2d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -974,7 +969,7 @@ GameObject:
   - component: {fileID: 380405312}
   m_Layer: 0
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -987,7 +982,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380405310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1131,7 +1126,6 @@ RectTransform:
   - {fileID: 2080091898}
   - {fileID: 1125866581}
   - {fileID: 276455650}
-  - {fileID: 2106245208}
   m_Father: {fileID: 859013008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -1151,33 +1145,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7bc06c3548b2044a811787e6690880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snowBallText:
+  textbox: {fileID: 495741888}
+  dialogueText:
   - {fileID: 1727563059}
+  - {fileID: 210472109}
+  - {fileID: 1280489261}
   - {fileID: 691966844}
+  - {fileID: 586492879}
+  - {fileID: 779633996}
   - {fileID: 1778420661}
   - {fileID: 813267254}
-  - {fileID: 458918514}
-  - {fileID: 1965639726}
-  - {fileID: 878147412}
-  - {fileID: 543653052}
-  - {fileID: 2099718924}
-  snowBallSprites:
-  - {fileID: 21300000, guid: 2d64926a7c48dbb43a58989735722077, type: 3}
-  demonLordText:
-  - {fileID: 210472109}
-  - {fileID: 779633996}
   - {fileID: 1929415971}
-  - {fileID: 613197414}
-  - {fileID: 1648284495}
-  demonLordSprites:
-  - {fileID: 21300000, guid: eace6f0a814639f48b000b34b54b26a7, type: 3}
-  toolTipText:
-  - {fileID: 586492879}
+  - {fileID: 458918514}
   - {fileID: 1067190153}
   - {fileID: 1963966711}
   - {fileID: 1232193942}
   - {fileID: 1525176948}
   - {fileID: 147293456}
+  - {fileID: 613197414}
+  - {fileID: 1965639726}
+  - {fileID: 878147412}
+  - {fileID: 543653052}
+  - {fileID: 1648284495}
+  - {fileID: 2099718924}
+  snowBall: {fileID: 2080091897}
+  demonLord: {fileID: 1125866580}
+  snowBallSprites:
+  - {fileID: 21300000, guid: 2d64926a7c48dbb43a58989735722077, type: 3}
+  demonLordSprites:
+  - {fileID: 21300000, guid: eace6f0a814639f48b000b34b54b26a7, type: 3}
 --- !u!1 &445672610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,7 +1319,7 @@ GameObject:
   - component: {fileID: 458918516}
   m_Layer: 0
   m_Name: S4
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1340,11 +1336,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 489938964}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -136}
+  m_AnchoredPosition: {x: 13, y: -330}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458918516
@@ -1592,7 +1588,7 @@ GameObject:
   - component: {fileID: 489938966}
   - component: {fileID: 489938965}
   m_Layer: 0
-  m_Name: Snowball
+  m_Name: Snowball Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1605,25 +1601,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489938963}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1727563060}
-  - {fileID: 691966845}
-  - {fileID: 1778420662}
-  - {fileID: 813267255}
-  - {fileID: 458918515}
-  - {fileID: 1965639727}
-  - {fileID: 878147413}
-  - {fileID: 543653053}
-  - {fileID: 2099718927}
-  m_Father: {fileID: 495741889}
+  m_Children: []
+  m_Father: {fileID: 2080091898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -194}
+  m_AnchoredPosition: {x: 545, y: -291}
   m_SizeDelta: {x: 55.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &489938965
@@ -1755,8 +1742,27 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 247121496}
-  - {fileID: 489938964}
+  - {fileID: 1727563060}
+  - {fileID: 691966845}
+  - {fileID: 1778420662}
+  - {fileID: 813267255}
+  - {fileID: 458918515}
+  - {fileID: 1965639727}
+  - {fileID: 878147413}
+  - {fileID: 543653053}
+  - {fileID: 2099718927}
+  - {fileID: 210472110}
+  - {fileID: 1280489264}
+  - {fileID: 779633997}
+  - {fileID: 1929415972}
+  - {fileID: 613197415}
+  - {fileID: 1648284498}
+  - {fileID: 586492880}
+  - {fileID: 1067190154}
+  - {fileID: 1963966712}
+  - {fileID: 1232193943}
+  - {fileID: 1525176949}
+  - {fileID: 147293457}
   m_Father: {fileID: 428524989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -1815,7 +1821,7 @@ GameObject:
   - component: {fileID: 543653054}
   m_Layer: 0
   m_Name: S5-3
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1828,15 +1834,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543653052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 489938964}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: -165}
+  m_AnchoredPosition: {x: 4, y: -359}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &543653054
@@ -2349,7 +2355,7 @@ GameObject:
   - component: {fileID: 586492881}
   m_Layer: 0
   m_Name: T1
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2361,18 +2367,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586492879}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 706811038}
   - {fileID: 882864374}
-  m_Father: {fileID: 2106245208}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -224.99998, y: -20.999996}
   m_SizeDelta: {x: 600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586492881
@@ -2426,7 +2432,7 @@ GameObject:
   - component: {fileID: 591261766}
   m_Layer: 0
   m_Name: Frame
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2817,7 +2823,7 @@ GameObject:
   - component: {fileID: 613197416}
   m_Layer: 0
   m_Name: D4
-  m_TagString: Untagged
+  m_TagString: DemonLord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2834,11 +2840,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 247121496}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -165}
+  m_AnchoredPosition: {x: 13, y: -359}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613197416
@@ -3029,7 +3035,7 @@ GameObject:
   - component: {fileID: 691966846}
   m_Layer: 0
   m_Name: S2
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3046,11 +3052,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 489938964}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -134.99994}
+  m_AnchoredPosition: {x: 13, y: -328.99994}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691966846
@@ -3166,7 +3172,7 @@ GameObject:
   - component: {fileID: 706811039}
   m_Layer: 0
   m_Name: Frame
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3381,7 +3387,7 @@ GameObject:
   - component: {fileID: 779633998}
   m_Layer: 0
   m_Name: D2
-  m_TagString: Untagged
+  m_TagString: DemonLord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3398,11 +3404,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 247121496}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -165}
+  m_AnchoredPosition: {x: 13, y: -359}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &779633998
@@ -3517,7 +3523,7 @@ GameObject:
   - component: {fileID: 813267256}
   m_Layer: 0
   m_Name: S3-2
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3534,11 +3540,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 489938964}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -136}
+  m_AnchoredPosition: {x: 13, y: -330}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813267256
@@ -3561,8 +3567,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: then you can destroy them and capture their souls.  The more souls you
-    have, the more rooms you can rebuild!
+  m_text: then you can destroy them and capture their souls. The more souls you have,
+    the more rooms you can rebuild!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
   m_sharedMaterial: {fileID: -8417316213441743056, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
@@ -3675,7 +3681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -26}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &844963789
@@ -3698,17 +3704,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Skip Tutorial
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
+  m_sharedMaterial: {fileID: -8417316213441743056, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4285546063
+  m_fontColor: {r: 0.30980393, g: 0.24313727, b: 0.43921572, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3725,8 +3731,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35.7
+  m_fontSizeBase: 35.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3790,7 +3796,7 @@ GameObject:
   - component: {fileID: 846564027}
   m_Layer: 0
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3834,7 +3840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Got it!  I need Goons in each room to keep these invaders out!
+  m_text: Got it! I need Goons in each room to keep these invaders out!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
   m_sharedMaterial: {fileID: -8417316213441743056, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
@@ -4077,7 +4083,7 @@ GameObject:
   - component: {fileID: 878147414}
   m_Layer: 0
   m_Name: S5-2
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4094,11 +4100,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 489938964}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: -136}
+  m_AnchoredPosition: {x: 24, y: -330}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878147414
@@ -4214,7 +4220,7 @@ GameObject:
   - component: {fileID: 882864375}
   m_Layer: 0
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4235,7 +4241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: 24}
+  m_AnchoredPosition: {x: 13, y: 23.999996}
   m_SizeDelta: {x: 20.6, y: 92.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &882864375
@@ -4669,7 +4675,7 @@ GameObject:
   - component: {fileID: 1067190155}
   m_Layer: 0
   m_Name: T2
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4681,18 +4687,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067190153}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1945073249}
   - {fileID: 846564026}
-  m_Father: {fileID: 2106245208}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33, y: 281}
+  m_AnchoredPosition: {x: -191.99998, y: 259.99997}
   m_SizeDelta: {x: 550, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1067190155
@@ -5047,7 +5053,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 247121496}
   m_Father: {fileID: 428524989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5068,7 +5075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5213,7 +5220,7 @@ GameObject:
   - component: {fileID: 1232193944}
   m_Layer: 0
   m_Name: T3-2
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5225,18 +5232,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232193942}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1440772229}
   - {fileID: 380405311}
-  m_Father: {fileID: 2106245208}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -224.99998, y: -20.999996}
   m_SizeDelta: {x: 560, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232193944
@@ -5608,6 +5615,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256308426}
   m_CullTransparentMesh: 1
+--- !u!1 &1280489261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280489264}
+  - component: {fileID: 1280489263}
+  - component: {fileID: 1280489262}
+  m_Layer: 0
+  m_Name: D1-2
+  m_TagString: DemonLord
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1280489262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280489261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: What do we need to fix this time?  Every day these invading heroes break
+    through an exterior wall then destroy rooms in my castle!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
+  m_sharedMaterial: {fileID: -8417316213441743056, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 46.2
+  m_fontSizeBase: 46.2
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -628.9932, y: 0, z: -599.25415, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1280489263
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280489261}
+  m_CullTransparentMesh: 1
+--- !u!224 &1280489264
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280489261}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 495741889}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 13, y: -328.99994}
+  m_SizeDelta: {x: 204.6, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1294212621
 GameObject:
   m_ObjectHideFlags: 0
@@ -5873,7 +6017,7 @@ GameObject:
   - component: {fileID: 1372721464}
   m_Layer: 0
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5886,7 +6030,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372721462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5894,7 +6038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 20}
+  m_AnchoredPosition: {x: 5.9999847, y: 20.000004}
   m_SizeDelta: {x: 20.6, y: 92.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1372721464
@@ -6009,7 +6153,7 @@ GameObject:
   - component: {fileID: 1440772230}
   m_Layer: 0
   m_Name: Frame
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6084,7 +6228,7 @@ GameObject:
   - component: {fileID: 1507023766}
   m_Layer: 0
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6105,7 +6249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 14}
+  m_AnchoredPosition: {x: 5.9999847, y: 14}
   m_SizeDelta: {x: 20.6, y: 92.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1507023766
@@ -6220,7 +6364,7 @@ GameObject:
   - component: {fileID: 1525176950}
   m_Layer: 0
   m_Name: T3-3
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6232,18 +6376,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525176948}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1979530769}
   - {fileID: 1507023765}
-  m_Father: {fileID: 2106245208}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -224.99998, y: -20.999996}
   m_SizeDelta: {x: 600, y: 333}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1525176950
@@ -6751,11 +6895,11 @@ GameObject:
   - component: {fileID: 1648284496}
   m_Layer: 0
   m_Name: D5
-  m_TagString: Untagged
+  m_TagString: DemonLord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1648284496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6867,11 +7011,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 247121496}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: -165}
+  m_AnchoredPosition: {x: 19, y: -359}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1672454218
@@ -6984,11 +7128,11 @@ GameObject:
   - component: {fileID: 1727563061}
   m_Layer: 0
   m_Name: S1
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1727563060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7001,11 +7145,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 489938964}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -134.99994}
+  m_AnchoredPosition: {x: 13, y: -328.99994}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1727563061
@@ -7415,7 +7559,7 @@ GameObject:
   - component: {fileID: 1778420663}
   m_Layer: 0
   m_Name: S3-1
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7428,15 +7572,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778420661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 489938964}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -140}
+  m_AnchoredPosition: {x: 13, y: -334}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1778420663
@@ -7629,7 +7773,7 @@ GameObject:
   - component: {fileID: 1929415973}
   m_Layer: 0
   m_Name: D3
-  m_TagString: Untagged
+  m_TagString: DemonLord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7646,11 +7790,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 247121496}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -165}
+  m_AnchoredPosition: {x: 13, y: -359}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929415973
@@ -7765,7 +7909,7 @@ GameObject:
   - component: {fileID: 1945073250}
   m_Layer: 0
   m_Name: Frame
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7786,7 +7930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 550, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1945073250
@@ -7840,7 +7984,7 @@ GameObject:
   - component: {fileID: 1963966713}
   m_Layer: 0
   m_Name: T3-1
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7852,18 +7996,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963966711}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 591261765}
   - {fileID: 1372721463}
-  m_Father: {fileID: 2106245208}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -224.99998, y: -20.999996}
   m_SizeDelta: {x: 560, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1963966713
@@ -7917,7 +8061,7 @@ GameObject:
   - component: {fileID: 1965639728}
   m_Layer: 0
   m_Name: S5-1
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7934,11 +8078,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 489938964}
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -136}
+  m_AnchoredPosition: {x: 13, y: -330}
   m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1965639728
@@ -8054,7 +8198,7 @@ GameObject:
   - component: {fileID: 1979530770}
   m_Layer: 0
   m_Name: Frame
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8277,7 +8421,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 489938964}
   m_Father: {fileID: 428524989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -8298,7 +8443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8336,11 +8481,11 @@ GameObject:
   - component: {fileID: 2099718925}
   m_Layer: 0
   m_Name: S6
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2099718925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8449,67 +8594,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099718924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 489938964}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: -139}
-  m_SizeDelta: {x: 204.6, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2106245207
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2106245208}
-  - component: {fileID: 2106245209}
-  m_Layer: 0
-  m_Name: TooltipText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2106245208
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106245207}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 586492880}
-  - {fileID: 1067190154}
-  - {fileID: 1963966712}
-  - {fileID: 1232193943}
-  - {fileID: 1525176949}
-  - {fileID: 147293457}
-  m_Father: {fileID: 428524989}
+  m_Children: []
+  m_Father: {fileID: 495741889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -225, y: -22}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 4, y: -333}
+  m_SizeDelta: {x: 204.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2106245209
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106245207}
-  m_CullTransparentMesh: 1
 --- !u!1 &2137221087
 GameObject:
   m_ObjectHideFlags: 0

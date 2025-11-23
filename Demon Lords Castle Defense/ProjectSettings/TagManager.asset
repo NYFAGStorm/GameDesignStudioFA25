@@ -7,6 +7,9 @@ TagManager:
   - Target
   - Note
   - Item
+  - Snowball
+  - DemonLord
+  - Tooltip
   layers:
   - Default
   - TransparentFX
