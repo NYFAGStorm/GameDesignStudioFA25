@@ -23,12 +23,12 @@ public class TutorialManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) 
         {
             
-            if (i < dialogueText.Length)
+            if (i < (dialogueText.Length - 1))
             {
                 NextDialogue();
             }
 
-            if (i >= dialogueText.Length)
+            if (i >= (dialogueText.Length - 1))
             {
                 this.gameObject.SetActive(false);
                 Debug.Log("End of Tutorial");
