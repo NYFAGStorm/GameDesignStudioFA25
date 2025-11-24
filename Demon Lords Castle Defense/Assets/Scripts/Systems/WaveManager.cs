@@ -14,7 +14,7 @@ public class WaveManager : MonoBehaviour
     //Script to manage for waves
 
     public UniqueWaves wavesData;
-    public Transform[] transforms; //??
+    public AttackerData attackerData;
 
     private int currentWave = 0;
     private int enemiesRemaining = 0;
