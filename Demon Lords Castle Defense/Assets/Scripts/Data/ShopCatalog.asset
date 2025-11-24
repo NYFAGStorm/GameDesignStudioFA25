@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: ShopCatalog
   m_EditorClassIdentifier: 
   items:
-  - name: test
-    price: 5
-    image: {fileID: 9131508962876260270, guid: 33a3c71cb01dc3147bd0df7dc26a5c28, type: 3}
+  - name: Shadow Hall
+    price: 10
+    image: {fileID: 21300000, guid: e17e765009725cf438883ccbdecdecd2, type: 3}
+    itemType: 0
+    itemEnumName: ShadowHall
