@@ -34,8 +34,7 @@ public class ShopItem : MonoBehaviour
     {
         if (!CurrencyManager.SpendSouls(price)) return;
 
-        GameObject newInvItem = new GameObject("EMPTY");
-        newInvItem.SetActive(false);
+        GameObject newInvItem = null;
 
         switch (type)
         {
@@ -55,14 +54,14 @@ public class ShopItem : MonoBehaviour
                 break;
         }
 
-        if (newInvItem.name == "EMPTY")
+        if (newInvItem)
         {
-            Destroy(newInvItem);
-            Debug.LogWarning("Invalid shop item data");
+            newInvItem.SetActive(false);
+            FindFirstObjectByType<InventoryScript>().AddToInventory(type, newInvItem, image);
         }
         else
         {
-            FindFirstObjectByType<InventoryScript>().AddToInventory(type, newInvItem, image);
+            Debug.LogWarning("Invalid shop item data");
         }
     }
 }
