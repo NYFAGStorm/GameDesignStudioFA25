@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public enum SlotType
 {
@@ -37,6 +38,8 @@ public class Slot : MonoBehaviour
         };
     }
 
+    public UnityEvent SlotUpdated;
+
     public Placeable GetItem()
     {
         return item;
@@ -62,6 +65,8 @@ public class Slot : MonoBehaviour
             item.UpdateContainer(this);
             item.transform.position = transform.position + offset;
 
+            SlotUpdated.Invoke();
+
             return true;
         }
     }
@@ -70,5 +75,7 @@ public class Slot : MonoBehaviour
     {
         if (forced) item.ForceRemove();
         item = null;
+
+        SlotUpdated.Invoke();
     }
 }

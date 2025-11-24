@@ -44,7 +44,7 @@ public class TileFloorManager : MonoBehaviour
         {
             for (int x = 0; x < gridSize.x; x++)
             {
-                GameObject newSlot = Instantiate(tileObject, transform, false);
+                Slot newSlot = Instantiate(tileObject, transform, false).GetComponent<Slot>();
 
                 float xCenterOffset = ((gridSize.x - 1) * unitSize) / 2;
                 float yCenterOffset = ((gridSize.y - 1) * unitSize) / 2;
@@ -64,7 +64,7 @@ public class TileFloorManager : MonoBehaviour
                         marker.transform.localRotation = horizontalEntrance ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 180, 0);
 
                         compileStartPosition = new Vector2Int(x, y);
-                        entranceSlot = newSlot.GetComponent<Slot>();
+                        entranceSlot = newSlot;
                     }
                 }
 
@@ -81,7 +81,8 @@ public class TileFloorManager : MonoBehaviour
                     }
                 }
 
-                tileSlots[x + y * gridSize.x] = newSlot.GetComponent<Slot>();
+                tileSlots[x + y * gridSize.x] = newSlot;
+                newSlot.SlotUpdated.AddListener(AttemptCompile);
             }
         }
     }
@@ -91,10 +92,9 @@ public class TileFloorManager : MonoBehaviour
         return tileSlots[Mathf.RoundToInt(x + y * gridSize.x)];
     }
 
-    public void DEBUGCompile()
+    private void AttemptCompile()
     {
         validPath = CompilePath();
-        Debug.Log(validPath);
     }
 
     public bool CompilePath()
