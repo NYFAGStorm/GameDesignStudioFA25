@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackers:
   - type: 0
-    attackerImage: {fileID: 21300000, guid: 19d40602d87c2c74a940a61d34d76683, type: 3}
+    attackerImage: {fileID: 21300000, guid: 8a199434228b30348856a730601ac6cf, type: 3}
     damageType: 1
     attackType: 1
     attackDamage: 2
     maxHealth: 20
     soulReward: 10
     travelSpeed: 4
-    attackRange: 2
+    attackRate: 0
   - type: 1
-    attackerImage: {fileID: 0}
+    attackerImage: {fileID: 21300000, guid: e79a8e939d85f804388c9d26df5f5da1, type: 3}
     damageType: 5
     attackType: 1
     attackDamage: 3
     maxHealth: 10
     soulReward: 13
     travelSpeed: 2
-    attackRange: 3
+    attackRate: 0
   - type: 2
     attackerImage: {fileID: 0}
     damageType: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     maxHealth: 10
     soulReward: 13
     travelSpeed: 2
-    attackRange: 1
+    attackRate: 0
   - type: 3
     attackerImage: {fileID: 0}
     damageType: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
     maxHealth: 20
     soulReward: 13
     travelSpeed: 6
-    attackRange: 4
+    attackRate: 0
   - type: 3
     attackerImage: {fileID: 0}
     damageType: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     maxHealth: 35
     soulReward: 18
     travelSpeed: 4
-    attackRange: 1
+    attackRate: 0
   - type: 5
     attackerImage: {fileID: 0}
     damageType: 0
@@ -66,4 +66,4 @@ MonoBehaviour:
     maxHealth: 10
     soulReward: 13
     travelSpeed: 2
-    attackRange: 3
+    attackRate: 0
