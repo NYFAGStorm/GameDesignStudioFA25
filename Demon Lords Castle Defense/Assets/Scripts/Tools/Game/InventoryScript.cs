@@ -5,10 +5,13 @@ public class InventoryScript : MonoBehaviour
 {
     // Author: Esther Li (YT)
     // this handles the inventory
+    
+    // Contributors: Gustavo Rojas Flores
 
     public List<InventoryItem> items = new List<InventoryItem>();
     public int outOfWorldX = -30;
     public int outOfWorldZ = -5;
+    public GameObject inventoryItemBase;
 
     [SerializeField] Transform itemsParent;
     [SerializeField] ItemSlot[] itemSlots;
@@ -53,10 +56,13 @@ public class InventoryScript : MonoBehaviour
 
     public void AddToInventory(ItemType type, GameObject gameObject, Sprite sprite)
     {
-        items.Add (new InventoryItem { type = type, item = gameObject, Icon = sprite });
+        InventoryItem newItem = new InventoryItem { type = type, item = gameObject, Icon = sprite };
+        items.Add(newItem);
 
         gameObject.transform.position = new Vector3(outOfWorldX, 1, outOfWorldZ);
-        gameObject.SetActive(false);
+
+        ItemSlot newItemSlot = Instantiate(inventoryItemBase, itemsParent).GetComponent<ItemSlot>();
+        newItemSlot.InitializeInvSlot(newItem);
 
         SortInventory();
         RefreshUI();

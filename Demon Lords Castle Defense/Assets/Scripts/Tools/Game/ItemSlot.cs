@@ -33,6 +33,12 @@ public class ItemSlot : MonoBehaviour
         inventoryScript = GetComponentInParent<InventoryScript>();
     }
 
+    public void InitializeInvSlot(InventoryItem itemData)
+    {
+        Item = itemData;
+        _item.item.GetComponent<Placeable>().LinkInventory(this);
+    }
+
     public void TakeOutItem()
     {
         _item.item.SetActive(true);

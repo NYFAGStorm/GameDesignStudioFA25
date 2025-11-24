@@ -141,6 +141,8 @@ public class Placeable : MonoBehaviour
         if (!s)
         {
             invSlotLink.ReturnItem();
+
+            return;
         }
 
         isPlaced = s.InsertItem(this);
