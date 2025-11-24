@@ -12,7 +12,6 @@ public enum ItemType
 public class InventoryItem
 {
     public ItemType type;
-    //public string itemName;
     public GameObject item;
     public Sprite Icon;
 }

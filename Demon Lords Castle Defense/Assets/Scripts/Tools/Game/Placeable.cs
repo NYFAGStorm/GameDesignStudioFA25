@@ -20,10 +20,16 @@ public class Placeable : MonoBehaviour
     protected List<Slot> childSlots;
     protected float removeHoldTime = 0.5f;
     protected bool clicked = false;
+    protected ItemSlot invSlotLink;
 
     public void Lock(bool setLock)
     {
         locked = setLock;
+    }
+
+    public void LinkInventory(ItemSlot link)
+    {
+        invSlotLink = link;
     }
 
     virtual protected void OnMouseDown()
@@ -132,7 +138,10 @@ public class Placeable : MonoBehaviour
 
         Slot s = GetClosestSlot();
 
-        if (!s) return;
+        if (!s)
+        {
+            invSlotLink.ReturnItem();
+        }
 
         isPlaced = s.InsertItem(this);
     }
