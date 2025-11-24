@@ -8,7 +8,7 @@ public class ShopItem : MonoBehaviour
     private int price;
     private string itemName;
     private Sprite image;
-    private ShopItemType type;
+    private ItemType type;
     private string enumName;
 
     public TMP_Text costDisplay;
@@ -39,17 +39,17 @@ public class ShopItem : MonoBehaviour
 
         switch (type)
         {
-            case ShopItemType.Tile:
+            case ItemType.Tile:
                 newInvItem = FindFirstObjectByType<TileData>().CreateTile(Enum.Parse<TileType>(enumName)).gameObject;
 
                 break;
 
-            case ShopItemType.Goon:
+            case ItemType.Goon:
                 newInvItem = FindFirstObjectByType<GoonData>().CreateGoon(Enum.Parse<GoonType>(enumName)).gameObject;
 
                 break;
 
-            case ShopItemType.Trophy:
+            case ItemType.Trophy:
                 //newInvItem = FindFirstObjectByType<TrophyData>().CreateTrophy(Enum.Parse<TrophyType>(enumName)).gameObject;
 
                 break;
@@ -61,8 +61,8 @@ public class ShopItem : MonoBehaviour
             Debug.LogWarning("Invalid shop item data");
         }
         else
-        { 
-            //FindFirstObjectByType<InventoryScript>().AddToInventory(newInvItem, image);
+        {
+            FindFirstObjectByType<InventoryScript>().AddToInventory(type, newInvItem, image);
         }
     }
 }

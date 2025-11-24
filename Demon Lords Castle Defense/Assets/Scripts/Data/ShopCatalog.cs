@@ -1,19 +1,12 @@
 using UnityEngine;
 
-public enum ShopItemType
-{
-    Tile,
-    Goon,
-    Trophy
-}
-
 [System.Serializable]
 public struct UniqueShopItem
 {
     public string name;
     public int price;
     public Sprite image;
-    public ShopItemType itemType;
+    public ItemType itemType;
     public string itemEnumName;
 }
 
