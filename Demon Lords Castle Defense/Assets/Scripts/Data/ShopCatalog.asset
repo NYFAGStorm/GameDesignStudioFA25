@@ -18,3 +18,8 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: e17e765009725cf438883ccbdecdecd2, type: 3}
     itemType: 0
     itemEnumName: ShadowHall
+  - name: Goblin
+    price: 10
+    image: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
+    itemType: 1
+    itemEnumName: Goblin
