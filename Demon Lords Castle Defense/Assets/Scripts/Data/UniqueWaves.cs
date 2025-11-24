@@ -1,6 +1,9 @@
 using UnityEngine;
 
 [System.Serializable]
+
+//LiAi
+//Groups up each wave
 public struct EnemyGroup
 {
     public AttackerType enemyType;
