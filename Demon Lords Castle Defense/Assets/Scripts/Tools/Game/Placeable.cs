@@ -44,6 +44,7 @@ public class Placeable : MonoBehaviour
     public void ManualStartDrag()
     {
         clicked = true;
+        isBeingDragged = true;
 
         StartDrag();
     }
