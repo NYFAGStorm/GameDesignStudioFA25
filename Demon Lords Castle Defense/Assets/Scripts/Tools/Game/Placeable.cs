@@ -44,7 +44,6 @@ public class Placeable : MonoBehaviour
     public void ManualStartDrag()
     {
         clicked = true;
-        isBeingDragged = true;
 
         StartDrag();
     }
@@ -87,7 +86,13 @@ public class Placeable : MonoBehaviour
     virtual protected void Update()
     {
         if (!isBeingDragged) return;
+        
         transform.position = new Vector3(WorldMouse.Get().x, 1, WorldMouse.Get().y);
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            OnRelease();
+        }
     }
 
     private Slot GetClosestSlot()
@@ -128,7 +133,7 @@ public class Placeable : MonoBehaviour
         container = newContainer;
     }
 
-    virtual protected void OnMouseUp()
+    virtual protected void OnRelease()
     {
         clicked = false;
         CancelInvoke("StartDrag");

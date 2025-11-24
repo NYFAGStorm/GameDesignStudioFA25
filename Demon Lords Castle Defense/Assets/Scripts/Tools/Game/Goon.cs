@@ -77,9 +77,9 @@ public class Goon : Placeable
         else statDisplay = PopupBuilder.CreatePopup(statDisplayBP);
     }
 
-    protected override void OnMouseUp()
+    protected override void OnRelease()
     {
-        base.OnMouseUp();
+        base.OnRelease();
 
         if (isPlaced) state = 1;
     }
