@@ -17,7 +17,13 @@ public class TutorialManager : MonoBehaviour
     public Sprite[] demonLordSprites;
 
     private int i = 0;
+    private int s = 0;
+    private int d = 0;
 
+    private void Start()
+    {
+        snowBall.GetComponent<Image>().sprite = snowBallSprites[s];
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) 
@@ -71,14 +77,30 @@ public class TutorialManager : MonoBehaviour
 
     private void SnowballTalk()
     {
+        SnowballChangeExpression();
+
         snowBall.GetComponent<Image>().color = new Color (1f, 1f, 1f);
         demonLord.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
     }
 
     private void DemonLordTalk()
     {
+        DemonLordChangeExpression();
+
         snowBall.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
         demonLord.GetComponent<Image>().color = new Color(1f, 1f, 1f);
+    }
+
+    private void SnowballChangeExpression()
+    {
+        s++;
+        snowBall.GetComponent<Image>().sprite = snowBallSprites[s];
+    }
+
+    private void DemonLordChangeExpression()
+    {
+        d++;
+        demonLord.GetComponent<Image>().sprite = demonLordSprites[d];
     }
 
     public void SkipTutorial()
