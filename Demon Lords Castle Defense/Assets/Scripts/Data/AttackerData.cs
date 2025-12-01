@@ -21,6 +21,7 @@ public enum AttackForm
     Ranged
 }
 
+
 public class AttackerData : MonoBehaviour
 {
     private List<Vector3> path;
@@ -30,7 +31,7 @@ public class AttackerData : MonoBehaviour
     public GameObject attackerBase;
     public UniqueAttackers types;
     public TileFloorManager tfm;
-    public Wavemanager wavemanager;
+    
 
     public void UpdatePath(List<Vector3> newPath)
     {
@@ -69,13 +70,5 @@ public class AttackerData : MonoBehaviour
         return newAttacker;
     }
 
-    public void Die()
-    {
-        if (wavemanager != null)
-        {
-            wavemanager.OnAttackerDie();
-        }
-
-     
-    }
+    
 }

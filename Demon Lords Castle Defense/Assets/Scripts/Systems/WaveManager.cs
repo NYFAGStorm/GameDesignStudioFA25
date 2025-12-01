@@ -64,7 +64,7 @@ public class WaveManager : MonoBehaviour
     {
         Wave wave = wavesData.waves[currentWave];
 
-        foreach (EnemyGroup group in wave.group)
+        foreach (EnemyGroup group in wave.groups)
         {
             for (int i = 0; i < groups.count; i++)
             {
@@ -77,6 +77,7 @@ public class WaveManager : MonoBehaviour
                 }
             }
         }
+        state = WaveState.Waiting;
     }
 
     public void OnAttackerDied()
