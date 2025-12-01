@@ -1802,9 +1802,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 610997369}
+      - m_Target: {fileID: 11500000, guid: d3fb7e6c35662af40b787ae9f547fb6e, type: 3}
         m_TargetAssemblyTypeName: AttackerData, Assembly-CSharp
-        m_MethodName: DEBUGAttacker
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3281,7 +3281,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4896302289062718793}
   m_HandleRect: {fileID: 3740409226601489276}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

@@ -18,11 +18,13 @@ public class WaveManager : MonoBehaviour
 
     private int currentWave = 0;
     private int enemiesRemaining = 0;
-    public WaveState state;
+    public WaveState state = WaveState.Idle;
    
 
     private void Start()
     {
+        currentWave = 0;
+        enemiesRemaining = 0;
         state = WaveState.SpawningWave;
     }
 
