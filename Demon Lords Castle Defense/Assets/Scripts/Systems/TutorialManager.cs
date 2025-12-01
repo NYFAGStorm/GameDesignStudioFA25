@@ -12,9 +12,14 @@ public class TutorialManager : MonoBehaviour
     public GameObject textbox;
     public GameObject[] dialogueText;
     public GameObject snowBall;
+    public GameObject snowBallName;
     public GameObject demonLord;
+    public GameObject demonLordName;
     public Sprite[] snowBallSprites;
     public Sprite[] demonLordSprites;
+
+    public GameObject shopOpen;
+    public GameObject shopClose;
 
     private int i = 0;
     private int s = 0;
@@ -23,6 +28,7 @@ public class TutorialManager : MonoBehaviour
     private void Start()
     {
         snowBall.GetComponent<Image>().sprite = snowBallSprites[s];
+
     }
     void Update()
     {
@@ -45,34 +51,48 @@ public class TutorialManager : MonoBehaviour
 
     public void NextDialogue()
     {
-            dialogueText[i].SetActive(false);
-            i++;
-            dialogueText[i].SetActive(true);
+        dialogueText[i].SetActive(false);
+        i++;
+        dialogueText[i].SetActive(true);
 
-            if (dialogueText[i].tag == "Snowball")
-            {
-                SnowballTalk();
-                demonLord.SetActive(true);
-                snowBall.SetActive(true);
-                snowBall.transform.Find("Snowball Name").gameObject.SetActive(true);
-                demonLord.transform.Find("Demon Lord Name").gameObject.SetActive(false);
-                textbox.GetComponent<Image>().enabled = true;
-            }
-            if (dialogueText[i].tag == "DemonLord")
-            {
-                DemonLordTalk();
-                demonLord.SetActive(true);
-                snowBall.SetActive(true);
-                snowBall.transform.Find("Snowball Name").gameObject.SetActive(false);
-                demonLord.transform.Find("Demon Lord Name").gameObject.SetActive(true);
-                textbox.GetComponent<Image>().enabled = true;
-            }
-            if (dialogueText[i].tag == "Tooltip")
-            {
-                textbox.GetComponent<Image>().enabled = false;
-                demonLord.SetActive(false);
-                snowBall.SetActive(false);
-            }        
+        if (i == 12)
+        {
+            shopClose.SetActive(false);
+            shopOpen.SetActive(true);
+        }
+
+        if (i == 15)
+        {
+            shopClose.SetActive(true);
+            shopOpen.SetActive(false);
+        }
+
+        if (dialogueText[i].tag == "Snowball")
+        {
+            SnowballTalk();
+            demonLord.SetActive(true);
+            snowBall.SetActive(true);
+            snowBallName.SetActive(true);
+            demonLordName.SetActive(false);
+            textbox.GetComponent<Image>().enabled = true;
+        }
+        if (dialogueText[i].tag == "DemonLord")
+        {
+            DemonLordTalk();
+            demonLord.SetActive(true);
+            snowBall.SetActive(true);
+            snowBallName.SetActive(false);
+            demonLordName.SetActive(true);
+            textbox.GetComponent<Image>().enabled = true;
+        }
+        if (dialogueText[i].tag == "Tooltip")
+        {
+            textbox.GetComponent<Image>().enabled = false;
+            demonLord.SetActive(false);
+            snowBall.SetActive(false);
+            snowBallName.SetActive(false);
+            demonLordName.SetActive(false);
+        }
     }
 
     private void SnowballTalk()
