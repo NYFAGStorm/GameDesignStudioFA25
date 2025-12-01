@@ -66,7 +66,7 @@ public class WaveManager : MonoBehaviour
 
         foreach (EnemyGroup group in wave.groups)
         {
-            for (int i = 0; i < groups.count; i++)
+            for (int i = 0; i < wave.groups.Length; i++)
             {
                 Attacker attacker = attackerData.SummonAttacker(group.enemyType);
 

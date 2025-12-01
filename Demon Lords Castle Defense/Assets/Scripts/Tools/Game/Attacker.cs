@@ -53,6 +53,8 @@ public class Attacker : MonoBehaviour
     private OnBeat attackOnBeat;
     private int state;
 
+    [HideInInspector]
+    public WaveManager waveManager;
     public SpriteRenderer appearance;
 
     public void InitializeAttacker(List<Vector3> inPath, UniqueAttacker data, Vector3 start)
