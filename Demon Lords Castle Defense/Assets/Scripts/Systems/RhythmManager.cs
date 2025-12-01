@@ -25,7 +25,7 @@ public class RhythmManager : MonoBehaviour
 
         secondTimer = Mathf.Min(1, secondTimer + timeIncrement);
 
-        if (secondTimer == 1)
+        if (secondTimer >= 1)
         {
             Rhythm.beats[0].Invoke();
             secondTimer = 0;
@@ -48,7 +48,7 @@ public static class Rhythm
     private static UnityEvent ThirdBeat = new UnityEvent();
     private static UnityEvent FourthBeat = new UnityEvent();
 
-    public static float beatsPerMinute = 120;
+    public static float beatsPerMinute = 60;
     public static UnityEvent[] beats = { Beat, SecondBeat, ThirdBeat, FourthBeat };
 }
 

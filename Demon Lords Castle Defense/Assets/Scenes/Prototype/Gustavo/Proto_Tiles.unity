@@ -1362,6 +1362,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupBase: {fileID: 6682973635862368042, guid: 05e903f49ad23574691c783b2ac25705, type: 3}
+--- !u!1 &1077803853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1077803855}
+  - component: {fileID: 1077803854}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1077803854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077803853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fb7e6c35662af40b787ae9f547fb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  wavesData: {fileID: 11400000, guid: 81a09dd4f1511b74f8608e628d46e25b, type: 2}
+  attackerData: {fileID: 610997369}
+--- !u!4 &1077803855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077803853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.574632, y: -161.35953, z: 87.65282}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1126503436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,9 +2089,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: d3fb7e6c35662af40b787ae9f547fb6e, type: 3}
-        m_TargetAssemblyTypeName: AttackerData, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1077803854}
+        m_TargetAssemblyTypeName: WaveManager, Assembly-CSharp
+        m_MethodName: BeginWave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2671,7 +2718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1977655850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3797,4 +3844,5 @@ SceneRoots:
   - {fileID: 1239981533}
   - {fileID: 1054647806}
   - {fileID: 1126503438}
+  - {fileID: 1077803855}
   - {fileID: 141497289}

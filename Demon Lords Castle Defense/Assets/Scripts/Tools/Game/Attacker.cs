@@ -99,6 +99,7 @@ public class Attacker : MonoBehaviour
         if (currentPathPos == path.Count)
         {
             FindFirstObjectByType<DemonGameManager>().EnemyReachedEnd();
+            waveManager.OnAttackerRemoved();
             isMoving = false;
 
             Destroy(gameObject);
@@ -117,13 +118,13 @@ public class Attacker : MonoBehaviour
     {
         health = Mathf.Max(0, health - damage);
 
-        Debug.Log("hero health: " + health);
         if (health == 0)
         {
             CurrencyManager.AwardSouls(soulReward);
 
             Destroy(gameObject);
 
+            waveManager.OnAttackerRemoved();
             attackerData.UpdateExistingAttackers.Invoke();
         }
 

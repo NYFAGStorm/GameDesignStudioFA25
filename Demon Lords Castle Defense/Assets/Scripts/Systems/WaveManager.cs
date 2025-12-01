@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public enum WaveState
 {
@@ -10,22 +11,30 @@ public enum WaveState
 }
 public class WaveManager : MonoBehaviour
 {
-    //LiAi
-    //Script to manage for waves
+    // LiAi
+    // Script to manage for waves
 
+    [HideInInspector]
+    public WaveState state = WaveState.Idle;
     public UniqueWaves wavesData;
     public AttackerData attackerData;
 
     private int currentWave = 0;
     private int enemiesRemaining = 0;
-    public WaveState state = WaveState.Idle;
-   
+    private bool spawning = false;
+    private int currentEnemyIndex = 0;
+    private List<AttackerType> bakedWave = new List<AttackerType>();
 
-    private void Start()
+    public void BeginWave()
     {
+        if (spawning) return;
+
+        spawning = true;
         currentWave = 0;
         enemiesRemaining = 0;
         state = WaveState.SpawningWave;
+
+        SpawnNextWave();
     }
 
     private void Update()
@@ -33,7 +42,7 @@ public class WaveManager : MonoBehaviour
         switch (state)
         {
             case WaveState.SpawningWave:
-                SpawnNextWave();
+                //SpawnNextWave();
                 break;
 
             case WaveState.Waiting:
@@ -60,31 +69,46 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    private void TimedEnemySpawn()
+    {
+        Attacker attacker = attackerData.SummonAttacker(bakedWave[currentEnemyIndex]);
+
+        if (attacker != null)
+        {
+            attacker.waveManager = this;
+            enemiesRemaining++;
+        }
+
+        currentEnemyIndex++;
+    }
+
     private void SpawnNextWave()
     {
         Wave wave = wavesData.waves[currentWave];
 
-        foreach (EnemyGroup group in wave.groups)
-        {
-            for (int i = 0; i < wave.groups.Length; i++)
-            {
-                Attacker attacker = attackerData.SummonAttacker(group.enemyType);
+        currentEnemyIndex = 0;
+        bakedWave.Clear();
 
-                if (attacker != null)
-                {
-                    attacker.waveManager = this;
-                    enemiesRemaining++;
-                }
+        for (int g = 0; g < wave.groups.Length; g++)
+        {
+            for (int enemy = 0; enemy < wave.groups[g].count; enemy++)
+            {
+                bakedWave.Add(wave.groups[g].enemyType);
+
+                Invoke("TimedEnemySpawn", (enemy + g) * 60 / Rhythm.beatsPerMinute);
             }
         }
+
         state = WaveState.Waiting;
     }
 
-    public void OnAttackerDied()
+    public void OnAttackerRemoved()
     {
         enemiesRemaining--;
-        if (enemiesRemaining < 0) 
-            enemiesRemaining = 0;
-    }
 
+        if (enemiesRemaining == 0)
+        {
+            state = WaveState.WaveCompleted;
+        }
+    }
 }
