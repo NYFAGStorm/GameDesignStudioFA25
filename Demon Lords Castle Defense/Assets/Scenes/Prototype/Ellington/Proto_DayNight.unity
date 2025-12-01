@@ -1525,6 +1525,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697075590}
   m_CullTransparentMesh: 1
+--- !u!1 &727056416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 727056419}
+  - component: {fileID: 727056418}
+  - component: {fileID: 727056417}
+  m_Layer: 0
+  m_Name: DayNightManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &727056417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727056416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fb7e6c35662af40b787ae9f547fb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  wavesData: {fileID: 11400000, guid: 81a09dd4f1511b74f8608e628d46e25b, type: 2}
+  attackerData: {fileID: 1203715295}
+--- !u!114 &727056418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727056416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bed4c5a66ede3345bce50e97256898d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNight: 1
+  currentNight: 1
+  currentDay: 0
+  finalDay: 5
+  isFinalDay: 0
+  TotalRounds: 10
+  currentRound: 0
+  bossRound: 0
+  tileFloorManager: {fileID: 1203715297}
+--- !u!4 &727056419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727056416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &774745298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2794,59 +2863,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1203715298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1255159440
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1255159442}
-  - component: {fileID: 1255159441}
-  m_Layer: 0
-  m_Name: DayNightManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1255159441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255159440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bed4c5a66ede3345bce50e97256898d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isNight: 1
-  currentNight: 1
-  currentDay: 0
-  finalDay: 5
-  isFinalDay: 0
-  TotalRounds: 10
-  currentRound: 0
-  bossRound: 0
-  tileFloorManager: {fileID: 1203715297}
---- !u!4 &1255159442
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255159440}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1410128488
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,7 +3396,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1255159441}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DayNightManager, Assembly-CSharp
         m_MethodName: SwapToDay
         m_Mode: 1
@@ -4162,5 +4178,5 @@ SceneRoots:
   - {fileID: 359422097}
   - {fileID: 1207682504}
   - {fileID: 77603660}
-  - {fileID: 1255159442}
   - {fileID: 1203715298}
+  - {fileID: 727056419}

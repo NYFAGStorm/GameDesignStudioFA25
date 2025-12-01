@@ -25,9 +25,15 @@ public class WaveManager : MonoBehaviour
     private int currentEnemyIndex = 0;
     private List<AttackerType> bakedWave = new List<AttackerType>();
 
+    // Ellington: Added DayNightManager for function call
+    public DayNightManager dayNightManager;
+
     public void BeginWave()
     {
         if (spawning) return;
+
+        // Ellington: Added a function call to start the day
+        dayNightManager.SwapToDay();
 
         spawning = true;
         currentWave = 0;

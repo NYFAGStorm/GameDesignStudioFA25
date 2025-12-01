@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class DayNightManager : MonoBehaviour
@@ -7,19 +8,23 @@ public class DayNightManager : MonoBehaviour
 
     public bool isNight = true;
     public int currentNight = 1;
-    public int currentDay = 0;
+    public int currentDay = 1;
     public int finalDay = 5;
     public bool isFinalDay = false;
 
-    public int TotalRounds = 10;
-    public int currentRound;
-    public bool bossRound = false;
+    /// NTOE: Invalidated
+    // public int TotalRounds = 10;
+    // public int currentRound;
+    // public bool bossRound = false;
 
-    // For testing purposes
-    //public float roundTimerDuration = 60f;
-    //public float roundTimer;
+    /// NOTE: For testing purposes
+    // public float roundTimerDuration = 60f;
+    // public float roundTimer;
 
     public TileFloorManager tileFloorManager;
+    public WaveManager waveManager;
+    /// NOTE: Might need to disable this, so keep a reference here just in case
+    // public GameObject sendEnemyButton;
 
     void Start()
     {
@@ -28,6 +33,11 @@ public class DayNightManager : MonoBehaviour
 
     void Update()
     {
+        if (isNight! && waveManager.state == WaveState.AllWavesCompleted)
+        {
+            SwapToNight();
+        }
+
         // Timer for testing purposes
         /**
         if (roundTimer > 0f)
@@ -44,8 +54,10 @@ public class DayNightManager : MonoBehaviour
         **/
     }
 
+    /// NOTE: Below script has been invalidated
     // Begins the next round
     // Disables the Start Next Round button if it is the boss round
+    /**
     public void RoundStart()
     {
         if (currentRound == 0)
@@ -67,9 +79,12 @@ public class DayNightManager : MonoBehaviour
         // For testing purposes
         //roundTimer = roundTimerDuration;
     }
+    **/
 
+    /// NOTE: Below script has been invalidated
     // Moves the current round count up by 1
     // If the current round is the boss round when this is called, change day to night
+    /**
     public void RoundEnd()
     {
         if (!bossRound)
@@ -93,6 +108,7 @@ public class DayNightManager : MonoBehaviour
             }
         }
     }
+    **/
 
     // Changes to Day and begins the rounds
     // Changes UI view to Day
@@ -102,9 +118,9 @@ public class DayNightManager : MonoBehaviour
         isNight = false;
         currentDay++;
 
-        Debug.Log("Day has begun! Starting rounds...");
+        Debug.Log("Day has begun! Locking the floor...");
         tileFloorManager.LockFloor(true);
-        RoundStart();
+        // RoundStart();
 
         if (currentDay == finalDay)
         {
@@ -118,7 +134,7 @@ public class DayNightManager : MonoBehaviour
     // Enables Tile Movement
     public void SwapToNight()
     {
-        currentRound = 0;
+        // currentRound = 0;
         isNight = true;
         currentNight++;
 
