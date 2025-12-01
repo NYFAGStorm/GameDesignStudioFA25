@@ -1395,7 +1395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be338c5c237be4aa8b8205cfcddd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  demonHealth: 100
+  demonLordHealth: 10
+  gameOverScreen: {fileID: 0}
 --- !u!4 &1126503438
 Transform:
   m_ObjectHideFlags: 0
