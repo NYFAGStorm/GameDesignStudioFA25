@@ -62,8 +62,28 @@ public class WaveManager : MonoBehaviour
 
     private void SpawnNextWave()
     {
-        state = WaveState.Waiting;
+        Wave wave = wavesData.waves[currentWave];
+
+        foreach (EnemyGroup group in wave.group)
+        {
+            for (int i = 0; i < groups.count; i++)
+            {
+                Attacker attacker = attackerData.SummonAttacker(group.enemyType);
+
+                if (attacker != null)
+                {
+                    attacker.waveManager = this;
+                    enemiesRemaining++;
+                }
+            }
+        }
     }
 
+    public void OnAttackerDied()
+    {
+        enemiesRemaining--;
+        if (enemiesRemaining < 0) 
+            enemiesRemaining = 0;
+    }
 
 }
