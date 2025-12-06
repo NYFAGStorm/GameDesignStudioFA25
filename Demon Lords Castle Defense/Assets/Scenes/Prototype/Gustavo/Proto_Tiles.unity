@@ -1394,6 +1394,7 @@ MonoBehaviour:
   state: 0
   wavesData: {fileID: 11400000, guid: 81a09dd4f1511b74f8608e628d46e25b, type: 2}
   attackerData: {fileID: 610997369}
+  dayNightManager: {fileID: 0}
 --- !u!4 &1077803855
 Transform:
   m_ObjectHideFlags: 0
@@ -2266,6 +2267,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 5378631254763255589, guid: a205c796a946c0242ba0623ef0e6100a, type: 3}
+      propertyPath: shopOpen
+      value: 
+      objectReference: {fileID: 739790555}
+    - target: {fileID: 5378631254763255589, guid: a205c796a946c0242ba0623ef0e6100a, type: 3}
+      propertyPath: shopClose
+      value: 
+      objectReference: {fileID: 596656599}
     - target: {fileID: 7019209168316002304, guid: a205c796a946c0242ba0623ef0e6100a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
