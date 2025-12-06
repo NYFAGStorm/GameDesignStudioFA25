@@ -125,7 +125,7 @@ public class Placeable : MonoBehaviour
 
         container = null;
         Destroy(gameObject);
-        // Tell inventory manager to add this item back to player's inventory
+        invSlotLink.ReturnItem();
     }
 
     public void UpdateContainer(Slot newContainer)

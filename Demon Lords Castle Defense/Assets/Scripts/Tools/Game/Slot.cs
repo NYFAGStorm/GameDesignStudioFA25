@@ -24,6 +24,7 @@ public class Slot : MonoBehaviour
     //      all Slots should be cleared, all items returns to inventory
 
     private Placeable item = null;
+    private Placeable replacer = null;
 
     public SlotType slotType = 0;
     public Vector3 offset;
@@ -34,11 +35,31 @@ public class Slot : MonoBehaviour
     {
         replacePrompt = new PopupBlueprint()
         {
-
+            target = transform,
+            size = new Vector2(400, 100),
+            header = "Replace?",
+            buttons = new PopupButton[]
+            {
+                new PopupButton()
+                {
+                    text = "Yes",
+                    textScale = 50,
+                    size = new Vector2(80, 40),
+                    position = new Vector2(10, 5),
+                    action = Replace
+                }
+            }
         };
     }
 
     public UnityEvent SlotUpdated;
+
+    private void Replace()
+    {
+        RemoveItem(item);
+
+        InsertItem(replacer);
+    }
 
     public Placeable GetItem()
     {
@@ -56,6 +77,8 @@ public class Slot : MonoBehaviour
 
         if (item)
         {
+            replacer = newItem;
+
             PopupBuilder.CreatePopup(replacePrompt);
             return false;
         }

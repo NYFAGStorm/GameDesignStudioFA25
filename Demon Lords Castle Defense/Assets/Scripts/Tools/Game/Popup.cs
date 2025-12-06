@@ -22,25 +22,32 @@ public class Popup : MonoBehaviour
 
         PopupBuilder.DestroyOtherPopups.AddListener(Delete);
 
-
-        foreach (PopupLabel label in blueprint.labels)
+        if (blueprint.labels != null)
         {
-            RectTransform newLabel = Instantiate(labelBase, canvas).GetComponent<RectTransform>();
-            newLabel.anchoredPosition = label.position;
-            newLabel.sizeDelta = label.size;
-            newLabel.GetComponent<TMP_Text>().text = label.text;
-            newLabel.GetComponent<TMP_Text>().fontSize = label.textScale;
-            newLabel.gameObject.name = label.identifier;
+            if (blueprint.labels.Length == 0) return;
+
+            foreach (PopupLabel label in blueprint.labels)
+            {
+                RectTransform newLabel = Instantiate(labelBase, canvas).GetComponent<RectTransform>();
+                newLabel.anchoredPosition = label.position;
+                newLabel.sizeDelta = label.size;
+                newLabel.GetComponent<TMP_Text>().text = label.text;
+                newLabel.GetComponent<TMP_Text>().fontSize = label.textScale;
+                newLabel.gameObject.name = label.identifier;
+            }
         }
 
         if (blueprint.buttons != null)
         {
+            if (blueprint.buttons.Length == 0) return;
+
             foreach (PopupButton button in blueprint.buttons)
             {
                 RectTransform newButton = Instantiate(labelBase, canvas).GetComponent<RectTransform>();
                 newButton.anchoredPosition = button.position;
                 newButton.sizeDelta = button.size;
-                TMP_Text label = newButton.transform.GetChild(0).GetComponent<TMP_Text>();
+
+                TMP_Text label = newButton.GetComponentInChildren<TMP_Text>();
                 label.text = button.text;
                 label.fontSize = button.textScale;
                 newButton.GetComponent<Button>().onClick.AddListener(button.action);
