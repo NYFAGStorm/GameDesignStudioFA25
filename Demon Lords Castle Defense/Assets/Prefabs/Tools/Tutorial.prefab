@@ -1106,12 +1106,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cd56f3d746e5c494298b888519da8180, type: 3}
   - {fileID: 21300000, guid: 1cf3a1ccef164944d87850da9acb28e9, type: 3}
   demonLordSprites:
-  - {fileID: 21300000, guid: eace6f0a814639f48b000b34b54b26a7, type: 3}
-  - {fileID: 21300000, guid: a6ab1fac97707b14f916a89fb93448f6, type: 3}
-  - {fileID: 21300000, guid: 24aaab4abe4d1eb42b634b1aa1b99704, type: 3}
-  - {fileID: 21300000, guid: eace6f0a814639f48b000b34b54b26a7, type: 3}
-  - {fileID: 21300000, guid: a6ab1fac97707b14f916a89fb93448f6, type: 3}
-  - {fileID: 21300000, guid: eace6f0a814639f48b000b34b54b26a7, type: 3}
+  - {fileID: 21300000, guid: 995a15174ed2aa946ae1c91098341214, type: 3}
+  - {fileID: 21300000, guid: 995a15174ed2aa946ae1c91098341214, type: 3}
+  - {fileID: 21300000, guid: 9aceb002e3a9de14287133179128d8ac, type: 3}
+  - {fileID: 21300000, guid: 9aceb002e3a9de14287133179128d8ac, type: 3}
+  - {fileID: 21300000, guid: 4ef61de759d242c4e8067149c64bcfb4, type: 3}
+  - {fileID: 21300000, guid: 105a6e85ba108bc4489dea673c61a4df, type: 3}
+  - {fileID: 21300000, guid: 9aceb002e3a9de14287133179128d8ac, type: 3}
+  shopOpen: {fileID: 0}
+  shopClose: {fileID: 0}
 --- !u!1 &1881583211597010545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -348.99997, y: -709}
+  m_AnchoredPosition: {x: -517, y: -647}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7369592750099900584
@@ -2921,7 +2924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -802, y: -709}
+  m_AnchoredPosition: {x: -812, y: -647}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &334126721865516893
@@ -4543,17 +4546,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7513159611950250001}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -154.00002}
-  m_LocalScale: {x: -1.00008, y: 1.00008, z: 1.00008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5462831681724591097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -294, y: -111.99991}
-  m_SizeDelta: {x: 920, y: 540}
+  m_AnchoredPosition: {x: -183, y: -78}
+  m_SizeDelta: {x: 736, y: 432}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6961662829171424455
 CanvasRenderer:
@@ -4583,7 +4586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eace6f0a814639f48b000b34b54b26a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aceb002e3a9de14287133179128d8ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4627,8 +4630,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 555, y: 96}
-  m_SizeDelta: {x: 500, y: 500}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8143236866968919289
 CanvasRenderer:
@@ -4658,7 +4661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eace6f0a814639f48b000b34b54b26a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 105a6e85ba108bc4489dea673c61a4df, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5745,7 +5748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -574, y: -709}
+  m_AnchoredPosition: {x: -666, y: -647}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6082484729950292
