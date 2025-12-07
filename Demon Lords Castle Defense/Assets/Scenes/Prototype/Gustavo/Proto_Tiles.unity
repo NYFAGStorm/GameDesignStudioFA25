@@ -943,6 +943,26 @@ MonoBehaviour:
     pitchVariance: 0
     volume: 1
     volumeVariance: 0
+  - name: ObjectGrab
+    clip: {fileID: 8300000, guid: 79fe7a2b76d4e48578a3e43072556c5f, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: ObjectPlace
+    clip: {fileID: 8300000, guid: dc8e1c78c8b16461e981cf7da889c692, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
   musicCrossFadeTime: 2
 --- !u!4 &618298469
 Transform:

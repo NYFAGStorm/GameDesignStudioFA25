@@ -62,6 +62,8 @@ public class Placeable : MonoBehaviour
         childSlots = new List<Slot>();
         childSlots.Clear();
 
+        FindFirstObjectByType<AudioManager>().StartSound("ObjectGrab");
+
         List<Slot> newValidSlots = new List<Slot>(validSlots);
 
         foreach (Slot s in validSlots)

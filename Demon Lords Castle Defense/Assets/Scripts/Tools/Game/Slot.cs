@@ -90,6 +90,8 @@ public class Slot : MonoBehaviour
 
             SlotUpdated.Invoke();
 
+            FindFirstObjectByType<AudioManager>().StartSound("ObjectPlace");
+
             return true;
         }
     }
