@@ -923,22 +923,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: GoblinAttack1
+  - name: GoblinAttack
     clip: {fileID: 8300000, guid: f7e3924eb2f4341228ba350d5a19235d, type: 3}
     type: 0
     delay: 0
     maxDelay: 0
-    spaceBlend: 1
+    spaceBlend: 0
     pitch: 1
     pitchVariance: 0
     volume: 1
     volumeVariance: 0
-  - name: PriestDeath1
+  - name: PriestDeath
     clip: {fileID: 8300000, guid: 1c2949e2a341e4671b123432dceace51, type: 3}
     type: 0
     delay: 0
     maxDelay: 0
-    spaceBlend: 1
+    spaceBlend: 0
     pitch: 1
     pitchVariance: 0
     volume: 1
@@ -3920,5 +3920,5 @@ SceneRoots:
   - {fileID: 1054647806}
   - {fileID: 1126503438}
   - {fileID: 1077803855}
-  - {fileID: 141497289}
   - {fileID: 618298469}
+  - {fileID: 141497289}

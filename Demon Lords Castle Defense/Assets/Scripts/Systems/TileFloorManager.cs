@@ -38,7 +38,13 @@ public class TileFloorManager : MonoBehaviour
         floor.localScale = new Vector3(gridSize.x * unitSize, gridSize.y * unitSize, 1);
 
         int entrance = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
-        int exit = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
+        int exit = entrance;
+
+        do
+        {
+            exit = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
+        } 
+        while (entrance - 1 == exit);
 
         for (int y = 0; y < gridSize.y; y++)
         {

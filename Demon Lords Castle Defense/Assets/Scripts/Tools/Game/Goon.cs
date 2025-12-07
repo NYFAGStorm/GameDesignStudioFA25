@@ -159,6 +159,8 @@ public class Goon : Placeable
         Debug.Log("goon health: " + health);
         if (health == 0)
         {
+            FindFirstObjectByType<AudioManager>().StartSound(type.ToString() + "Death");
+
             container.RemoveItem(false);
             Destroy(gameObject);
 
