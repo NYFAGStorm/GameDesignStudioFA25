@@ -50,6 +50,7 @@ public class Popup : MonoBehaviour
                 TMP_Text label = newButton.GetComponentInChildren<TMP_Text>();
                 label.text = button.text;
                 label.fontSize = button.textScale;
+
                 newButton.GetComponent<Button>().onClick.AddListener(button.action);
 
                 if (button.image) newButton.GetComponent<Image>().sprite = button.image;

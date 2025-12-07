@@ -45,7 +45,7 @@ public class Slot : MonoBehaviour
                     text = "Yes",
                     textScale = 50,
                     size = new Vector2(80, 40),
-                    position = new Vector2(10, 5),
+                    position = new Vector2(40, 0),
                     action = Replace
                 }
             }
