@@ -973,6 +973,26 @@ MonoBehaviour:
     pitchVariance: 0
     volume: 1
     volumeVariance: 0
+  - name: UIClick
+    clip: {fileID: 8300000, guid: 7921ad3e710bb4ac69a93815b795c82a, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: PurchaseItem
+    clip: {fileID: 8300000, guid: b26fdd5f7227153449acd549a31991da, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
   musicCrossFadeTime: 2
 --- !u!4 &618298469
 Transform:

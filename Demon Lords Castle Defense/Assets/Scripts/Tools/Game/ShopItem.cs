@@ -58,6 +58,8 @@ public class ShopItem : MonoBehaviour
         {
             newInvItem.SetActive(false);
             FindFirstObjectByType<InventoryScript>().AddToInventory(type, newInvItem, image);
+
+            FindFirstObjectByType<AudioManager>().StartSound("PurchaseItem");
         }
         else
         {

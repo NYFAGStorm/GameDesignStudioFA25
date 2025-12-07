@@ -15,7 +15,7 @@ MonoBehaviour:
   items:
   - name: Shadow Hall
     price: 10
-    image: {fileID: 21300000, guid: e17e765009725cf438883ccbdecdecd2, type: 3}
+    image: {fileID: 21300000, guid: 32f8ca2e6753adc428995762a8c38eec, type: 3}
     itemType: 0
     itemEnumName: ShadowHall
   - name: Goblin
@@ -25,6 +25,6 @@ MonoBehaviour:
     itemEnumName: Goblin
   - name: Tea House
     price: 10
-    image: {fileID: 21300000, guid: a2e842e73e9ebc84abdb504ec3d2693e, type: 3}
+    image: {fileID: 21300000, guid: fddb7141b3dcfc14597eeb313322f04d, type: 3}
     itemType: 0
     itemEnumName: Teahouse

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [AddComponentMenu("NYFA Studio/Audio/AudioManager")]
 public class AudioManager : MonoBehaviour
@@ -81,6 +82,17 @@ public class AudioManager : MonoBehaviour
             if (sounds[i].volume == 0f)
                 sounds[i].volume = 1f;
         }
+
+        // Gustavo - Add UI click SFX to all UI buttons
+        foreach (Button btn in Resources.FindObjectsOfTypeAll<Button>())
+        {
+            btn.onClick.AddListener(UIButtonClick);
+        }
+    }
+
+    private void UIButtonClick()
+    {
+        StartSound("UIClick");
     }
 
     void Update()
