@@ -963,6 +963,16 @@ MonoBehaviour:
     pitchVariance: 0
     volume: 1
     volumeVariance: 0
+  - name: ObjectPlace
+    clip: {fileID: 8300000, guid: dc8e1c78c8b16461e981cf7da889c692, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
   musicCrossFadeTime: 2
 --- !u!4 &618298469
 Transform:
@@ -2796,6 +2806,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7019209168316002304, guid: a205c796a946c0242ba0623ef0e6100a, type: 3}
   m_PrefabInstance: {fileID: 1467855751}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1905475146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1905475147}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1905475147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905475146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.410648, y: -172.96576, z: 101.37471}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977655849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3942,3 +3983,4 @@ SceneRoots:
   - {fileID: 1077803855}
   - {fileID: 618298469}
   - {fileID: 141497289}
+  - {fileID: 1905475147}

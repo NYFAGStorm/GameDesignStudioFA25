@@ -133,6 +133,9 @@ public class Goon : Placeable
     {
         target.Engage(this);
         Debug.Log("damaged hero for " + damage);
+
+        FindFirstObjectByType<AudioManager>().StartSound(type.ToString() + "Attack");
+
         if (!target.DealDamage(damage))
         {
             UpdateAttackers();
