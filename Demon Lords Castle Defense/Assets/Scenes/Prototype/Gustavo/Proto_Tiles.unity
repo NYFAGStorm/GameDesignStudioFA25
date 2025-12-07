@@ -893,6 +893,72 @@ MonoBehaviour:
       m_Calls: []
   goonBase: {fileID: 8032749320919845049, guid: 185c0342d81c2f34599b42aaf579a331, type: 3}
   types: {fileID: 11400000, guid: 0cf70b441c4ef844dae168e93392d628, type: 2}
+--- !u!1 &618298467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 618298469}
+  - component: {fileID: 618298468}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &618298468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618298467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84ee89b53e7d06479daf259d5fd914c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: GoblinAttack1
+    clip: {fileID: 8300000, guid: f7e3924eb2f4341228ba350d5a19235d, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 1
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: PriestDeath1
+    clip: {fileID: 8300000, guid: 1c2949e2a341e4671b123432dceace51, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 1
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  musicCrossFadeTime: 2
+--- !u!4 &618298469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618298467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.410648, y: -172.96576, z: 101.37471}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &739790555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3855,3 +3921,4 @@ SceneRoots:
   - {fileID: 1126503438}
   - {fileID: 1077803855}
   - {fileID: 141497289}
+  - {fileID: 618298469}
