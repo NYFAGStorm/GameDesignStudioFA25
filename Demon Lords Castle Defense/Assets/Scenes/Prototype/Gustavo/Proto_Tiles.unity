@@ -2855,8 +2855,8 @@ MonoBehaviour:
   currentDay: 1
   finalDay: 5
   isFinalDay: 0
-  tileFloorManager: {fileID: 0}
-  waveManager: {fileID: 0}
+  tileFloorManager: {fileID: 610997367}
+  waveManager: {fileID: 1077803854}
 --- !u!1 &1977655849
 GameObject:
   m_ObjectHideFlags: 0
