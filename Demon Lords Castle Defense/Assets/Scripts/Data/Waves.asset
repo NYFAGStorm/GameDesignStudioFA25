@@ -15,11 +15,11 @@ MonoBehaviour:
   waves:
   - groups:
     - enemyType: 0
-      count: 24
+      count: 3
     - enemyType: 1
-      count: 4
+      count: 3
     - enemyType: 2
-      count: 2
+      count: 1
     timeRange: 0
     spawnRate: 0
   - groups:
