@@ -14,11 +14,6 @@ public class RhythmManager : MonoBehaviour
     private float secondTimer = 0;
     private int beat = 1;
 
-    private void Awake()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         float timeIncrement = Time.fixedDeltaTime * (Rhythm.beatsPerMinute / 60);

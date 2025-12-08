@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Attacker : MonoBehaviour
 {
@@ -121,6 +122,8 @@ public class Attacker : MonoBehaviour
         if (health == 0)
         {
             CurrencyManager.AwardSouls(soulReward);
+
+            Rhythm.beats[(int)attackOnBeat].RemoveListener(SingleAttack);
 
             Destroy(gameObject);
 
