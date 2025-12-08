@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public enum RhythmGameType
@@ -18,7 +19,13 @@ public class RhythmGameManager : MonoBehaviour
     private int totalScore;
     private DemonGameManager dgm;
     private bool gameActive = false;
-    private SpriteRenderer[] pentagrams;
+    private Animator[] pentagrams = new Animator[4];
+    private KeyCode[] keyMap = { 
+        KeyCode.A,
+        KeyCode.S,
+        KeyCode.D,
+        KeyCode.F
+    };
 
     public GameObject[] heroNotes;
     public Transform[] lanes;
@@ -40,14 +47,26 @@ public class RhythmGameManager : MonoBehaviour
         int l = 0;
         foreach (Transform lane in lanes)
         {
-            pentagrams[l] = lane.Find("Target").GetComponent<SpriteRenderer>();
+            pentagrams[l] = lane.Find("Target").GetComponent<Animator>();
+
+            lane.Find("Key").GetComponent<TMP_Text>().text = keyMap[l].ToString();
             l++;
         }
     }
 
     private void Update()
     {
-        if ()
+        int p = 0;
+
+        foreach (Animator pentagram in pentagrams)
+        {
+            if (Input.GetKeyDown(keyMap[p]))
+            {
+                pentagram.SetTrigger("Press");
+            }
+
+            p++;
+        }
     }
 
     [ContextMenu("Dance Off")]
