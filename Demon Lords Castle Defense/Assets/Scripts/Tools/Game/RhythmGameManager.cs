@@ -18,10 +18,10 @@ public class RhythmGameManager : MonoBehaviour
     private int totalScore;
     private DemonGameManager dgm;
     private bool gameActive = false;
+    private SpriteRenderer[] pentagrams;
 
     public GameObject[] heroNotes;
-    public Transform[] heroSpawns;
-    public Transform[] misses;
+    public Transform[] lanes;
     public RhythmGameType gameType;
     public GameObject danceOffScreen;
 
@@ -36,6 +36,18 @@ public class RhythmGameManager : MonoBehaviour
         danceOffScreen.SetActive(false);
 
         dgm = FindFirstObjectByType<DemonGameManager>();
+        
+        int l = 0;
+        foreach (Transform lane in lanes)
+        {
+            pentagrams[l] = lane.Find("Target").GetComponent<SpriteRenderer>();
+            l++;
+        }
+    }
+
+    private void Update()
+    {
+        if ()
     }
 
     [ContextMenu("Dance Off")]
@@ -72,14 +84,16 @@ public class RhythmGameManager : MonoBehaviour
         {
             CancelInvoke("NextNote");
 
-            Invoke("StopMinigame", 4);
+            Invoke("StopMinigame", 3);
+
+            return;
         }
         remainingNotes--;
 
-        int lane = Random.Range(0, heroSpawns.Length);
+        int lane = Random.Range(0, lanes.Length);
 
-        GameObject newNote = Instantiate(heroNotes[Random.Range(0, heroNotes.Length)], heroSpawns[lane].position, Quaternion.identity, danceOffScreen.transform);
-        newNote.GetComponent<HeroNote>().InitializeNote(lane, 200, 10, heroSpawns[lane].GetComponent<RectTransform>(), misses[lane].GetComponent<RectTransform>());
+        GameObject newNote = Instantiate(heroNotes[Random.Range(0, heroNotes.Length)], lanes[lane].Find("Spawn").position, Quaternion.identity, danceOffScreen.transform);
+        newNote.GetComponent<HeroNote>().InitializeNote(lane, 250, 40, lanes[lane].Find("Target").GetComponent<Transform>(), lanes[lane].Find("Miss").GetComponent<Transform>());
 
         Invoke("NextNote", 0.5f);
     }

@@ -10,11 +10,11 @@ public class HeroNote : MonoBehaviour
     private float speed;
     private RectTransform rect;
     private KeyCode noteKey;
-    private RectTransform targetPosition;
-    private RectTransform missPosition;
+    private Transform targetPosition;
+    private Transform missPosition;
     private float threshold;
 
-    public void InitializeNote(int inLane, float inSpeed, float inThreshold, RectTransform inTarget, RectTransform inMiss)
+    public void InitializeNote(int inLane, float inSpeed, float inThreshold, Transform inTarget, Transform inMiss)
     {
         lane = inLane;
         speed = inSpeed;
@@ -45,7 +45,7 @@ public class HeroNote : MonoBehaviour
     {
         rect.anchoredPosition -= new Vector2(0, speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(noteKey) && Vector2.Distance(rect.position, targetPosition.position) < threshold)
+        if (Input.GetKeyDown(noteKey) && Vector3.Distance(rect.position, targetPosition.position) < threshold)
         {
             rgm.SuccessfulHit(100);
 
@@ -58,5 +58,10 @@ public class HeroNote : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    private void OnDisable()
+    {
+        Destroy(gameObject);
     }
 }
