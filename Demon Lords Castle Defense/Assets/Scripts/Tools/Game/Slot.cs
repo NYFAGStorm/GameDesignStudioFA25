@@ -47,6 +47,14 @@ public class Slot : MonoBehaviour
                     size = new Vector2(80, 40),
                     position = new Vector2(40, 0),
                     action = Replace
+                },
+                new PopupButton()
+                {
+                    text = "No",
+                    textScale = 50,
+                    size = new Vector2(80, 40),
+                    position = new Vector2(40, 0),
+                    action = DontReplace
                 }
             }
         };
@@ -59,6 +67,11 @@ public class Slot : MonoBehaviour
         RemoveItem(item);
 
         InsertItem(replacer);
+    }
+
+    private void DontReplace()
+    {
+        replacer.ReturnToInventory();
     }
 
     public Placeable GetItem()

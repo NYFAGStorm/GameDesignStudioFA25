@@ -118,6 +118,13 @@ public class Placeable : MonoBehaviour
         return closestSlot;
     }
 
+    public void ReturnToInventory()
+    {
+        FindFirstObjectByType<AudioManager>().StartSound("ObjectGrab");
+
+        invSlotLink.ReturnItem();
+    }
+
     public void ForceRemove()
     {
         foreach (Slot s in childSlots)
@@ -127,7 +134,7 @@ public class Placeable : MonoBehaviour
 
         container = null;
         Destroy(gameObject);
-        invSlotLink.ReturnItem();
+        ReturnToInventory();
     }
 
     public void UpdateContainer(Slot newContainer)
@@ -148,7 +155,7 @@ public class Placeable : MonoBehaviour
 
         if (!s)
         {
-            invSlotLink.ReturnItem();
+            ReturnToInventory();
 
             return;
         }
