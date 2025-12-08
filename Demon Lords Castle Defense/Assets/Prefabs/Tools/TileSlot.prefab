@@ -48,6 +48,9 @@ MonoBehaviour:
   slotType: 0
   offset: {x: 0, y: 0.1, z: 0}
   maximumDistance: 3
+  SlotUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3146698353109917385
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +68,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7918666815660497349
 Transform:
   m_ObjectHideFlags: 0
