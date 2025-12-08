@@ -1106,13 +1106,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3d9157e1cebeca84c92a4204d099f0d3, type: 3}
   - {fileID: 21300000, guid: 138a87e4e379fee4092dbcd49b4d0f61, type: 3}
   demonLordSprites:
-  - {fileID: 21300000, guid: 995a15174ed2aa946ae1c91098341214, type: 3}
-  - {fileID: 21300000, guid: 995a15174ed2aa946ae1c91098341214, type: 3}
-  - {fileID: 21300000, guid: 9aceb002e3a9de14287133179128d8ac, type: 3}
-  - {fileID: 21300000, guid: 9aceb002e3a9de14287133179128d8ac, type: 3}
-  - {fileID: 21300000, guid: 4ef61de759d242c4e8067149c64bcfb4, type: 3}
-  - {fileID: 21300000, guid: 105a6e85ba108bc4489dea673c61a4df, type: 3}
-  - {fileID: 21300000, guid: 9aceb002e3a9de14287133179128d8ac, type: 3}
+  - {fileID: 21300000, guid: c80d5a187d438834c980288b3066e8d5, type: 3}
+  - {fileID: 21300000, guid: c80d5a187d438834c980288b3066e8d5, type: 3}
+  - {fileID: 21300000, guid: 09e31441701d2e749a18e44aa6cab310, type: 3}
+  - {fileID: 21300000, guid: 09e31441701d2e749a18e44aa6cab310, type: 3}
+  - {fileID: 21300000, guid: 3cb0414b2d61cfc438785fd5f4891f37, type: 3}
+  - {fileID: 21300000, guid: f881714b897ea5d429d36bb9e5dee43d, type: 3}
+  - {fileID: 21300000, guid: 09e31441701d2e749a18e44aa6cab310, type: 3}
   shopOpen: {fileID: 0}
   shopClose: {fileID: 0}
 --- !u!1 &1881583211597010545
@@ -4586,7 +4586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9aceb002e3a9de14287133179128d8ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09e31441701d2e749a18e44aa6cab310, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4661,7 +4661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 105a6e85ba108bc4489dea673c61a4df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f881714b897ea5d429d36bb9e5dee43d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
