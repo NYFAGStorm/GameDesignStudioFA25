@@ -190,7 +190,6 @@ public class TileFloorManager : MonoBehaviour
         {
             compiledPath.Add(heroExit);
             compiledPath.RemoveAt(1);
-            compiledPath.RemoveAt(compiledPath.Count - 2);
 
             attackerData.UpdatePath(compiledPath);
 
