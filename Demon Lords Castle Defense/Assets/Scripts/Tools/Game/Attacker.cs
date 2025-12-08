@@ -154,7 +154,6 @@ public class Attacker : MonoBehaviour
 
     private void SingleAttack()
     {
-        Debug.Log("Damaged goon for " + attackDamage + " damage");
         if (!target.DealDamage(attackDamage))
         {
             Rhythm.beats[0].RemoveListener(SingleAttack);
