@@ -42,6 +42,8 @@ public class RhythmGameManager : MonoBehaviour
     {
         danceOffScreen.SetActive(false);
 
+        FindFirstObjectByType<AudioManager>().StartSound("RhythmGameMusic");
+
         dgm = FindFirstObjectByType<DemonGameManager>();
         
         int l = 0;
