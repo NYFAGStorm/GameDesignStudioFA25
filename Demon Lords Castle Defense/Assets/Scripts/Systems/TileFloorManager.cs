@@ -36,7 +36,7 @@ public class TileFloorManager : MonoBehaviour
     private void Awake()
     {
         tileSlots = new Slot[gridSize.x * gridSize.y];
-        floor.GetComponent<SpriteRenderer>().size = new Vector2((gridSize.x * unitSize) / 1.55f, (gridSize.y * unitSize) / 1.55f);
+        floor.GetComponent<SpriteRenderer>().size = new Vector2((gridSize.x * unitSize) / 1.55f + 3.1f, (gridSize.y * unitSize) / 1.55f + 2.93f);
 
         int entrance = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
         int exit = entrance;

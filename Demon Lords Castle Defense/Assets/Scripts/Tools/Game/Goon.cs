@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Goon : Placeable
 {
@@ -21,6 +22,7 @@ public class Goon : Placeable
     private GoonData goonData;
     private Animator animator;
     private SpriteRenderer image;
+    private bool alive = true;
 
     public void InitializeGoon(UniqueGoon data)
     {
@@ -163,12 +165,15 @@ public class Goon : Placeable
 
     public bool DealDamage(float damage)
     {
-        health = Mathf.Max(0, health - damage);
+        if (!alive) return false;
 
+        health = Mathf.Max(0, health - damage);
 
         Debug.Log("goon health: " + health);
         if (health == 0)
         {
+            alive = false;
+
             FindFirstObjectByType<AudioManager>().StartSound(type.ToString() + "Death");
 
             animator.SetTrigger("Die");

@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class Attacker : MonoBehaviour
 {
@@ -52,6 +54,7 @@ public class Attacker : MonoBehaviour
     private AttackerData attackerData;
     private OnBeat attackOnBeat;
     private int state;
+    private bool alive = true;
 
     [HideInInspector]
     public WaveManager waveManager;
@@ -116,10 +119,14 @@ public class Attacker : MonoBehaviour
     // Returns whether the enemy is still alive after taking the damage
     public bool DealDamage(float damage)
     {
+        if (!alive) return false;
+
         health = Mathf.Max(0, health - damage);
 
         if (health == 0)
         {
+            alive = false;
+
             CurrencyManager.AwardSouls(soulReward);
 
             Destroy(gameObject);

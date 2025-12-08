@@ -11,6 +11,8 @@ public class RhythmGameManager : MonoBehaviour
     // Author: Esther Li (YT)
     // this handles the total score for each game as well as spawning
 
+    // Contributors: Gustavo Rojas Flores
+
     // [need to change to private once debug done]
     public int totalScore;
 
@@ -22,6 +24,16 @@ public class RhythmGameManager : MonoBehaviour
     {
         // can get notes while spawning
         note = GameObject.FindGameObjectsWithTag("Note");
+    }
+
+    public void StartMinigame(int noteCount)
+    {
+
+    }
+
+    private void NextNote()
+    {
+
     }
 
     public int UpdateScore()
