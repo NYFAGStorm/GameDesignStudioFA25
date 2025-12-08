@@ -8,19 +8,19 @@ public class HeroNote : MonoBehaviour
     private int lane;
     private float speed;
     private RectTransform rect;
-    private float distance = 0;
     private KeyCode noteKey;
-    private float targetPosition;
+    private RectTransform targetPosition;
+    private RectTransform missPosition;
     private float threshold;
-    private float outOfBounds = 200;
 
-    public void InitializeNote(int inLane, float inSpeed, float inTarget, float inThreshold)
+    public void InitializeNote(int inLane, float inSpeed, float inThreshold, RectTransform inTarget, RectTransform inMiss)
     {
         lane = inLane;
         speed = inSpeed;
         rect = GetComponent<RectTransform>();
         targetPosition = inTarget;
         threshold = inThreshold;
+        missPosition = inMiss;
 
         switch (lane)
         {
@@ -41,18 +41,17 @@ public class HeroNote : MonoBehaviour
 
     void Update()
     {
-        rect.anchoredPosition -= new Vector2(0, -speed);
+        rect.anchoredPosition -= new Vector2(0, speed * Time.deltaTime);
 
-        distance += speed;
-
-        if (Input.GetKeyDown(noteKey) && Mathf.Abs(distance - targetPosition) < threshold)
+        if (Input.GetKeyDown(noteKey) && Vector2.Distance(rect.position, targetPosition.position) < threshold)
         {
             FindFirstObjectByType<RhythmGameManager>().SuccessfulHit(100);
 
             Destroy(gameObject);
         }
 
-        if (distance > outOfBounds)
+        Debug.Log(Vector2.Distance(rect.position, missPosition.position));
+        if (Vector3.Distance(rect.position, missPosition.position) < threshold)
         {
             Destroy(gameObject);
         }

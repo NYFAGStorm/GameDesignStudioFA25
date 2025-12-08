@@ -13,9 +13,28 @@ public class RhythmManager : MonoBehaviour
 {
     private float secondTimer = 0;
     private int beat = 1;
+    private bool paused = false;
+
+    private void Awake()
+    {
+        FindFirstObjectByType<DemonGameManager>().PauseTowerDefense.AddListener(PauseRhythm);
+        FindFirstObjectByType<DemonGameManager>().ResumeTowerDefense.AddListener(ResumeRhythm);
+    }
+
+    private void PauseRhythm()
+    {
+        paused = true;
+    }
+
+    private void ResumeRhythm()
+    {
+        paused = false;
+    }
 
     private void FixedUpdate()
     {
+        if (paused) return;
+
         float timeIncrement = Time.fixedDeltaTime * (Rhythm.beatsPerMinute / 60);
 
         secondTimer = Mathf.Min(1, secondTimer + timeIncrement);

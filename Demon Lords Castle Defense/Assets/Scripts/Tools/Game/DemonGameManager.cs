@@ -1,9 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DemonGameManager : MonoBehaviour
 {
     public float demonLordHealth = 10;
     public GameObject gameOverScreen;
+
+    [HideInInspector]
+    public UnityEvent PauseTowerDefense;
+
+    [HideInInspector]
+    public UnityEvent ResumeTowerDefense;
 
     private void Awake()
     {
@@ -12,13 +19,17 @@ public class DemonGameManager : MonoBehaviour
 
     public void EnemyReachedEnd()
     {
-        demonLordHealth--;
+        PauseTowerDefense.Invoke();
 
-        if (demonLordHealth == 0)
-        {
-            gameOverScreen.SetActive(true);
+        FindFirstObjectByType<RhythmGameManager>().StartMinigame(Random.Range(10, 21));
 
-            Time.timeScale = 0;
-        }
+        //demonLordHealth--;
+
+        //if (demonLordHealth == 0)
+        //{
+        //    gameOverScreen.SetActive(true);
+
+        //    Time.timeScale = 0;
+        //}
     }
 }

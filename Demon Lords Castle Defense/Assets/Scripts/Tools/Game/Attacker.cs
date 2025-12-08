@@ -55,6 +55,7 @@ public class Attacker : MonoBehaviour
     private OnBeat attackOnBeat;
     private int state;
     private bool alive = true;
+    private bool paused = false;
 
     [HideInInspector]
     public WaveManager waveManager;
@@ -76,9 +77,22 @@ public class Attacker : MonoBehaviour
 
         attackerData = FindFirstObjectByType<AttackerData>();
 
+        FindFirstObjectByType<DemonGameManager>().PauseTowerDefense.AddListener(PauseRhythm);
+        FindFirstObjectByType<DemonGameManager>().ResumeTowerDefense.AddListener(ResumeRhythm);
+
         NextPathPoint();
         isMoving = true;
         state = 1;
+    }
+
+    private void PauseRhythm()
+    {
+        paused = true;
+    }
+
+    private void ResumeRhythm()
+    {
+        paused = false;
     }
 
     public void Engage(Goon combatant)
@@ -152,7 +166,7 @@ public class Attacker : MonoBehaviour
 
     private void Update()
     {
-        if (!isMoving || state != 1) return;
+        if (!isMoving || state != 1 || paused) return;
 
         pointLerp += (Time.deltaTime * speed) / 5;
         transform.localPosition = Vector3.Lerp(pointA, pointB, pointLerp);
