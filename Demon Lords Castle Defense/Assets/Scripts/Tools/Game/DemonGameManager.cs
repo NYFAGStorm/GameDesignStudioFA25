@@ -26,6 +26,13 @@ public class DemonGameManager : MonoBehaviour
     public void DamageDemonLord(int damage)
     {
         demonLordHealth -= damage;
+
+        if (demonLordHealth <= 0)
+        {
+            gameOverScreen.SetActive(true);
+
+            Time.timeScale = 0;
+        }
     }
 
     public void EnemyReachedEnd()
@@ -34,13 +41,5 @@ public class DemonGameManager : MonoBehaviour
 
         FindFirstObjectByType<RhythmGameManager>().StartMinigame(Random.Range(10, 21));
 
-        //demonLordHealth--;
-
-        //if (demonLordHealth == 0)
-        //{
-        //    gameOverScreen.SetActive(true);
-
-        //    Time.timeScale = 0;
-        //}
     }
 }
