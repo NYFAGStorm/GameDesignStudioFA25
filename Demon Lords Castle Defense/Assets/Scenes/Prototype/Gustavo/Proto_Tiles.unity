@@ -1159,26 +1159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: GoblinAttack
-    clip: {fileID: 8300000, guid: f7e3924eb2f4341228ba350d5a19235d, type: 3}
-    type: 0
-    delay: 0
-    maxDelay: 0
-    spaceBlend: 0
-    pitch: 1
-    pitchVariance: 0
-    volume: 1
-    volumeVariance: 0
-  - name: PriestDeath
-    clip: {fileID: 8300000, guid: 1c2949e2a341e4671b123432dceace51, type: 3}
-    type: 0
-    delay: 0
-    maxDelay: 0
-    spaceBlend: 0
-    pitch: 1
-    pitchVariance: 0
-    volume: 1
-    volumeVariance: 0
   - name: ObjectGrab
     clip: {fileID: 8300000, guid: 79fe7a2b76d4e48578a3e43072556c5f, type: 3}
     type: 0
@@ -1222,6 +1202,196 @@ MonoBehaviour:
   - name: RhythmGameMusic
     clip: {fileID: 8300000, guid: 7cbcaa2adc4c748ab8b5d1c70e5ee8e4, type: 3}
     type: 3
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: ShopOpen_Close
+    clip: {fileID: 8300000, guid: fe83bf7041fc0415eb22b0488f2be9cf, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: GoblinAttack
+    clip: {fileID: 8300000, guid: f7e3924eb2f4341228ba350d5a19235d, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: GoblinDeath
+    clip: {fileID: 8300000, guid: 1e746a89e46414c788e4e3c451a1219d, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: BatAttack
+    clip: {fileID: 8300000, guid: ecae2c3aa19c44175a2ccf471a76d300, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: BatDeath
+    clip: {fileID: 8300000, guid: 50d625b063b014175b999b72844698a4, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: HellhoundAttach
+    clip: {fileID: 8300000, guid: 8fe45b6f7ed5a40a2b0416294f50a78a, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: HellhoundDeath
+    clip: {fileID: 8300000, guid: 9424a2c6f29404fe5a5e70e5bf28782b, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: ImpAttack
+    clip: {fileID: 8300000, guid: 4920fa9d3a6fc4d458d2de9832d84d6b, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: ImpDeath
+    clip: {fileID: 8300000, guid: e48057b37207941adb505d7b3c45f3c7, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: ArcherDeath
+    clip: {fileID: 8300000, guid: 500fa29e70b844281bcd2b01c5361ac3, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: AssassinDeath
+    clip: {fileID: 8300000, guid: aff5b62d30f1e4b0dbbb6308aa21107d, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: HunterDeath
+    clip: {fileID: 8300000, guid: 606aecbe390264a94baf2b50c7beb1cc, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: KnightDeath
+    clip: {fileID: 8300000, guid: 9b2a2ca738e7e4e448e6092d29914673, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: PriestDeath
+    clip: {fileID: 8300000, guid: 1c2949e2a341e4671b123432dceace51, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: Arrow
+    clip: {fileID: 8300000, guid: c4c52e9ba83824b758a970f06e85f972, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: Spellcast
+    clip: {fileID: 8300000, guid: 1156e4b86c7d844faa6b007715cb1e4c, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: Sword 1
+    clip: {fileID: 8300000, guid: f9120451cf4d943e7996a7c6a405d805, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: Sword 2
+    clip: {fileID: 8300000, guid: 374d4902bd58b474b84877f5256616ec, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: Sword Shing
+    clip: {fileID: 8300000, guid: 37a5640f1f0ba40cb81c82ba87d7603b, type: 3}
+    type: 0
     delay: 0
     maxDelay: 0
     spaceBlend: 0
