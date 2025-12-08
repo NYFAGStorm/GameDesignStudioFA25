@@ -2656,7 +2656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ac2613eead7685047968155b601a9cb2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2741,8 +2741,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294949888
-  m_fontColor: {r: 0, g: 0.73714876, b: 1, a: 1}
+    rgba: 4281467073
+  m_fontColor: {r: 0.7584905, g: 0, b: 0.19714838, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3439,6 +3439,9 @@ MonoBehaviour:
   currentDay: 1
   finalDay: 5
   isFinalDay: 0
+  dayNightState: {fileID: 1418200632}
+  moonSprite: {fileID: 21300000, guid: ac2613eead7685047968155b601a9cb2, type: 3}
+  sunSprite: {fileID: 21300000, guid: fbefa804654df724a8fba6773bbeeb25, type: 3}
   tileFloorManager: {fileID: 610997367}
   waveManager: {fileID: 1077803854}
 --- !u!1 &1977655849

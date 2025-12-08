@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DayNightManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class DayNightManager : MonoBehaviour
     public int currentDay = 1;
     public int finalDay = 5;
     public bool isFinalDay = false;
+    public Image dayNightState;
+    public Sprite moonSprite;
+    public Sprite sunSprite;
 
     /// NTOE: Invalidated
     // public int TotalRounds = 10;
@@ -24,11 +28,6 @@ public class DayNightManager : MonoBehaviour
     public WaveManager waveManager;
     /// NOTE: Might need to disable this, so keep a reference here just in case
     // public GameObject sendEnemyButton;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -117,6 +116,8 @@ public class DayNightManager : MonoBehaviour
         isNight = false;
         currentDay++;
 
+        dayNightState.sprite = sunSprite;
+
         Debug.Log("Day has begun! Locking the floor...");
         tileFloorManager.LockFloor(true);
         // RoundStart();
@@ -136,6 +137,8 @@ public class DayNightManager : MonoBehaviour
         // currentRound = 0;
         isNight = true;
         currentNight++;
+
+        dayNightState.sprite = moonSprite;
 
         tileFloorManager.LockFloor(false);
         Debug.Log("Night has begun!");

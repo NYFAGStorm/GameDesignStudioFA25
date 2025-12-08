@@ -36,7 +36,6 @@ public class WaveManager : MonoBehaviour
         dayNightManager.SwapToDay();
 
         spawning = true;
-        currentWave = 0;
         enemiesRemaining = 0;
         state = WaveState.SpawningWave;
 
