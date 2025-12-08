@@ -14,23 +14,29 @@ public class WaveManager : MonoBehaviour
     // LiAi
     // Script to manage for waves
 
-    [HideInInspector]
-    public WaveState state = WaveState.Idle;
-    public UniqueWaves wavesData;
-    public AttackerData attackerData;
-
     private int currentWave = 0;
     private int enemiesRemaining = 0;
     private bool spawning = false;
     private int currentEnemyIndex = 0;
     private List<AttackerType> bakedWave = new List<AttackerType>();
+    private TileFloorManager tfm;
+    private AttackerData attackerData;
+    private DayNightManager dayNightManager; // Ellington: Added DayNightManager for function call
 
-    // Ellington: Added DayNightManager for function call
-    public DayNightManager dayNightManager;
+    [HideInInspector]
+    public WaveState state = WaveState.Idle;
+    public UniqueWaves wavesData;
+
+    private void Awake()
+    {
+        tfm = FindFirstObjectByType<TileFloorManager>();
+        attackerData = FindFirstObjectByType<AttackerData>();
+        dayNightManager = FindFirstObjectByType<DayNightManager>();
+    }
 
     public void BeginWave()
     {
-        if (spawning) return;
+        if (spawning || !tfm.validPath) return;
 
         // Ellington: Added a function call to start the day
         dayNightManager.SwapToDay();
