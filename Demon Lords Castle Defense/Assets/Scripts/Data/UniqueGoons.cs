@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [System.Serializable]
@@ -12,6 +13,7 @@ public struct UniqueGoon
     public OnBeat attackRate;
     public Sprite goonImage;
     public float attackRange;
+    public AnimatorController animations;
 }
 
 [CreateAssetMenu(fileName = "GoonTypes", menuName = "DemonDefense/GoonTypes", order = 3)]

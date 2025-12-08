@@ -19,11 +19,14 @@ public class Goon : Placeable
     private PopupBlueprint statDisplayBP;
     private Popup statDisplay = null;
     private GoonData goonData;
-
-    public SpriteRenderer image;
+    private Animator animator;
+    private SpriteRenderer image;
 
     public void InitializeGoon(UniqueGoon data)
     {
+        image = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
+
         maxHealth = data.maxHealth;
         health = data.maxHealth;
         type = data.type;
@@ -32,6 +35,8 @@ public class Goon : Placeable
         attackRate = data.attackRate;
         attackRange = data.attackRange * 2;
         image.sprite = data.goonImage;
+
+        if (data.animations != null) animator.runtimeAnimatorController = data.animations;
 
         goonData = FindFirstObjectByType<GoonData>();
 
@@ -135,6 +140,7 @@ public class Goon : Placeable
         Debug.Log("damaged hero for " + damage);
 
         FindFirstObjectByType<AudioManager>().StartSound(type.ToString() + "Attack");
+        animator.SetTrigger("Attack");
 
         if (!target.DealDamage(damage))
         {
@@ -159,18 +165,31 @@ public class Goon : Placeable
     {
         health = Mathf.Max(0, health - damage);
 
+
         Debug.Log("goon health: " + health);
         if (health == 0)
         {
             FindFirstObjectByType<AudioManager>().StartSound(type.ToString() + "Death");
 
-            container.RemoveItem(false);
-            Destroy(gameObject);
+            animator.SetTrigger("Die");
 
-            goonData.ExistingGoonsUpdated.Invoke();
+            container.RemoveItem(false);
+
+            Invoke("DeleteGoon", 0.4f);
+        }
+        else
+        {
+            animator.SetTrigger("Hurt");
         }
 
         return health > 0;
+    }
+
+    private void DeleteGoon()
+    {
+        Destroy(gameObject);
+
+        goonData.ExistingGoonsUpdated.Invoke();
     }
 
     // Written rules (Esther)
