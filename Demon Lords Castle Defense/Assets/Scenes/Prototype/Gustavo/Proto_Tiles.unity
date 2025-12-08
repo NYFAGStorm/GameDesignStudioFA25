@@ -1159,6 +1159,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - name: RhythmGameMusic
+    clip: {fileID: 8300000, guid: 7cbcaa2adc4c748ab8b5d1c70e5ee8e4, type: 3}
+    type: 3
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: SplashScreenMusic
+    clip: {fileID: 8300000, guid: ff7e5e360c13a40ce86004743058d135, type: 3}
+    type: 3
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
   - name: ObjectGrab
     clip: {fileID: 8300000, guid: 79fe7a2b76d4e48578a3e43072556c5f, type: 3}
     type: 0
@@ -1192,16 +1212,6 @@ MonoBehaviour:
   - name: PurchaseItem
     clip: {fileID: 8300000, guid: b26fdd5f7227153449acd549a31991da, type: 3}
     type: 0
-    delay: 0
-    maxDelay: 0
-    spaceBlend: 0
-    pitch: 1
-    pitchVariance: 0
-    volume: 1
-    volumeVariance: 0
-  - name: RhythmGameMusic
-    clip: {fileID: 8300000, guid: 7cbcaa2adc4c748ab8b5d1c70e5ee8e4, type: 3}
-    type: 3
     delay: 0
     maxDelay: 0
     spaceBlend: 0
