@@ -56,15 +56,19 @@ public class Attacker : MonoBehaviour
     private int state;
     private bool alive = true;
     private bool paused = false;
+    private bool stunned = false;
+    private SpriteRenderer appearance;
 
     [HideInInspector]
     public WaveManager waveManager;
-    public SpriteRenderer appearance;
 
     public void InitializeAttacker(List<Vector3> inPath, UniqueAttacker data, Vector3 start)
     {
         transform.localPosition = start;
         path = inPath;
+        appearance = GetComponentInChildren<SpriteRenderer>();
+        attackerData = FindFirstObjectByType<AttackerData>();
+        waveManager = FindFirstObjectByType<WaveManager>();
 
         attackDamage = data.attackDamage;
         health = data.maxHealth;
@@ -74,8 +78,6 @@ public class Attacker : MonoBehaviour
         appearance.sprite = data.attackerImage;
         attackOnBeat = data.attackRate;
         attackForm = data.attackType;
-
-        attackerData = FindFirstObjectByType<AttackerData>();
 
         FindFirstObjectByType<DemonGameManager>().PauseTowerDefense.AddListener(PauseRhythm);
         FindFirstObjectByType<DemonGameManager>().ResumeTowerDefense.AddListener(ResumeRhythm);
@@ -109,6 +111,32 @@ public class Attacker : MonoBehaviour
         return (currentPathPos + pointLerp) / path.Count;
     }
 
+    public void PushBack(float duration)
+    {
+        stunned = true;
+
+        appearance.color = new Color(45f / 255, 223f / 255, 1);
+        PreviousPathPoint();
+        Move();
+
+        Invoke("Unstun", duration);
+    }
+
+    private void Unstun()
+    {
+        stunned = false;
+
+        appearance.color = Color.white;
+    }
+
+    private void PreviousPathPoint()
+    {
+        currentPathPos = Mathf.Max(1, currentPathPos - 1);
+
+        pointA = path[currentPathPos - 1];
+        pointB = path[currentPathPos];
+    }
+
     private void NextPathPoint()
     {
         currentPathPos++;
@@ -124,7 +152,7 @@ public class Attacker : MonoBehaviour
 
             return;
         }
-        
+
         pointA = path[currentPathPos - 1];
         pointB = path[currentPathPos];
         pointLerp = 0;
@@ -154,6 +182,8 @@ public class Attacker : MonoBehaviour
 
     private void SingleAttack()
     {
+        if (stunned) return;
+
         if (!target.DealDamage(attackDamage))
         {
             Rhythm.beats[0].RemoveListener(SingleAttack);
@@ -163,10 +193,8 @@ public class Attacker : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Move()
     {
-        if (!isMoving || state != 1 || paused) return;
-
         pointLerp += (Time.deltaTime * speed) / 5;
         transform.localPosition = Vector3.Lerp(pointA, pointB, pointLerp);
 
@@ -174,5 +202,12 @@ public class Attacker : MonoBehaviour
         {
             NextPathPoint();
         }
+    }
+
+    private void Update()
+    {
+        if (!isMoving || state != 1 || paused || stunned) return;
+
+        Move();
     }
 }

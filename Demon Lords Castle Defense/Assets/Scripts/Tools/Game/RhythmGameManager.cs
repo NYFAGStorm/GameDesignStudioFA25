@@ -106,6 +106,10 @@ public class RhythmGameManager : MonoBehaviour
             {
                 atk.DealDamage(1000);
             }
+            else
+            {
+                atk.PushBack(1);
+            }
         }
 
         dgm.ResumeTowerDefense.Invoke();
