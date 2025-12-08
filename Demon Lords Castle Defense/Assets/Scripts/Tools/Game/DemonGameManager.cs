@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class DemonGameManager : MonoBehaviour
 {
-    public float demonLordHealth = 10;
+    public float demonLordHealth = 30;
     public GameObject gameOverScreen;
 
     [HideInInspector]
@@ -15,6 +15,11 @@ public class DemonGameManager : MonoBehaviour
     private void Awake()
     {
         gameOverScreen.SetActive(false);
+    }
+
+    public void DamageDemonLord(int damage)
+    {
+        demonLordHealth -= damage;
     }
 
     public void EnemyReachedEnd()

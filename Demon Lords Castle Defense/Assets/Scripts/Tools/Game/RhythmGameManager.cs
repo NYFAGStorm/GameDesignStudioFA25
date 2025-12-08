@@ -16,6 +16,8 @@ public class RhythmGameManager : MonoBehaviour
     // [need to change to private once debug done]
     private int remainingNotes;
     private int totalScore;
+    private DemonGameManager dgm;
+    private bool gameActive = false;
 
     public GameObject[] heroNotes;
     public Transform[] heroSpawns;
@@ -32,6 +34,8 @@ public class RhythmGameManager : MonoBehaviour
     private void Awake()
     {
         danceOffScreen.SetActive(false);
+
+        dgm = FindFirstObjectByType<DemonGameManager>();
     }
 
     [ContextMenu("Dance Off")]
@@ -42,18 +46,24 @@ public class RhythmGameManager : MonoBehaviour
 
     public void StartMinigame(int noteCount)
     {
-        danceOffScreen.SetActive(true);
+        if (gameActive) return;
 
+        gameActive = true;
         remainingNotes = noteCount;
+
+        danceOffScreen.SetActive(true);
 
         NextNote();
     }
 
     private void StopMinigame()
     {
+        if (!gameActive) return;
+
+        gameActive = false;
         danceOffScreen.SetActive(false);
 
-        FindFirstObjectByType<DemonGameManager>().ResumeTowerDefense.Invoke();
+        dgm.ResumeTowerDefense.Invoke();
     }
 
     private void NextNote()
@@ -61,7 +71,6 @@ public class RhythmGameManager : MonoBehaviour
         if (remainingNotes <= 0)
         {
             CancelInvoke("NextNote");
-            Debug.Log("ASD");
 
             Invoke("StopMinigame", 4);
         }
@@ -78,6 +87,11 @@ public class RhythmGameManager : MonoBehaviour
     public void SuccessfulHit(int score)
     {
         totalScore += score;
+    }
+
+    public void Miss()
+    {
+        dgm.DamageDemonLord(1);
     }
 
     public int UpdateScore()

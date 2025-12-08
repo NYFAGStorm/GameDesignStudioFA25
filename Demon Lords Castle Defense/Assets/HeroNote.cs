@@ -5,6 +5,7 @@ public class HeroNote : MonoBehaviour
     // Author: Gustavo Rojas Flores
     // Controls an individual note
 
+    private RhythmGameManager rgm;
     private int lane;
     private float speed;
     private RectTransform rect;
@@ -21,6 +22,7 @@ public class HeroNote : MonoBehaviour
         targetPosition = inTarget;
         threshold = inThreshold;
         missPosition = inMiss;
+        rgm = FindFirstObjectByType<RhythmGameManager>();
 
         switch (lane)
         {
@@ -45,14 +47,15 @@ public class HeroNote : MonoBehaviour
 
         if (Input.GetKeyDown(noteKey) && Vector2.Distance(rect.position, targetPosition.position) < threshold)
         {
-            FindFirstObjectByType<RhythmGameManager>().SuccessfulHit(100);
+            rgm.SuccessfulHit(100);
 
             Destroy(gameObject);
         }
 
-        Debug.Log(Vector2.Distance(rect.position, missPosition.position));
         if (Vector3.Distance(rect.position, missPosition.position) < threshold)
         {
+            rgm.Miss();
+
             Destroy(gameObject);
         }
     }
