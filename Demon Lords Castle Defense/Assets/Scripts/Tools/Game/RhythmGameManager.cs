@@ -15,11 +15,12 @@ public class RhythmGameManager : MonoBehaviour
 
     // [need to change to private once debug done]
     private int remainingNotes;
+    private int totalScore;
 
     public GameObject[] heroNotes;
-    public int totalScore;
     public RhythmGameType gameType;
     public Transform[] heroSpawns;
+    public GameObject danceOffScreen;
 
     //private void Update()
     //{
@@ -27,8 +28,15 @@ public class RhythmGameManager : MonoBehaviour
     //    note = GameObject.FindGameObjectsWithTag("Note");
     //}
 
+    private void Awake()
+    {
+        danceOffScreen.SetActive(false);
+    }
+
     public void StartMinigame(int noteCount)
     {
+        danceOffScreen.SetActive(true);
+
         remainingNotes = noteCount;
 
         NextNote();

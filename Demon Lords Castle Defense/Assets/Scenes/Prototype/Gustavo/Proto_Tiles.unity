@@ -194,6 +194,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5452640}
   m_CullTransparentMesh: 1
+--- !u!1 &30053226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30053228}
+  - component: {fileID: 30053227}
+  m_Layer: 0
+  m_Name: RhythmGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &30053227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30053226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252a933591f8b3f419193dd5422e6492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroNotes:
+  - {fileID: 5393947989550321358, guid: a7ec4a821f415a14daa522c8deb48137, type: 3}
+  - {fileID: 5393947989550321358, guid: a5204fb593b87e84ab7cf05ca6b1c183, type: 3}
+  - {fileID: 5393947989550321358, guid: b540b0f1704a9364698dd012b20a9a2a, type: 3}
+  - {fileID: 5393947989550321358, guid: 8cb8cf7cd550d354598ac3207d3e7eff, type: 3}
+  gameType: 0
+  heroSpawns:
+  - {fileID: 290828754}
+  - {fileID: 2001563526}
+  - {fileID: 5452641}
+  - {fileID: 1716834498}
+  danceOffScreen: {fileID: 1402702724}
+--- !u!4 &30053228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30053226}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 715.2581, y: 525.40094, z: -502.2903}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &141497285
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,37 +765,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290828753}
   m_CullTransparentMesh: 1
---- !u!1 &407454398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 407454399}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &407454399
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407454398}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 611.7793, y: 722.07904, z: -670.9126}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &445672610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,7 +2875,6 @@ GameObject:
   - component: {fileID: 1402702725}
   - component: {fileID: 1402702727}
   - component: {fileID: 1402702726}
-  - component: {fileID: 1402702728}
   m_Layer: 5
   m_Name: DanceOff
   m_TagString: Untagged
@@ -2870,8 +2894,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 194612757}
   - {fileID: 1363655139}
+  - {fileID: 194612757}
   m_Father: {fileID: 141497289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2917,22 +2941,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402702724}
   m_CullTransparentMesh: 1
---- !u!114 &1402702728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402702724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 252a933591f8b3f419193dd5422e6492, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heroNotes: []
-  totalScore: 0
-  gameType: 0
-  heroSpawns: []
 --- !u!1 &1424364934
 GameObject:
   m_ObjectHideFlags: 0
@@ -4965,5 +4973,5 @@ SceneRoots:
   - {fileID: 1077803855}
   - {fileID: 618298469}
   - {fileID: 1905475147}
+  - {fileID: 30053228}
   - {fileID: 141497289}
-  - {fileID: 407454399}

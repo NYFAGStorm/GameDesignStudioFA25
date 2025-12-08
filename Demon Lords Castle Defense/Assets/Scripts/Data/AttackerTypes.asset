@@ -59,7 +59,7 @@ MonoBehaviour:
     travelSpeed: 4
     attackRate: 0
   - type: 5
-    attackerImage: {fileID: 0}
+    attackerImage: {fileID: 21300000, guid: 3275888016af21c43a5aea70df4e32e8, type: 3}
     damageType: 0
     attackType: 1
     attackDamage: 4
