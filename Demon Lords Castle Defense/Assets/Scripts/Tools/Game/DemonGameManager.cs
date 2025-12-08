@@ -15,6 +15,12 @@ public class DemonGameManager : MonoBehaviour
     private void Awake()
     {
         gameOverScreen.SetActive(false);
+        Invoke("StartMusic", 0.5f);
+    }
+
+    private void StartMusic()
+    {
+        FindFirstObjectByType<AudioManager>().StartSound("RhythmGameMusic");
     }
 
     public void DamageDemonLord(int damage)

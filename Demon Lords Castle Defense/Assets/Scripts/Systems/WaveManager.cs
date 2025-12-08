@@ -51,24 +51,24 @@ public class WaveManager : MonoBehaviour
                 //SpawnNextWave();
                 break;
 
-            case WaveState.Waiting:
-                if (enemiesRemaining == 0)
-                {
-                    state = WaveState.WaveCompleted;
-                }
-                break;
+            //case WaveState.Waiting:
+            //    if (enemiesRemaining == 0)
+            //    {
+            //        state = WaveState.WaveCompleted;
+            //    }
+            //    break;
 
-            case WaveState.WaveCompleted:
-                currentWave++;
-                if (currentWave >= wavesData.waves.Length)
-                {
-                    state = WaveState.AllWavesCompleted;
-                }
-                else
-                {
-                    state = WaveState.SpawningWave;
-                }
-                break;
+            //case WaveState.WaveCompleted:
+            //    currentWave++;
+            //    if (currentWave >= wavesData.waves.Length)
+            //    {
+            //        state = WaveState.AllWavesCompleted;
+            //    }
+            //    else
+            //    {
+            //        state = WaveState.SpawningWave;
+            //    }
+            //    break;
 
             case WaveState.AllWavesCompleted:
                 break;
@@ -115,6 +115,11 @@ public class WaveManager : MonoBehaviour
         if (enemiesRemaining == 0)
         {
             state = WaveState.WaveCompleted;
+
+            spawning = false;
+            currentWave++;
+
+            dayNightManager.SwapToNight();
         }
     }
 }
