@@ -20,6 +20,7 @@ public class RhythmGameManager : MonoBehaviour
     private DemonGameManager dgm;
     private bool gameActive = false;
     private Animator[] pentagrams = new Animator[4];
+    private float maxHealth = 0;
     private KeyCode[] keyMap = { 
         KeyCode.A,
         KeyCode.S,
@@ -31,6 +32,7 @@ public class RhythmGameManager : MonoBehaviour
     public Transform[] lanes;
     public RhythmGameType gameType;
     public GameObject danceOffScreen;
+    public Transform healthBar;
 
     //private void Update()
     //{
@@ -43,6 +45,8 @@ public class RhythmGameManager : MonoBehaviour
         danceOffScreen.SetActive(false);
 
         dgm = FindFirstObjectByType<DemonGameManager>();
+
+        maxHealth = dgm.demonLordHealth;
         
         int l = 0;
         foreach (Transform lane in lanes)
@@ -125,6 +129,8 @@ public class RhythmGameManager : MonoBehaviour
     public void Miss()
     {
         dgm.DamageDemonLord(1);
+
+        healthBar.localScale = new Vector3(dgm.demonLordHealth / maxHealth, 1, 1);
     }
 
     public int UpdateScore()
