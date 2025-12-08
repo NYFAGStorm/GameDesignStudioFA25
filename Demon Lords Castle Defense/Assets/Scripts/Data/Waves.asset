@@ -15,7 +15,7 @@ MonoBehaviour:
   waves:
   - groups:
     - enemyType: 0
-      count: 3
+      count: 5
     - enemyType: 1
       count: 3
     - enemyType: 2
@@ -24,7 +24,7 @@ MonoBehaviour:
     spawnRate: 0
   - groups:
     - enemyType: 0
-      count: 18
+      count: 10
     - enemyType: 1
       count: 6
     - enemyType: 2
@@ -33,15 +33,15 @@ MonoBehaviour:
     spawnRate: 0
   - groups:
     - enemyType: 0
-      count: 20
+      count: 12
     - enemyType: 1
       count: 5
     - enemyType: 2
       count: 2
     - enemyType: 3
-      count: 3
+      count: 1
     - enemyType: 4
-      count: 2
+      count: 1
     timeRange: 0
     spawnRate: 0
   - groups:
