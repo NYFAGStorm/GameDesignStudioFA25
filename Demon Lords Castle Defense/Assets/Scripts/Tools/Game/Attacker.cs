@@ -106,7 +106,7 @@ public class Attacker : MonoBehaviour
 
     public float PathProgress()
     {
-        return currentPathPos + pointLerp;
+        return (currentPathPos + pointLerp) / path.Count;
     }
 
     private void NextPathPoint()

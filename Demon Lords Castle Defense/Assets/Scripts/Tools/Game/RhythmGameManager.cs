@@ -98,6 +98,16 @@ public class RhythmGameManager : MonoBehaviour
         gameActive = false;
         danceOffScreen.SetActive(false);
 
+        foreach (Attacker atk in FindObjectsByType<Attacker>(FindObjectsSortMode.InstanceID))
+        {
+            Debug.Log(atk.PathProgress());
+
+            if (atk.PathProgress() > 0.9f)
+            {
+                atk.DealDamage(1000);
+            }
+        }
+
         dgm.ResumeTowerDefense.Invoke();
     }
 
