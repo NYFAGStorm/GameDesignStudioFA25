@@ -30,7 +30,8 @@ public class TileFloorManager : MonoBehaviour
     public GameObject debugEnemy;
     public AttackerData attackerData;
     public bool horizontalEntrance = true;
-    public GameObject pathMarker;
+    public GameObject startMarker;
+    public GameObject endMarker;
 
     private void Awake()
     {
@@ -65,7 +66,7 @@ public class TileFloorManager : MonoBehaviour
                     {
                         heroEntrance = tilePosition + (horizontalEntrance ? new Vector3(-unitSize, 0, 0) : new Vector3(0, 0, -unitSize));
 
-                        GameObject marker = Instantiate(pathMarker, transform, false);
+                        GameObject marker = Instantiate(startMarker, transform, false);
                         marker.transform.localPosition = heroEntrance;
                         marker.transform.localRotation = horizontalEntrance ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 180, 0);
 
@@ -81,7 +82,7 @@ public class TileFloorManager : MonoBehaviour
                         exitSlotPosition = tilePosition;
                         heroExit = tilePosition + (horizontalEntrance ? new Vector3(unitSize, 0, 0) : new Vector3(0, 0, unitSize));
 
-                        GameObject marker = Instantiate(pathMarker, transform, false);
+                        GameObject marker = Instantiate(endMarker, transform, false);
                         marker.transform.localPosition = heroExit;
                         marker.transform.localRotation = horizontalEntrance ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 180, 0);
                     }
