@@ -21,14 +21,16 @@ MonoBehaviour:
     attackRate: 0
     goonImage: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
     attackRange: 1
+    animations: {fileID: 9100000, guid: c4cb5432633c08a468d0861d24ea47bd, type: 2}
   - type: 1
     maxHealth: 20
     damage: 3
     attackType: 0
     damageType: 0
     attackRate: 0
-    goonImage: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
+    goonImage: {fileID: 21300000, guid: 92e9bdc589aead2478c71da33f97eed1, type: 3}
     attackRange: 1.5
+    animations: {fileID: 9100000, guid: d16e311a8ab2827408d154793c8d6162, type: 2}
   - type: 2
     maxHealth: 20
     damage: 8
@@ -37,6 +39,7 @@ MonoBehaviour:
     attackRate: 0
     goonImage: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
     attackRange: 1.5
+    animations: {fileID: 0}
   - type: 3
     maxHealth: 20
     damage: 4
@@ -45,6 +48,7 @@ MonoBehaviour:
     attackRate: 1
     goonImage: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
     attackRange: 2
+    animations: {fileID: 0}
   - type: 4
     maxHealth: 20
     damage: 7
@@ -53,3 +57,4 @@ MonoBehaviour:
     attackRate: 1
     goonImage: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
     attackRange: 1
+    animations: {fileID: 0}

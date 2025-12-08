@@ -18,13 +18,18 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: 32f8ca2e6753adc428995762a8c38eec, type: 3}
     itemType: 0
     itemEnumName: ShadowHall
-  - name: Goblin
-    price: 10
-    image: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
-    itemType: 1
-    itemEnumName: Goblin
   - name: Tea House
     price: 10
     image: {fileID: 21300000, guid: fddb7141b3dcfc14597eeb313322f04d, type: 3}
     itemType: 0
     itemEnumName: Teahouse
+  - name: Goblin
+    price: 10
+    image: {fileID: 21300000, guid: ef2b7d2cd13216345b3211b13f0e6879, type: 3}
+    itemType: 1
+    itemEnumName: Goblin
+  - name: Imp
+    price: 10
+    image: {fileID: 21300000, guid: 92e9bdc589aead2478c71da33f97eed1, type: 3}
+    itemType: 1
+    itemEnumName: Imp
