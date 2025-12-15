@@ -22,16 +22,23 @@ public class PauseMenu : MonoBehaviour
         //open the pause menu when [ESC] is pressed
         if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
-            isPaused = true;
-
-            pauseClose.SetActive(true);
-            // deactivate the shop and tutorial that can react to clicks
-            shopClose.GetComponent<Button>().interactable = false;
-            shopOpen.GetComponent<Button>().interactable = false;
-            tutorial.GetComponent<TutorialManager>().enabled = false;
-            // simple animation purpose
-            StartCoroutine(OpenPause());
+            OpenPauseMenu();
         }
+    }
+
+    public void OpenPauseMenu()
+    {
+        if (isPaused) return;
+
+        isPaused = true;
+
+        pauseClose.SetActive(true);
+        // deactivate the shop and tutorial that can react to clicks
+        shopClose.GetComponent<Button>().interactable = false;
+        shopOpen.GetComponent<Button>().interactable = false;
+        tutorial.GetComponent<TutorialManager>().enabled = false;
+        // simple animation purpose
+        StartCoroutine(OpenPause());
     }
 
     IEnumerator OpenPause()
