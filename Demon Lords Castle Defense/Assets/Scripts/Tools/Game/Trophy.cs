@@ -25,13 +25,13 @@ public class Trophy : Placeable
             {
                 g.SetBoosts(healthBoost, damageBoost);
             }
+
+            FindFirstObjectByType<AudioManager>().StartSound("HeartOfAngel");
         }
     }
-
+    
     protected override void StartDrag()
     {
         base.StartDrag();
-
-
     }
 }
