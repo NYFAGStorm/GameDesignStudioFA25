@@ -31,5 +31,7 @@ public class ShopManager : MonoBehaviour
 
         shopContainer.SetActive(shopOpen);
         shopClosed.SetActive(!shopOpen);
+
+        FindFirstObjectByType<AudioManager>().StartSound("UIClick");
     }
 }
