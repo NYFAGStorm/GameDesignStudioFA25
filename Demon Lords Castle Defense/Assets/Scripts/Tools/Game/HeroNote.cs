@@ -49,6 +49,8 @@ public class HeroNote : MonoBehaviour
         {
             rgm.SuccessfulHit(100);
 
+            FindFirstObjectByType<AudioManager>().StartSound(System.Text.RegularExpressions.Regex.Replace(gameObject.name, "Note|\\(Clone\\)", "") + "Death");
+
             Destroy(gameObject);
         }
 
