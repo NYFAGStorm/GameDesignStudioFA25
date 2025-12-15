@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum RhythmGameType
 {
@@ -33,6 +34,15 @@ public class RhythmGameManager : MonoBehaviour
     public RhythmGameType gameType;
     public GameObject danceOffScreen;
     public Transform healthBar;
+
+    // Ellington: Added Sprites and game object to change image according to button pressed
+    [Header("Demon Lord Images")]
+    public GameObject DemonLordImage;
+
+    public Sprite DemonLordA;
+    public Sprite DemonLordS;
+    public Sprite DemonLordD;
+    public Sprite DemonLordF;
 
     //private void Update()
     //{
@@ -70,6 +80,7 @@ public class RhythmGameManager : MonoBehaviour
             }
 
             p++;
+
         }
     }
 
@@ -135,9 +146,26 @@ public class RhythmGameManager : MonoBehaviour
         Invoke("NextNote", 0.5f);
     }
 
-    public void SuccessfulHit(int score)
+    public void SuccessfulHit(int score, KeyCode key)
     {
         totalScore += score;
+
+        // Ellington: Added a switch case to change Demon Lord Image
+        switch (key)
+        {
+            case KeyCode.A:
+                DemonLordImage.GetComponent<Image>().sprite = DemonLordA;
+                break;
+            case KeyCode.S:
+                DemonLordImage.GetComponent<Image>().sprite = DemonLordS;
+                break;
+            case KeyCode.D:
+                DemonLordImage.GetComponent<Image>().sprite = DemonLordD;
+                break;
+            case KeyCode.F:
+                DemonLordImage.GetComponent<Image>().sprite = DemonLordF;
+                break;
+        }
     }
 
     public void Miss()

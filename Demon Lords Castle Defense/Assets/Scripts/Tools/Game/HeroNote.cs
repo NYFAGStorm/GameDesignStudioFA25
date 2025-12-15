@@ -47,7 +47,7 @@ public class HeroNote : MonoBehaviour
 
         if (Input.GetKeyDown(noteKey) && Vector3.Distance(rect.position, targetPosition.position) < threshold)
         {
-            rgm.SuccessfulHit(100);
+            rgm.SuccessfulHit(100, noteKey);
 
             FindFirstObjectByType<AudioManager>().StartSound(System.Text.RegularExpressions.Regex.Replace(gameObject.name, "Note|\\(Clone\\)", "") + "Death");
 
