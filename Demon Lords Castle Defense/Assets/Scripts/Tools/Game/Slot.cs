@@ -28,7 +28,6 @@ public class Slot : MonoBehaviour
 
     public SlotType slotType = 0;
     public SlotType secondarySlotType = 0;
-    public bool twoSlotTypes = false;
     public Vector3 offset;
     public float maximumDistance = 1;
     public PopupBlueprint replacePrompt;
@@ -84,6 +83,11 @@ public class Slot : MonoBehaviour
     public Type GetSlotType()
     {
         return Type.GetType(Enum.GetName(typeof(SlotType), slotType));
+    }
+
+    public Type GetSecondarySlotType()
+    {
+        return Type.GetType(Enum.GetName(typeof(SlotType), secondarySlotType));
     }
 
     public bool InsertItem(Placeable newItem)

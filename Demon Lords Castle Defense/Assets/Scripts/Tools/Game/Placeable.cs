@@ -76,7 +76,7 @@ public class Placeable : MonoBehaviour
                 continue;
             }
 
-            if (GetType().Name != s.GetSlotType().Name)
+            if (GetType().Name != s.GetSlotType().Name && GetType().Name != s.GetSecondarySlotType().Name)
             {
                 newValidSlots.Remove(s);
             }

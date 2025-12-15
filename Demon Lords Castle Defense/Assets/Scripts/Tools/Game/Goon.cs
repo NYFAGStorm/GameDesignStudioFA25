@@ -165,7 +165,7 @@ public class Goon : Placeable
         }
     }
 
-    public bool DealDamage(float damage)
+    public bool DealDamage(float damage, bool playEffect = true)
     {
         if (!alive) return false;
 
@@ -186,7 +186,7 @@ public class Goon : Placeable
         }
         else
         {
-            animator.SetTrigger("Hurt");
+            if (playEffect) animator.SetTrigger("Hurt");
         }
 
         return health > 0;
@@ -197,7 +197,7 @@ public class Goon : Placeable
         healthBoost = hp;
         damageBoost = dmg;
 
-        DealDamage(0);
+        DealDamage(0, false);
     }
 
     private void DeleteGoon()
