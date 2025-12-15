@@ -13,6 +13,8 @@ public class CurrencyDisplay : MonoBehaviour
         CurrencyUpdated.AddListener(UpdateDisplay);
 
         UpdateDisplay();
+
+        CurrencyManager.ResetSouls();
     }
 
     private void UpdateDisplay()
@@ -24,6 +26,11 @@ public class CurrencyDisplay : MonoBehaviour
 public static class CurrencyManager
 {
     private static int bankedSouls = 100;
+
+    public static void ResetSouls()
+    {
+        bankedSouls = 0;
+    }
 
     public static bool SpendSouls(int price)
     {
