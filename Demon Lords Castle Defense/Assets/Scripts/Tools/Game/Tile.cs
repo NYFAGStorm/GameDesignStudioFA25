@@ -32,13 +32,18 @@ public class Tile : Placeable
 
     public GameObject goonSlot;
     public SpriteRenderer plate;
+    public SpriteRenderer rotateTooltip;
 
     protected override void Update()
     {
         base.Update();
 
+        rotateTooltip.enabled = isBeingDragged;
+
         if (isBeingDragged && Input.GetKeyDown(KeyCode.R))
         {
+            rotateTooltip.transform.parent.rotation = Quaternion.Euler(0, -90, 0);
+            
             dir = (TileDirection)((int)(dir + 1) % 4);
             transform.localRotation = Quaternion.Euler(0, (int)dir * 90, 0);
 
@@ -69,6 +74,7 @@ public class Tile : Placeable
         shape = data.shape;
         type = data.type;
         plate.sprite = data.plateImage;
+        rotateTooltip.enabled = false;
 
         foreach (goonSlotPosition goonSlotPos in data.goonSlotPositions)
         {
