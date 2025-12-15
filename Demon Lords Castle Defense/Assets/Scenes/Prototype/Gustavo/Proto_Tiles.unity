@@ -1038,6 +1038,7 @@ GameObject:
   - component: {fileID: 610997368}
   - component: {fileID: 610997369}
   - component: {fileID: 610997370}
+  - component: {fileID: 610997371}
   m_Layer: 0
   m_Name: TileFloorManager
   m_TagString: Untagged
@@ -1134,6 +1135,20 @@ MonoBehaviour:
       m_Calls: []
   goonBase: {fileID: 8032749320919845049, guid: 185c0342d81c2f34599b42aaf579a331, type: 3}
   types: {fileID: 11400000, guid: 0cf70b441c4ef844dae168e93392d628, type: 2}
+--- !u!114 &610997371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610997362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a932fd6b65dd1d944b0bb10030db89bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrophyBase: {fileID: 4128130948670632769, guid: 29dcf259fc8388d4e990c236e55de458, type: 3}
+  types: {fileID: 11400000, guid: aed5361270ef03543a111ed6e50cc8a3, type: 2}
 --- !u!1 &618298467
 GameObject:
   m_ObjectHideFlags: 0

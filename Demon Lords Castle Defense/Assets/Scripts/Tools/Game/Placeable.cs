@@ -122,7 +122,7 @@ public class Placeable : MonoBehaviour
     {
         FindFirstObjectByType<AudioManager>().StartSound("ObjectGrab");
 
-        container.RemoveItem(false);
+        if (container) container.RemoveItem(false);
 
         invSlotLink.ReturnItem();
     }

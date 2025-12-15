@@ -33,3 +33,8 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: 92e9bdc589aead2478c71da33f97eed1, type: 3}
     itemType: 1
     itemEnumName: Imp
+  - name: Star Shield
+    price: 20
+    image: {fileID: 21300000, guid: 2ab5e7061f48b074f83736c3cc0e5fff, type: 3}
+    itemType: 2
+    itemEnumName: StarShield
