@@ -7,8 +7,6 @@ public class TutorialManager : MonoBehaviour
     // Author: Esther Li (YT)
     // this handles showing the onboarding/tutorial
 
-    private bool isSkipped = false;
-
     public GameObject textbox;
     public GameObject[] dialogueText;
     public GameObject snowBall;
@@ -125,7 +123,6 @@ public class TutorialManager : MonoBehaviour
 
     public void SkipTutorial()
     {
-        isSkipped = true;
         this.gameObject.SetActive(false);
     }
 }// end of class
