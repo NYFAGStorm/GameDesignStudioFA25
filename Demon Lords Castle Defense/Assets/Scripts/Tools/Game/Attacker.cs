@@ -58,6 +58,7 @@ public class Attacker : MonoBehaviour
     private bool paused = false;
     private bool stunned = false;
     private SpriteRenderer appearance;
+    private float lastX;
 
     [HideInInspector]
     public WaveManager waveManager;
@@ -202,6 +203,18 @@ public class Attacker : MonoBehaviour
         {
             NextPathPoint();
         }
+        
+        if (lastX < transform.localPosition.x)
+        {
+            appearance.flipX = true;
+        }
+
+        if (lastX > transform.localPosition.x)
+        {
+            appearance.flipX = false;
+        }
+
+        lastX = transform.localPosition.x;
     }
 
     private void Update()
