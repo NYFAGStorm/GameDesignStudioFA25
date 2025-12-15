@@ -26,17 +26,30 @@ public class WaveManager : MonoBehaviour
     [HideInInspector]
     public WaveState state = WaveState.Idle;
     public UniqueWaves wavesData;
+    public GameObject invalidPathWarning;
 
     private void Awake()
     {
         tfm = FindFirstObjectByType<TileFloorManager>();
         attackerData = FindFirstObjectByType<AttackerData>();
         dayNightManager = FindFirstObjectByType<DayNightManager>();
+
+        HideWarning();
     }
 
     public void BeginWave()
     {
-        if (spawning || !tfm.validPath) return;
+        if (spawning) return;
+
+        if (!tfm.validPath)
+        {
+            invalidPathWarning.SetActive(true);
+
+            CancelInvoke("HideWarning");
+            Invoke("HideWarning", 3);
+
+            return;
+        }
 
         // Ellington: Added a function call to start the day
         dayNightManager.SwapToDay();
@@ -46,6 +59,12 @@ public class WaveManager : MonoBehaviour
         state = WaveState.SpawningWave;
 
         SpawnNextWave();
+        HideWarning();
+    }
+
+    private void HideWarning()
+    {
+        invalidPathWarning.SetActive(false);
     }
 
     private void Update()

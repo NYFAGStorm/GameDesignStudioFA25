@@ -104,6 +104,7 @@ public class TileFloorManager : MonoBehaviour
         validPath = CompilePath();
     }
 
+
     public bool CompilePath()
     {
         Slot currentSlot = entranceSlot;
