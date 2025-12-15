@@ -70,6 +70,11 @@ public class TileFloorManager : MonoBehaviour
             t.ReturnToInventory();
         }
 
+        foreach (Trophy t in FindObjectsByType<Trophy>(FindObjectsSortMode.InstanceID))
+        {
+            t.ReturnToInventory();
+        }
+
         foreach (GameObject go in floorContent)
         {
             Slot s = go.GetComponent<Slot>();

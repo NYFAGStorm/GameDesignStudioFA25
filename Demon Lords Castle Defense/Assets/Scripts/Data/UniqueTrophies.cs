@@ -3,7 +3,10 @@ using UnityEngine;
 [System.Serializable]
 public struct UniqueTrophy
 {
-    public float effectAmount;
+    public TrophyType type;
+    public Sprite sprite;
+    public float healthAdditive;
+    public float attackAdditive;
 }
 
 [CreateAssetMenu(fileName = "TrophyTypes", menuName = "DemonDefense/TrophyTypes", order = 3)]
