@@ -122,6 +122,8 @@ public class Placeable : MonoBehaviour
     {
         FindFirstObjectByType<AudioManager>().StartSound("ObjectGrab");
 
+        container.RemoveItem(false);
+
         invSlotLink.ReturnItem();
     }
 
@@ -129,11 +131,11 @@ public class Placeable : MonoBehaviour
     {
         foreach (Slot s in childSlots)
         {
-            s.GetItem().ForceRemove();
+            if (s.GetItem()) s.GetItem().ForceRemove();
         }
 
         container = null;
-        Destroy(gameObject);
+        
         ReturnToInventory();
     }
 

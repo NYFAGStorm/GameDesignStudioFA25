@@ -90,9 +90,10 @@ public class Slot : MonoBehaviour
 
         if (item)
         {
-            replacer = newItem;
+            newItem.ReturnToInventory();
+            //replacer = newItem;
 
-            PopupBuilder.CreatePopup(replacePrompt);
+            //PopupBuilder.CreatePopup(replacePrompt);
             return false;
         }
         else
@@ -111,7 +112,7 @@ public class Slot : MonoBehaviour
 
     public void RemoveItem(bool forced)
     {
-        if (forced) item.ForceRemove();
+        if (forced && item) item.ForceRemove();
         item = null;
 
         SlotUpdated.Invoke();

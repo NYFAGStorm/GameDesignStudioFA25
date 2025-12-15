@@ -19,6 +19,10 @@ public class TileFloorManager : MonoBehaviour
     private Slot entranceSlot;
     private Vector2Int currentCompilePosition;
     private Vector2Int compileStartPosition;
+    private WaveManager waveManager;
+    private int entrance;
+    private int exit;
+    private List<GameObject> floorContent = new List<GameObject>();
 
     [HideInInspector]
     public bool validPath;
@@ -37,21 +41,56 @@ public class TileFloorManager : MonoBehaviour
     {
         tileSlots = new Slot[gridSize.x * gridSize.y];
         floor.GetComponent<SpriteRenderer>().size = new Vector2((gridSize.x * unitSize) / 1.55f + 3.1f, (gridSize.y * unitSize) / 1.55f + 2.93f);
+        waveManager = FindFirstObjectByType<WaveManager>();
 
-        int entrance = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
-        int exit = entrance;
+        ResetFloor(waveManager.currentWave == 0);
+    }
 
-        do
+    public void ResetFloor(bool straightEntranceExit)
+    {
+        entrance = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
+        exit = entrance;
+
+        if (!straightEntranceExit)
         {
-            exit = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
-        } 
-        while (entrance - 1 == exit);
+            do
+            {
+                exit = Random.Range(0, horizontalEntrance ? gridSize.y : gridSize.x);
+            }
+            while (entrance - 1 == exit);
+        }
+
+        foreach (Goon p in FindObjectsByType<Goon>(FindObjectsSortMode.InstanceID))
+        {
+            p.ReturnToInventory();
+        }
+
+        foreach (Tile t in FindObjectsByType<Tile>(FindObjectsSortMode.InstanceID))
+        {
+            t.ReturnToInventory();
+        }
+
+        foreach (GameObject go in floorContent)
+        {
+            Slot s = go.GetComponent<Slot>();
+            
+            if (s)
+            {
+                s.RemoveItem(true);
+            }
+
+            Destroy(go);
+        }
+
+        floorContent.Clear();
 
         for (int y = 0; y < gridSize.y; y++)
         {
             for (int x = 0; x < gridSize.x; x++)
             {
                 Slot newSlot = Instantiate(tileObject, transform, false).GetComponent<Slot>();
+
+                floorContent.Add(newSlot.gameObject);
 
                 float xCenterOffset = ((gridSize.x - 1) * unitSize) / 2;
                 float yCenterOffset = ((gridSize.y - 1) * unitSize) / 2;
@@ -70,6 +109,8 @@ public class TileFloorManager : MonoBehaviour
                         marker.transform.localPosition = heroEntrance;
                         marker.transform.localRotation = horizontalEntrance ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 180, 0);
 
+                        floorContent.Add(marker);
+
                         compileStartPosition = new Vector2Int(x, y);
                         entranceSlot = newSlot;
                     }
@@ -85,6 +126,8 @@ public class TileFloorManager : MonoBehaviour
                         GameObject marker = Instantiate(endMarker, transform, false);
                         marker.transform.localPosition = heroExit;
                         marker.transform.localRotation = horizontalEntrance ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 180, 0);
+
+                        floorContent.Add(marker);
                     }
                 }
 
@@ -103,7 +146,6 @@ public class TileFloorManager : MonoBehaviour
     {
         validPath = CompilePath();
     }
-
 
     public bool CompilePath()
     {

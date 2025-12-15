@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 public enum WaveState
 {
     Idle,
@@ -14,7 +15,6 @@ public class WaveManager : MonoBehaviour
     // LiAi
     // Script to manage for waves
 
-    private int currentWave = 0;
     private int enemiesRemaining = 0;
     private bool spawning = false;
     private int currentEnemyIndex = 0;
@@ -24,7 +24,11 @@ public class WaveManager : MonoBehaviour
     private DayNightManager dayNightManager; // Ellington: Added DayNightManager for function call
 
     [HideInInspector]
+    public int currentWave = 0;
+    [HideInInspector]
     public WaveState state = WaveState.Idle;
+    [HideInInspector]
+    public UnityEvent NewWave;
     public UniqueWaves wavesData;
     public GameObject invalidPathWarning;
 
@@ -60,6 +64,8 @@ public class WaveManager : MonoBehaviour
 
         SpawnNextWave();
         HideWarning();
+
+        NewWave.Invoke();
     }
 
     private void HideWarning()
@@ -144,6 +150,8 @@ public class WaveManager : MonoBehaviour
             currentWave++;
 
             dayNightManager.SwapToNight();
+
+            tfm.ResetFloor(currentWave == 0);
         }
     }
 }
