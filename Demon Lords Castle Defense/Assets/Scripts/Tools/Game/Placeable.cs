@@ -76,7 +76,7 @@ public class Placeable : MonoBehaviour
                 continue;
             }
 
-            if (GetType().Name != s.GetSlotType().Name)
+            if (GetType().Name != s.GetSlotType().Name && GetType().Name != s.GetSecondarySlotType().Name)
             {
                 newValidSlots.Remove(s);
             }
@@ -122,7 +122,7 @@ public class Placeable : MonoBehaviour
     {
         FindFirstObjectByType<AudioManager>().StartSound("ObjectGrab");
 
-        container.RemoveItem(false);
+        if (container) container.RemoveItem(false);
 
         invSlotLink.ReturnItem();
     }

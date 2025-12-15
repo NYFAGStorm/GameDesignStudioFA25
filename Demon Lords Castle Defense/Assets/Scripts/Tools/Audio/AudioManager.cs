@@ -84,6 +84,9 @@ public class AudioManager : MonoBehaviour
         }
 
         // Gustavo - Add UI click SFX to all UI buttons
+
+        if (!SoundExists("UIClick")) return;
+
         foreach (Button btn in Resources.FindObjectsOfTypeAll<Button>())
         {
             btn.onClick.AddListener(UIButtonClick);

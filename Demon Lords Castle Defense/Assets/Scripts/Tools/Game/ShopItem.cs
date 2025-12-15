@@ -49,7 +49,7 @@ public class ShopItem : MonoBehaviour
                 break;
 
             case ItemType.Trophy:
-                //newInvItem = FindFirstObjectByType<TrophyData>().CreateTrophy(Enum.Parse<TrophyType>(enumName)).gameObject;
+                newInvItem = FindFirstObjectByType<TrophyData>().CreateTrophy(Enum.Parse<TrophyType>(enumName)).gameObject;
 
                 break;
         }

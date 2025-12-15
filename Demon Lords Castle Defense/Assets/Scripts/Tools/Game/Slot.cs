@@ -6,7 +6,7 @@ public enum SlotType
 {
     Tile,
     Goon,
-    Decoration
+    Trophy
 }
 
 public class Slot : MonoBehaviour
@@ -27,6 +27,7 @@ public class Slot : MonoBehaviour
     private Placeable replacer = null;
 
     public SlotType slotType = 0;
+    public SlotType secondarySlotType = 0;
     public Vector3 offset;
     public float maximumDistance = 1;
     public PopupBlueprint replacePrompt;
@@ -84,9 +85,14 @@ public class Slot : MonoBehaviour
         return Type.GetType(Enum.GetName(typeof(SlotType), slotType));
     }
 
+    public Type GetSecondarySlotType()
+    {
+        return Type.GetType(Enum.GetName(typeof(SlotType), secondarySlotType));
+    }
+
     public bool InsertItem(Placeable newItem)
     {
-        if (newItem.GetType().Name != GetSlotType().Name) return false;
+        //if (newItem.GetType().Name != GetSlotType().Name) return false;
 
         if (item)
         {

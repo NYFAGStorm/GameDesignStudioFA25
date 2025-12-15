@@ -21,7 +21,10 @@ public class Trophy : Placeable
 
         if (isPlaced)
         {
-
+            foreach (Goon g in FindObjectsByType<Goon>(FindObjectsSortMode.InstanceID))
+            {
+                g.SetBoosts(healthBoost, damageBoost);
+            }
         }
     }
 

@@ -155,5 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotType: 1
+  secondarySlotType: 1
   offset: {x: 0, y: 0.1, z: 0}
   maximumDistance: 1
+  SlotUpdated:
+    m_PersistentCalls:
+      m_Calls: []

@@ -161,6 +161,11 @@ MonoBehaviour:
   gameType: 0
   danceOffScreen: {fileID: 1402702724}
   healthBar: {fileID: 1553105808}
+  DemonLordImage: {fileID: 1490756578}
+  DemonLordA: {fileID: 21300000, guid: 4270edc056edd44439e0913fb64bbc5b, type: 3}
+  DemonLordS: {fileID: 21300000, guid: b0f7ac9184334b74eb1c459cce428f00, type: 3}
+  DemonLordD: {fileID: 21300000, guid: 4a9138867d4d1ea41beda7fe54f9692f, type: 3}
+  DemonLordF: {fileID: 21300000, guid: a50fe5a23980c0243890e650d5561b67, type: 3}
 --- !u!4 &30053228
 Transform:
   m_ObjectHideFlags: 0
@@ -1033,6 +1038,7 @@ GameObject:
   - component: {fileID: 610997368}
   - component: {fileID: 610997369}
   - component: {fileID: 610997370}
+  - component: {fileID: 610997371}
   m_Layer: 0
   m_Name: TileFloorManager
   m_TagString: Untagged
@@ -1129,6 +1135,20 @@ MonoBehaviour:
       m_Calls: []
   goonBase: {fileID: 8032749320919845049, guid: 185c0342d81c2f34599b42aaf579a331, type: 3}
   types: {fileID: 11400000, guid: 0cf70b441c4ef844dae168e93392d628, type: 2}
+--- !u!114 &610997371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610997362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a932fd6b65dd1d944b0bb10030db89bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrophyBase: {fileID: 4128130948670632769, guid: 29dcf259fc8388d4e990c236e55de458, type: 3}
+  types: {fileID: 11400000, guid: aed5361270ef03543a111ed6e50cc8a3, type: 2}
 --- !u!1 &618298467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,7 +3381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1402702725
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3950,8 +3970,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: 66}
-  m_SizeDelta: {x: 1382.4, y: 777.6}
+  m_AnchoredPosition: {x: 500, y: 0}
+  m_SizeDelta: {x: 645, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490756580
 MonoBehaviour:
@@ -3973,7 +3993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 09e31441701d2e749a18e44aa6cab310, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4270edc056edd44439e0913fb64bbc5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
