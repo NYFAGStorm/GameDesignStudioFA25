@@ -22,6 +22,8 @@ public class Goon : Placeable
     private Animator animator;
     private SpriteRenderer image;
     private bool alive = true;
+    private float healthBoost = 0;
+    private float damageBoost = 0;
 
     public void InitializeGoon(UniqueGoon data)
     {
@@ -92,6 +94,8 @@ public class Goon : Placeable
 
     protected override void StartDrag()
     {
+        if (!alive) return;
+
         base.StartDrag();
         state = 0;
     }
@@ -142,7 +146,7 @@ public class Goon : Placeable
         FindFirstObjectByType<AudioManager>().StartSound(type.ToString() + "Attack");
         animator.SetTrigger("Attack");
 
-        if (!target.DealDamage(damage))
+        if (!target.DealDamage(damage + damageBoost))
         {
             UpdateAttackers();
 
@@ -168,7 +172,7 @@ public class Goon : Placeable
         health = Mathf.Max(0, health - damage);
 
         Debug.Log("goon health: " + health);
-        if (health == 0)
+        if (health + healthBoost == 0)
         {
             alive = false;
 
@@ -186,6 +190,14 @@ public class Goon : Placeable
         }
 
         return health > 0;
+    }
+
+    public void SetBoosts(float hp, float dmg)
+    {
+        healthBoost = hp;
+        damageBoost = dmg;
+
+        DealDamage(0);
     }
 
     private void DeleteGoon()

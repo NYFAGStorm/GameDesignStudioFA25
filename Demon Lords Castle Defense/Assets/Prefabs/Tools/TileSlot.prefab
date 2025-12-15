@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotType: 0
+  secondarySlotType: 2
   offset: {x: 0, y: 0.1, z: 0}
   maximumDistance: 3
   SlotUpdated:
