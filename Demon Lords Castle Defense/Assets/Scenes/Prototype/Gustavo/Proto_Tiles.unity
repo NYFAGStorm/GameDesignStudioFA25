@@ -1409,6 +1409,66 @@ MonoBehaviour:
     pitchVariance: 0
     volume: 1
     volumeVariance: 0
+  - name: BookOfSpells
+    clip: {fileID: 8300000, guid: 10feed67033544e1f9c05a610a874d42, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: CrownOfFlames
+    clip: {fileID: 8300000, guid: 159e4064cb57c42c0b9f438c859b8b6c, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: HeartOfAngel
+    clip: {fileID: 8300000, guid: c6b7e4e936ef24f15a08ece861d34bf3, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: MirrorOfAgony
+    clip: {fileID: 8300000, guid: f851afcf6669948e2be0e715fd21efea, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: PetrifiedPaladin
+    clip: {fileID: 8300000, guid: 8be75a18c24ab45ed96a4f7374b80814, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
+  - name: ShopBoat
+    clip: {fileID: 8300000, guid: 554ff16b0d6c8495484317f93c28e902, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 1
+    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0
   musicCrossFadeTime: 2
 --- !u!4 &618298469
 Transform:
@@ -1577,6 +1637,192 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739790555}
   m_CullTransparentMesh: 1
+--- !u!1 &754255526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754255527}
+  - component: {fileID: 754255528}
+  m_Layer: 0
+  m_Name: VOAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754255527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754255526}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1459922594}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &754255528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754255526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84ee89b53e7d06479daf259d5fd914c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: VO_DL_Laugh2
+    clip: {fileID: 8300000, guid: cf54c6c7e612922409d544ebd5fa2f77, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_Applause3
+    clip: {fileID: 8300000, guid: 2e0de4cf4e7574d4ca48e90c3062d1ee, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_CheckOut4
+    clip: {fileID: 8300000, guid: d93bc52b700e83f47b71143f518bfbe9, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_FoolishHeroes4
+    clip: {fileID: 8300000, guid: 67bf3ca2b0e5fe9478bc638c455039e6, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_GoForth4
+    clip: {fileID: 8300000, guid: 4ec7ad8d7ac378c4cb16b27bfb0ea4b4, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_KillMe2
+    clip: {fileID: 8300000, guid: 2b5a56e7aa20e62479e001061451ec28, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_NoneCanDefeat2
+    clip: {fileID: 8300000, guid: 9899fe5b41af35b4889364bc762d6873, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_OhNo2
+    clip: {fileID: 8300000, guid: cb4f0faccb626da4b9dc395b7c886984, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_Pathetic3
+    clip: {fileID: 8300000, guid: 948adf83b869cdf498d69fd24aca8bcc, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_StepRightUp2
+    clip: {fileID: 8300000, guid: 154591ada33c3ab4fb8dd09b742c126d, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_TheOnlyThing3
+    clip: {fileID: 8300000, guid: 1d35d13632c91cb47addbb900fcdfac5, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_TryHarder2
+    clip: {fileID: 8300000, guid: a2bd5689bfe898c4c8e793db92c9107d, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_YoullNeverDance3
+    clip: {fileID: 8300000, guid: 05f8cfddc40f4954694fe1bc3fd771cb, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  - name: VO_DL_YoureRuining1
+    clip: {fileID: 8300000, guid: bf2d928c2aac43043b6e07518628511c, type: 3}
+    type: 0
+    delay: 0
+    maxDelay: 0
+    spaceBlend: 0
+    pitch: 0
+    pitchVariance: 0
+    volume: 0
+    volumeVariance: 0
+  musicCrossFadeTime: 2
 --- !u!1 &759562463
 GameObject:
   m_ObjectHideFlags: 0
@@ -3558,6 +3804,7 @@ Transform:
   - {fileID: 1905475147}
   - {fileID: 30053228}
   - {fileID: 1268453685}
+  - {fileID: 754255527}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1467855751
