@@ -29,7 +29,7 @@ public static class CurrencyManager
 
     public static void ResetSouls()
     {
-        bankedSouls = 0;
+        bankedSouls = 100;
     }
 
     public static bool SpendSouls(int price)
