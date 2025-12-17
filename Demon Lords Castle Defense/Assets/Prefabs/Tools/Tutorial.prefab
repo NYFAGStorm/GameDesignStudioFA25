@@ -1903,7 +1903,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Great!  I have a few souls that I want to use to buy Tiles and Goons right
+  m_text: Great! I have a few souls that I want to use to buy Tiles and Goons right
     now!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
@@ -2471,8 +2471,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "We\u2019ll then I suggest you leave the outerwall as is so the invading
-    Heroes can come right in,"
+  m_text: Well, then I suggest you leave the outerwall as is so the invading Heroes
+    can come right in,
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
   m_sharedMaterial: {fileID: -8417316213441743056, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
@@ -3890,7 +3890,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Those fools!  I will squash then scrape them off the bottom of my hoof
+  m_text: 'Those fools! I will squash then scrape them off the bottom of my hoof
     and feed their guts to my Goons! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
@@ -4811,9 +4811,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Well, if you spend the souls you have now in your Soul Chests to buy some
-    Goons, they will battle and kill the invading Hero\u2019s for you, collecting
-    even more souls!"
+  m_text: Well, if you spend the souls you have now in your Soul Chests to buy some
+    Goons, they will battle and kill the invading Heroes for you, collecting even
+    more souls!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
   m_sharedMaterial: {fileID: -8417316213441743056, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
@@ -5161,8 +5161,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Demon Lord, I\u2019ve been looking all over for you!  The Heroes have
-    broken through the front wall again and destroyed multiple rooms in the castle!"
+  m_text: "Demon Lord, I\u2019ve been looking all over for you! The Heroes have broken
+    through the front wall again and destroyed multiple rooms in the castle!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
   m_sharedMaterial: {fileID: -8417316213441743056, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
@@ -5642,7 +5642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What do we need to fix this time?  Every day these invading heroes break
+  m_text: What do we need to fix this time? Every day these invading heroes break
     through an exterior wall then destroy rooms in my castle!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 796f42f0e931eca499d76c3ed5806049, type: 2}
