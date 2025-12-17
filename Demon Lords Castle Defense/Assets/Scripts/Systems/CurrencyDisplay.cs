@@ -30,6 +30,8 @@ public static class CurrencyManager
     public static void ResetSouls()
     {
         bankedSouls = 100;
+
+        Object.FindFirstObjectByType<CurrencyDisplay>().CurrencyUpdated.Invoke();
     }
 
     public static bool SpendSouls(int price)
